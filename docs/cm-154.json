@@ -1,0 +1,1412 @@
+{
+  "version": 1,
+  "gate": "choshen_mishpat",
+  "siman": 154,
+  "siman_he": "קנד",
+  "title": {
+    "he": "חזקת חלונות ופתחים וכמה צריך להתרחק מהן",
+    "hu": ""
+  },
+  "description": {
+    "he": "ובו לב סעיפים",
+    "hu": ""
+  },
+  "seifim": [
+    {
+      "id": 1,
+      "letter": "א",
+      "hebrew": [
+        "אחד מהשותפין בחצר",
+        "שלקח בית בחצר אחרת",
+        "**אינו יכול לפתוח פתחו** לחצר השותפים שלו",
+        "(שכל אחד מבני החצר אין לו רשות לשנות כלל",
+        "אלא כמו שבנאו או קנאו או **ירשוהו**",
+        "יש להם לנהוג בו) (טור סע\"ב)",
+        "**אפילו** בנה עלייה על גב ביתו",
+        "לא יעשה לה (פתח) לתוך החצר",
+        "**לפי שמרבה עליהם את הדרך**",
+        "נעשה כמי שהיה לו שכן אחד",
+        "ונעשו לו שכנים הרבה",
+        "**אבל** יכול הוא **לבנות עלייה**",
+        "על גב ביתו בנין חדש",
+        "**ובלבד** שלא תהא פתוחה לחצר",
+        "אלא לתוך ביתו",
+        "**ואצ\"ל** שאם רצה **לחלוק (ביתו) לשנים** חולק",
+        "**כיון** שאינו פותח פתח אחר לחצר",
+        "**בד\"א** שאם לקח בית בחצר אחרת",
+        "אינו יכול לפתוח פתחו לחצר השותפים",
+        "בפותחו **לחצר ממש**",
+        "**אבל** יכול לפתחו לתוך ביתו",
+        "והוא **שיסתום הפתח** שהיה לו בחצר אחרת",
+        "(**ויש חולקין** דאפילו לתוך ביתו אסור לפתחו)",
+        "(טור בשם הרא\"ש):"
+      ],
+      "hungarian": {
+        "title": "Ajtó nyitása, udvarok összenyitása",
+        "items": [
+          {
+            "level": 1,
+            "text": "(Ablak nyitása: ld. 3. pont)"
+          },
+          {
+            "level": 1,
+            "text": "Akinek két szomszédos udvarban van két szomszédos háza, nem nyithatja őket össze („járás sokasítása” miatt)"
+          },
+          {
+            "level": 1,
+            "text": "Új lakásrészének ajtaját se az udvarból, hanem a saját házából nyissa"
+          },
+          {
+            "level": 1,
+            "text": "**Új lakásrészt** azonban adhat hozzá, és fel is oszthatja a sajátját (hiába növeli a lakókat, és így a forgalmat is)"
+          },
+          {
+            "level": 1,
+            "text": "Ha szomszédos a két lakása, vagy új lakásrésze van, ezeket összenyithatja?"
+          },
+          {
+            "level": 2,
+            "text": "*Máchloket*, de a könnyítő vélemény szerint is csak akkor, ha a másik udvarbeli bejáratot lezárja, hogy ne hozzon létre átjáróházat"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "letter": "ב",
+      "hebrew": [
+        "אחד מהשותפין בחצר",
+        "**שהביא לביתו אנשי** בית אחרת",
+        "יש לחבירו לעכב עליו",
+        "**מפני** שמרבה עליו את הדרך",
+        "**וכן** **המשכיר** ביתו לבעל הבית אחד",
+        "**ואח\"כ** הביא עמו קרוביו או מיודעיו",
+        "לשכון עמו כאחד בבית זה",
+        "**הרי** המשכיר מעכב",
+        "**ואם** הם **סמוכים על שלחנו**",
+        "אינו יכול לעכב עליו",
+        "לא השותף ולא המשכיר:",
+        "הגה **וי\"א** דשותף יכול למלאות ביתו אכסנאים ודיורים",
+        "כל שאינו מוסיף בנין חדש",
+        "(טור בשם רשב\"ם ונ\"י בשם הרי\"ף והרמב\"ן וריטב\"א)",
+        "**אע\"פ** שחולק ביתו לדיורים",
+        "**ויש להן בית הכסא** אחד ביחד",
+        "ולא יוכל השני למימר הם ממלאים לי הבית הכסא",
+        "**שנים** שיש להם בשותפות בית אחד",
+        "אין האחד יכול להרשות לאחרים להשתמש בחלקו",
+        "**אע\"ג** דבחצר אין להקפיד בכה\"ג",
+        "**מיהו** בבית קפידי אינשי (כ\"ז מרדכי פרק חזקת):"
+      ],
+      "hungarian": {
+        "title": "Új lakók hozása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Akár a többi lakó, akár a bérbeadó tiltakozhat ellene (hozzájárulást nem köteles kérni?)"
+          },
+          {
+            "level": 1,
+            "text": "Ha azonban ellátja őket, nem tiltakozhatnak"
+          },
+          {
+            "level": 1,
+            "text": "Más vélemény szerint akárhány vendéget hozhat, csak ne bővítse ki a házát",
+            "gap": 8
+          },
+          {
+            "level": 2,
+            "text": "(ez utóbbi *Rásbám* véleménye, azonban a *Mechábér* az 1. pontban ezzel szemben paszkenolt)"
+          },
+          {
+            "level": 1,
+            "text": "Még az sem tiltakozási alap eszerint, hogy csökkentik a **közös mosdó** használati lehetőségét",
+            "gap": 1
+          },
+          {
+            "level": 1,
+            "text": "**Ikerház** esetén azonban ugyanez működő érv"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "letter": "ג",
+      "hebrew": [
+        "לא יפתח אדם **חלון** לחצר חבירו",
+        "**ואפילו** א' מהשותפים בחצר",
+        "שבקש לפתוח לו חלון בתוך ביתו לחצר",
+        "מעכב עליו שותפו",
+        "**מפני** שמסתכל בו ממנו",
+        "**ואם** פתח יסתום",
+        "**ואם** נתנו לו השותפים בחצר **רשות**",
+        "לפתוח חלון או פתח **רשאי**",
+        "**והוא** שלא יפתח **פתח כנגד פתח**",
+        "או **חלון כנגד חלון**:",
+        "הגה ופתח כנגד פתח לא מהני **חזקה**",
+        "**וה\"ה** בחלון נגד חלון (ב\"י בשם רשב\"ם)",
+        "**וי\"א** בחלון נגד חלון מהני (טור בשם הרמ\"ה)",
+        "**ואם** באו שניהם לפתוח **בבת אחת**",
+        "פתח נגד פתח או חלון נגד חלון",
+        "**אם** אחד מהן אינו חסר וחבירו נהנה",
+        "כופין על **מדת סדום**",
+        "**ואם** שניהם כאחד חסרים",
+        "יעשו פשרה ביניהם (נ\"י פ' חזקת)",
+        "**אלא** ירחיק **משהו** זה מנגד זה",
+        "**ואם** הוא **לחצר אחרת**",
+        "שנתנו לו רשות לפתוח פתח או חלון",
+        "צריך להרחיק מכנגד פתחו או חלונו של חבירו",
+        "**עד שלא יוכל לראות** בו כלל",
+        "**אבל** פותח אדם לר\"ה",
+        "פתח בית כנגד פתח בית",
+        "וחלון כנגד חלון",
+        "**אם** אינם גבוהים **ד' אמות**",
+        "**מפני** שאומר לו הריני כא' מבני ר\"ה",
+        "שרואים אותך:",
+        "הגה והבא לבנות ראשון בעלייה",
+        "**אם** חבירו שכנגדו יכול לעכב עליו",
+        "לומר היום או מחר אפתח ג\"כ ותעכב עלי",
+        "ע\"ל סי' זה סעיף י\"ד ט\"ו וי\"ו וי\"ז",
+        "**ולמבוי** כל שיש למטה ממנו ג' בתים",
+        "**יש מי שאומר** שדינו כר\"ה",
+        "**וי\"א** שכל שאינו מפולש",
+        "אין דינו כרשות הרבים",
+        "פתח לר\"ה ויש בזה **היזק ראייה לחצר**",
+        "שבצד רה\"ר שכנגדו",
+        "חבירו יכול למחות בו",
+        "(נ\"י ומרדכי פ\"ק דב\"ב וד\"ע מדקדוק הפוסקים)",
+        "**ואע\"פ** כן לא יפתח אדם",
+        "**חנות** כנגד פתח או חלון חבירו",
+        "**מפני** שזה **היזק קבוע תמיד**",
+        "שבני ר\"ה עוברים ושבים",
+        "ואינם מביטים בו תמיד",
+        "וזה יושב בחנותו כל היום",
+        "ומביט בפתח או בחלון חבירו",
+        "**לפיכך** צריך להתרחק",
+        "עד כדי שלא יהא יכול לראות בו כלל:",
+        "(**י\"א** שצריך ליזהר אדם מלהסתכל בבית חבירו",
+        "עד שהוא **נתפס כגנב** בראייה ההיא",
+        "כיון שאין לו טענה) (נ\"י פ' חזקת):"
+      ],
+      "hungarian": {
+        "title": "Ablakok nyitása, szemközti nyílások",
+        "items": [
+          {
+            "level": 1,
+            "text": "Engedélyt kell kérnie még a közös udvarhoz is"
+          },
+          {
+            "level": 2,
+            "text": "Ha nem járulnak hozzá, be kell falaznia"
+          },
+          {
+            "level": 1,
+            "text": "Ha hozzájárultak, akkor sem lehetnek **egymással szemben** (vö. Bileám *„má tovu”* áldása)",
+            "gap": 3
+          },
+          {
+            "level": 1,
+            "text": "Ha ehhez is hozzájárultak, utólag bármikor visz-szavonhatják (nincs *cházáká* – sima ablakra viszont van, ld. 7. pont)"
+          },
+          {
+            "level": 2,
+            "text": "*Máchloket*, hogy az ablak esetében van-e *cházáká* (ajtóban biztosan nincsen)"
+          },
+          {
+            "level": 1,
+            "text": "Ha egyszerre nyitották – aki nem veszít, az változtasson (ha külön-külön: ld. 14. pont)"
+          },
+          {
+            "level": 2,
+            "text": "**Közös udvarban** minimális eltolás elég"
+          },
+          {
+            "level": 2,
+            "text": "**Szomszédos udvarban** látótávolságnyi"
+          },
+          {
+            "level": 2,
+            "text": "**Közterületen** (4 ámá alatt) nem kell"
+          },
+          {
+            "level": 1,
+            "text": "Az emelet építése elleni tiltakozás ld. később: 14-17. pont",
+            "gap": 13
+          },
+          {
+            "level": 1,
+            "text": "*Mávoj* (több udvar előtere) akkor lesz közterület, ha van 3 lakás ott vagy ha *mefulás* – *máchloket*",
+            "gap": 2
+          },
+          {
+            "level": 1,
+            "text": "Amikor még a közterület sem elég kifogás:",
+            "gap": 2
+          },
+          {
+            "level": 2,
+            "text": "Ha **udvar** nyílik az ablakkal szemben"
+          },
+          {
+            "level": 2,
+            "text": "Ha **boltot** nyit, ahol állandóan ül"
+          },
+          {
+            "level": 1,
+            "text": "Van, aki szerint egyáltalán **ne nézelődjön** más ablakán, a gyanakvást elkerülendő",
+            "gap": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "letter": "ד",
+      "hebrew": [
+        "היה פתח של אחד מהשותפין בחצר **קטן**",
+        "**אינו יכול להרחיבו**",
+        "**שהרי** שותפו אומר לו",
+        "בפתח קטן **אני יכול להסתר** ממך בשעת תשמיש",
+        "**ואיני יכול להסתר** ממך בפתח גדול",
+        "**ואם** היה הפתח **גדול**",
+        "לא יעשנו **שנים** **שהרי** אומר לו",
+        "בפתח אחד אני יכול להסתר",
+        "בשנים איני יכול",
+        "**אבל** מי שהיה לו פתח **קטן** **לר\"ה**",
+        "ורצה **להרחיבו**",
+        "**או** היה **רחב** ורצה לעשותו **שנים**",
+        "**אין** חבירו שכנגדו מעכב עליו",
+        "**ואצ\"ל** בני ר\"ה שאינם יכולים לעכב עליו",
+        "(**היה** לו פתח **גדול**",
+        "יכול לעשות שם פתח **קטן**",
+        "**אבל** לא במקום אחר) (טור וב\"י בשם הרמב\"ם):"
+      ],
+      "hungarian": {
+        "title": "Kis nyílás bővítése",
+        "items": [
+          {
+            "level": 1,
+            "text": "Engedély kell az ajtaja kiszélesítéséhez"
+          },
+          {
+            "level": 1,
+            "text": "Ahhoz is, ha egy nagyot akar két kicsivé alakítani (*Szmá / Rásbám*: mert az egyik szárnyat nyitva fogja hagyni)"
+          },
+          {
+            "level": 1,
+            "text": "(Ablak bővítése, átalakítása, ld. 13. pont)"
+          },
+          {
+            "level": 1,
+            "text": "Közterületen nincs ilyen tiltakozás (ott teljesen újat is nyithat)",
+            "gap": 2
+          },
+          {
+            "level": 1,
+            "text": "Ha nagyot akar kisebbíteni, nem helyezheti át cserébe engedély nélkül",
+            "gap": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "letter": "ה",
+      "hebrew": [
+        "אחד מהשותפים בחצר",
+        "שהיה לו פתח פתוח לחצר",
+        "והיו לו **שתי דלתות**",
+        "**ורוצה לעשותה דלת אחת**",
+        "**יש מי שאומר** שאינם יכולים לעכב עליו",
+        "**אע\"פ שנפתח כולו תמיד**",
+        "**משא\"כ** שהיה בשתי דלתות:",
+        "הגה **אבל** היו לו שני פתחים של **שני שני אמות**",
+        "**לא יוכל** לעשות פתח א' של ד' אמות (גמ' פ' חזקת):"
+      ],
+      "hungarian": {
+        "title": "Két ajtó összevonása",
+        "items": [
+          {
+            "level": 1,
+            "text": "*Jes mi seomér*: szabad, nem mondhatják, hogy most majd az egész nyitva lesz"
+          },
+          {
+            "level": 1,
+            "text": "*Remo* szerint ha ez már 4 ámás lesz, akkor nem igaz – a magyarázók azonban nem találták ezt meg a Gemárában"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "letter": "ו",
+      "hebrew": [
+        "מי שבא לפתוח חלון לחצר חבירו",
+        "**בין** חלון גדולה בין חלון קטנה",
+        "**בין** למעלה בין למטה",
+        "בעל החצר מעכב עליו",
+        "**שהרי** אומר תזיק לי בראיה",
+        "**ואע\"פ** שהוא גבוה **תעלה בסולם ותראה**:"
+      ],
+      "hungarian": {
+        "title": "A magas ablak és a létra alatta",
+        "items": [
+          {
+            "level": 1,
+            "text": "Nem elég kifogás az, hogy az új ablak magasan van"
+          },
+          {
+            "level": 1,
+            "text": "A szomszéd mondhatja, hogy a másik majd létráról fog nézelődni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "letter": "ז",
+      "hebrew": [
+        "הרי **שפתח חלון** לחצר חבירו",
+        "**ומחל לו** בעל החצר",
+        "או **שגלה דעתו** שהניחו",
+        "**כגון** שבא **וסייע** עמו",
+        "או שידע הניזק ולא ערער",
+        "הרי זה החזיק בחלון",
+        "**ואינו יכול** אח\"כ לחזור",
+        "ולערער עליו לסתום:",
+        "הגה כן ראוי להורות מאחר שכבר החזיק זה בחלון",
+        "**אע\"פ שרבים חולקים** וסבירא להו",
+        "**דאין** חזקה מהני בהיזק ראיה",
+        "**ואפילו** למ\"ד יש לו חזקה היינו לגופו של חלון",
+        "דלא יוכל בעל החצר לסתמו או למחות בו",
+        "**אבל** הוא **אסור לעמוד בחלון ולראות** בחצר חבירו",
+        "**כדי** שלא יזיקנו בראייתו",
+        "ובזה איסורא קא עביד ולא מהני ליה חזקה",
+        "וזה יוכל בעל החצר למחות בו (ב\"י בשם הרשב\"א)",
+        "**אבל** כל זמן שאין לו חזקה",
+        "יוכל לערער עליו וצריך לסותמו",
+        "**אע\"פ** שעכשיו א\"צ לבנות בצדו",
+        "**ואי בעינן חזקה ג' שנים** יש בו מחלוקת",
+        "**וכמו** שנתבאר לעיל סי' קנ\"ג",
+        "לענין זיזין ושאר דברים כיוצא בו",
+        "(וע\"ל סי' קנ\"ה סעיף ל\"ה):"
+      ],
+      "hungarian": {
+        "title": "Ablak cházákája – hogy ne kelljen eltávolítani",
+        "items": [
+          {
+            "level": 1,
+            "text": "Lehetséges, akár csak ráutaló magatartással"
+          },
+          {
+            "level": 1,
+            "text": "(Fentebb, a 3. pontban a *chálon keneged chálon*ra írtuk, hogy nem mindenki szerint van *cházáká*)"
+          },
+          {
+            "level": 1,
+            "text": "**Ijun:** *ablak cházákája*"
+          },
+          {
+            "level": 1,
+            "text": "Komoly *máchloket risonim*, még a könnyítő vélemény szerint sincs joga *hezek reijá*t okozni, ablakából nézni (vö. *Remo* 3. pont végén)",
+            "gap": 4
+          },
+          {
+            "level": 1,
+            "text": "Ha a szomszéd udvarra néz az ablaka, akkor ők tiltakozhatnak, hogy ne nézzen ott ki sokat"
+          },
+          {
+            "level": 1,
+            "text": "Mennyi idő után van *cházáká*? Ld. 153. fejezet",
+            "gap": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "letter": "ח",
+      "hebrew": [
+        "**בד\"א** שיש חזקה להיזק ראייה",
+        "**בעושה מעשה** כגון פותח חלון על חצר חבירו",
+        "**אבל** **חצר השותפין**",
+        "**אע\"פ** שעמדו שנים רבות בלא מחיצה",
+        "**כיון** **דממילא** בלא עשיית שום מעשה",
+        "הם מזיקים זה את זה בראייה",
+        "אין להם חזקה",
+        "**וכופים** זה את זה לעשות מחיצה:"
+      ],
+      "hungarian": {
+        "title": "*Hezek reijá* – mikor van *cházáká*?",
+        "items": [
+          {
+            "level": 1,
+            "text": "**Ablaknál** van, mert volt *máásze* – van mi ellen tiltakozni"
+          },
+          {
+            "level": 1,
+            "text": "**Közös udvarban** nincsen, mert ott éppen a kerítés építése maradt el, az bármikor utólag kikényszeríthető"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "letter": "ט",
+      "hebrew": [
+        "הרי שפתח חלון לחצר חבירו",
+        "וידע בעל החצר ולא ערער",
+        "**ונפל הכותל** שהחלון בו",
+        "**לא הפסיד זכותו**",
+        "וכשיבנה הכותל יחזיר בו החלון:"
+      ],
+      "hungarian": {
+        "title": "Ablak virtuális előjoga megmarad",
+        "items": [
+          {
+            "level": 1,
+            "text": "Akár az ablak falának összeomlása után is"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "letter": "י",
+      "hebrew": [
+        "כיצד דינו של חלון זה שהניח לפתחה",
+        "**אם ראשו** של אדם יכול ליכנס ממנה",
+        "או שהיתה למטה מד' אמות",
+        "**אע\"פ** שאין ראשו נכנס ממנה",
+        "אין בעל החצר יכול לבנות כנגדה או מצדדין",
+        "**אא\"כ** הרחיק ד' אמות כמו שיתבאר (בסכ\"א)",
+        "**היתה חלון קטנה**",
+        "**שאין ראשו** של אדם נכנס ממנה",
+        "והיתה למעלה מד' אמות",
+        "בעל החצר יכול לבנות כנגדה או מצדדין",
+        "**שהרי** טוען ואומר לא הנחתיך לפתוח",
+        "**אלא** מפני שהיא קטנה וגבוה",
+        "**אבל** שתחזיק עלי עד שארחיק הבנין לא הנחתי",
+        "**בד\"א** כשפתחה לתשמיש",
+        "או כדי שיכנס בה הרוח",
+        "**אבל** אם פתחה לאורה",
+        "**אפילו** היתה קטנה ביותר (וגבוה) ביותר",
+        "**הואיל** ולא ערער החזיק",
+        "ואין בעל החצר יכול לבנות כנגדה או מצדדיה",
+        "עד שירחיק ד' אמות",
+        "**כדי** שלא יאפיל עליו",
+        "**שהרי** מחל לו על האורה",
+        "(ובענין **איזה חלון עשוי לאורה**",
+        "תלוי בעיני הדיין ולפי ענין החלון)",
+        "(טור וב\"י בשם הרשב\"א):"
+      ],
+      "hungarian": {
+        "title": "Ablak cházákája – hogy ne építhessék be",
+        "items": [
+          {
+            "level": 1,
+            "text": "(Vö. 7. pont)"
+          },
+          {
+            "level": 1,
+            "text": "Akkor van *cházáká*, ha 1. a feje belefér VAGY 2. 4 ámánál alacsonyabban van, VAGY 3. fény számára jött létre"
+          },
+          {
+            "level": 1,
+            "text": "Ez elég ahhoz, hogy a másiknak ne legyen joga odaépítés által sötétíteni (vö. 16. pont, ha feltételesen kapott csak engedélyt)"
+          },
+          {
+            "level": 1,
+            "text": "Hogy pontosan mi számít fényre szánt ablaknak, arról sok risonim vélemény van – a dájánnak kell megítélnie minden helyzetet",
+            "gap": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "letter": "יא",
+      "hebrew": [
+        "**י\"א** דהא דיש חזקה לחלון",
+        "**דוקא** כשיש לה **צורת הפתח או מלבן**",
+        "**דבלא\"ה** לא הוי אלא כחור שחררוהו עכברים",
+        "(**וי\"א** דהכל לפי ענין בני המדינה (ב\"י בשם הרשב\"א וכנ\"ל):"
+      ],
+      "hungarian": {
+        "title": "Ablakkeretek szükségessége",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha még kerete sincs, azt mondhatnák, hogy az nem ablak, hanem egérlyuk"
+          },
+          {
+            "level": 1,
+            "text": "Erről is a dáján ítéljen (*Remo*)"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "letter": "יב",
+      "hebrew": [
+        "וכן מי שהיתה לו **חלון מוחזקת**",
+        "ובא חבירו ובנה כנגדה",
+        "**או** מצדדיה בלא הרחקה",
+        "**או** סתמה ושתק בעל החלון",
+        "**אינו יכול לחזור** ולערער לפתוח החלון",
+        "או להרחיק הבנין",
+        "**שכיון** ששתק מחל",
+        "**שאין** אדם עשוי שסותמים אורו בפניו",
+        "ושתק אא\"כ מחל:",
+        "הגה **ומיד** הוי מחילה",
+        "**וי\"א** שצריך טענה",
+        "שאם בעל החלון יש לו שטר או ראייה על החלון",
+        "צריך שיטעון זה שקנאו וסתימתו [בפניו]",
+        "הוא ראייה לדבריו",
+        "**ואם** אין לו ראיה על החלון",
+        "אלא החזקה שהחזיק לבד",
+        "אין זה צריך טענה אחרת",
+        "רק שיאמר שחזקתו טעות היתה",
+        "(טור בשם ר\"ת והרא\"ש)",
+        "וכל זה כשסתם בעל החצר ושתק בעל החלון",
+        "**אבל** כשבעל החלון **בעצמו סתם חלונו**",
+        "לא הוי מחילה במה שסתמו **לפי צורך שעה**",
+        "**אלא** אם פרץ פצימי החלון",
+        "**שניכר שאינו רוצה** לפתחו עוד",
+        "או שבנה בנין גמור לפניו וכיוצא בזה (מרדכי פ\"ק דב\"ב)",
+        "**ואם** בעל החלון אומר **אני סתמתי** ולא הוי מחילה",
+        "ובעל החצר אומר **שהוא סתמו** והוי מחילה",
+        "**בעל החלון נקרא מוחזק**",
+        "ועל בעל החצר להביא ראיה",
+        "(ב\"י בשם הריטב\"א) וע' לקמן (בסעיף כ')",
+        "ובסי' קנ\"ה סעיף ל\"ה:"
+      ],
+      "hungarian": {
+        "title": "Fordított ablak-cházáká",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az ablak tulajdonosa is elveszítheti a cházákáját"
+          },
+          {
+            "level": 1,
+            "text": "Ha besötétítik, és ő nem tiltakozik"
+          },
+          {
+            "level": 2,
+            "text": "Azonnal kell tiltakoznia – ha ezt nem tette meg, neki kell bizonyítania, hogy nem tudott róla, máshol volt *(Kcot, JD 155:43 alapján)*"
+          },
+          {
+            "level": 1,
+            "text": "Ugyanolyan **erős bizonyíték** kell az építőnek, amilyen az ablakos cházákája volt",
+            "gap": 4
+          },
+          {
+            "level": 1,
+            "text": "Ha ő maga zárta be, az csak akkor lemondás, ha állandó jelleggel történt",
+            "gap": 8
+          },
+          {
+            "level": 1,
+            "text": "Ha vita van, hogy ki zárta be, az ablakos a *muchzák*"
+          },
+          {
+            "level": 2,
+            "text": "(Pedig valójában mindkettő akar újat: az ablakos a zárt ablakát kinyitni, az udvaros ráépíteni – ld. *Kcot*, 20. pontra)"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "letter": "יג",
+      "hebrew": [
+        "מי שהיו לו חלונות למטה בכותלו",
+        "ובא חבירו לבנות בפניהם",
+        "ואמר ליה **אני אפתח לך** חלונות אחרות",
+        "בכותל זה **למעלה מאלו**",
+        "**הרי** זה מעכב עליו ואומר לו",
+        "בעת שתפתח החלונות",
+        "תרעיד הכותל **ותקלקל אותה**",
+        "**ואפילו** אומר אני אסתיר כל הכותל",
+        "ואבנה אותו לך חדש",
+        "ואעשה בו חלונות למעלה",
+        "ואשכיר לך בית שתדור בו עד שאבנה",
+        "**יכול לעכב עליו** שאומר לו",
+        "אין רצוני **שאטרח ממקום למקום**",
+        "**אפילו** אינו משתמש בו אלא **בעצים**",
+        "**לפיכך** אם לא היה שם טורח כלל",
+        "ואינו צריך לפנות",
+        "**אינו יכול לעכב עליו**",
+        "**אבל** בעל החלונות",
+        "שרצה לשנות מקום החלונות",
+        "בין למעלה בין למטה",
+        "**אפילו** היתה **גדולה** ואמר",
+        "אפתח אחרת **קטנה** ואסתום זו",
+        "**בעל החצר מעכב עליו**",
+        "**וכן** אינו יכול להרחיב בחלון כל שהוא:",
+        "הגה כותל שבין ראובן לשמעון",
+        "**והכותל של אחד מהן**",
+        "יכול לסתור כשירצה",
+        "ואין חבירו יכול לעכב (מרדכי ריש ב\"ב):"
+      ],
+      "hungarian": {
+        "title": "Ablak bővítése, szűkítése",
+        "items": [
+          {
+            "level": 1,
+            "text": "(Ajtó bővítése, szűkítése, ld. 4-5. pont)"
+          },
+          {
+            "level": 1,
+            "text": "Szomszéd akarja a másik ablakát áthelyezni, hogy odaépíthessen"
+          },
+          {
+            "level": 1,
+            "text": "Legitim kifogások (enélkül *midát szedom*):"
+          },
+          {
+            "level": 2,
+            "text": "Összedől a fal az átépítés miatt"
+          },
+          {
+            "level": 2,
+            "text": "Nem akarok költözködni"
+          },
+          {
+            "level": 1,
+            "text": "Ha viszont az ablakos akar mozgatni, az engedélyköteles (kivéve helyben kisebbítés, ahogy az ajtónál is)",
+            "gap": 11
+          },
+          {
+            "level": 1,
+            "text": "A közös udvar saját falát lerombolhatja, aki egyedül fizette (*Netivot*: csak ha nincs benne *midát szedom*, *Szmá*: itt direkt is létrehozhat *hezek reijá*t – vö. 16. pont vége, *Grá*: nem mondhatja a másik, hogy már *cházákája* van *mechilára*)",
+            "gap": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "letter": "יד",
+      "hebrew": [
+        "הבא לפתוח **ראשון בעלייה**",
+        "שכנגד עליית חבירו",
+        "**לה\"ר יונה** אינו יכול לפתוח",
+        "אלא עד **חצי עלייתו**",
+        "**כדי** שישאר השאר לכשנגדו",
+        "**ולהרא\"ש ולהרשב\"א**",
+        "אינו יכול חבירו לעכב עליו",
+        "ולומר **היום או למחר אפתח** ותעכב עלי",
+        "**שר\"ה הפקר הוא**",
+        "וראשון שפתח הוי **כזוכה מהפקר**:"
+      ],
+      "hungarian": {
+        "title": "Még nincs semmi szemben",
+        "items": [
+          {
+            "level": 1,
+            "text": "Emeleti ablaknál releváns, mert földszinten amúgy sincs *hezek reijá* (ld. 3. pont). Ugyanott szerepel ha egyszerre akarnak nyitni – ez a pont a risonról szól"
+          },
+          {
+            "level": 1,
+            "text": "*Rábénu Joná* szerint csak fél-ablakot nyithat, helyet hagyva a másik építendő ablakának, *Ros* és *Rásbá* szerint nem"
+          },
+          {
+            "level": 2,
+            "text": "Ha nem teregetnek az utcán, akkor ezt is paszkenoljuk (ld. köv. pont)"
+          },
+          {
+            "level": 1,
+            "text": "Mert ez olyan, mintha a *hefker*ből (közterületi látásból) szerezne"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "letter": "טו",
+      "hebrew": [
+        "**וה\"מ במקום** שאין אדם רשאי להוציא",
+        "**זיזין וגזוזטראות** מעלייתו לרשות הרבים",
+        "**אבל במקום** שרשאי להוציאם",
+        "לא הוי **האור** שלפני עלייתו הפקר",
+        "**אלא** הוי **כחצר השותפין**",
+        "**וכשפתח** זה חלונו כנגד",
+        "אויר שלפני עלייה שכנגדה",
+        "**שלא כדין** פתח",
+        "**כיון** שגם האחר יכול",
+        "להוציא בניינו לרשות הרבים:"
+      ],
+      "hungarian": {
+        "title": "Olyan helyen, ahol az utcán is teregetnek",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ekkor nem közterületnek, hanem közös udvarnak számít"
+          },
+          {
+            "level": 1,
+            "text": "Ha az egyik nyitott bármit arra, attól még a másik is ugyanúgy nyithat"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "letter": "טז",
+      "hebrew": [
+        "**דעת הרא\"ש** שהפותח חלון לרשות חבירו",
+        "**שעכשיו** אינו מזיקו בהיזק ראייה",
+        "**אין** שכנו יכול לעכב עליו",
+        "**בטענת** שהיום או **למחר**",
+        "יבנה הוא המקום ההוא",
+        "ויזיקנו זה מחלון זה בהיזק ראיה",
+        "**מפני** שכיון שעכשיו אינו מזיקו",
+        "**אינו** יכול לעכב עליו",
+        "**דזה** נהנה וזה אינו חסר הוא",
+        "**וכיון** שאינו יכול לעכב עליו",
+        "אין לו חזקה",
+        "**וכשיבנה** הלה **יכפנו לסתמו**",
+        "**כדי** שלא יזיקנו בהיזק ראייה",
+        "**וכן** יכול לבנות כנגד אותו חלון **בלא הרחקה**",
+        "**ועל פי הדברים** האלה פסק",
+        "**בראובן** שהוציא עלייתו לחוץ ופתח בו חלון",
+        "**ולסוף נמלך שמעון** שכנו שכנגדו",
+        "להוציא גם הוא בליטת עלייתו",
+        "**וטוען ראובן שירחיק** בניינו מכנגד חלונו",
+        "**כדי** שלא יאפיל",
+        "**שהדין** עם שמעון",
+        "**מפני** שכיון **שמנהג המקום**",
+        "שרשאי להוציא זיזין וגזוזטראות לרשות הרבים",
+        "**הוי** כחצר השותפין",
+        "**וכשפתח** ראובן חלונו",
+        "**כנגד** האויר של עליית שמעון",
+        "שלא כדין פתח",
+        "**כיון** שגם שמעון היה יכול להוציא בניינו",
+        "ועד עתה לא היה שמעון מקפיד",
+        "כי לא היה מזיק לו",
+        "**ולכן** לא היה יכול למחות בידו",
+        "**הילכך** אין חזקה לראובן",
+        "ויכול שמעון לבנות כנגד חלונו",
+        "**ומטעם** זה פסק בראובן",
+        "שבא לפתוח חלון **לחורבת שמעון**",
+        "אינו יכול למחות בו כיון שאין מזיקו",
+        "**וכיון** **שאינו יכול למחות בו אין לו חזקה**",
+        "**לפיכך** אם נמצא חלון פתוח לחורבה",
+        "אין לו חזקה",
+        "**אם לא** שיביא **עדים**",
+        "שהחזיק בו קודם שנעשה חורבה",
+        "**ואדם** שיש לו חלון פתוח לרשות חבירו ונחרב",
+        "**טוב** הוא שיעמיד **עדים** שהחזיק בחלון זה",
+        "קודם שנחרב המקום",
+        "**ויכתוב** עדותם להיות בידו לראיה",
+        "**ומטעם** זה פסק **בגגים**",
+        "שהם מכוסים רעיפים ואין עליהם תשמיש",
+        "שיכול לפתוח עליו חלון",
+        "**ואם** אחר זמן יפתח זה גגו",
+        "ויכול לראות מאותו חלון לחצר",
+        "כופהו לסותמו",
+        "**הלכך** חלון הפתוח לחצר חבירו",
+        "והוא במקום גבוה",
+        "ובא חבירו לבנות תחתיו",
+        "ולעשות על הבנין **גג של רעפים**",
+        "ואותו הבנין מנעו מלהסתכל בחצר",
+        "**יכול** **למחות** בידו מלעשות הבנין והגג",
+        "**כי** יאמר לו היום או למחר",
+        "תסתור הבנין שלך ותכפיני לסתום חלוני",
+        "**כי** תאמר אין לך חזקה",
+        "כי היה פתוח על גגי",
+        "**ואני** **לא אוכל למצוא עדים** שהחזקתי בו",
+        "בעוד שהייתי יכול להסתכל בחצרך",
+        "**אבל הרשב\"א** כתב",
+        "שראובן הבא לפתוח חלון על חצר שמעון",
+        "במקום שאינו מזיקו עכשיו בהיזק ראיה",
+        "ושמעון טוען שהוא יבנה בשלו",
+        "היום או למחר ויזיקנו בראייה",
+        "**שהדין עם שמעון** לעכב על ידו",
+        "**דלא** בעי למיקם בהדיה למחר",
+        "בדינא ודיינא כשיבא לבנות",
+        "**ואפילו** אם רצה לכתוב לו **שטר הודאה** בכך",
+        "אין שומעין לו",
+        "דנמצא זה צריך להיות",
+        "**שומר שוברו** מהעכברים",
+        "**וכן** דעת הראב\"ד ולזה הסכים הריב\"ש",
+        "וכתב שכן דעת הרבה מהאחרונים",
+        "**וכן** דעת ה\"ר יונה והרמב\"ן",
+        "**והכי** נקטינן",
+        "(ובמקום שיש מנהג הולכין אחר המנהג)",
+        "(ריב\"ש סימן תע\"ב)",
+        "**ומיהו** כתב הרמב\"ן שנ\"ל",
+        "שאינו יכול להחזיק עליו",
+        "**הואיל** ואינו מזיקו עדיין:",
+        "הגה **ואפילו** למ\"ד שיש לו חזקה",
+        "**הואיל** והיה יכול למחות",
+        "**הני מילי** בפותח לרשות חבירו",
+        "**אבל** בפותח לרשות הרבים וכדומה",
+        "**שאין** בידו למחות כלל",
+        "**לכולי עלמא** לא הוי חזקה",
+        "**ראובן** שהיו לו חלונות בביתו",
+        "נגד חצירו או גינתו של חבירו",
+        "**וכותל ביניהן ונפל הכותל**",
+        "**ועי\"ז** ראובן רואה לרשות חבירו",
+        "**צריך לסתום** חלונותיו",
+        "**אע\"פ** שעשאם בהיתר",
+        "**כן** כתב הרא\"ש בתשובה (הביאו הטור סכ\"ב)",
+        "**מיהו** אם היה בית מפסיק",
+        "**והיה** ג\"כ של ראובן או של אחר",
+        "**שהיה** רואה מאותו בית לרשות חבירו",
+        "**ונפל** ועל ידי כך רואה מבית אחר",
+        "**א\"צ לסתום** חלונותיו",
+        "**דמאי שנא** (שרואין) מבית זה או מבית אחר (טור שם)",
+        "**מיהו** יש חולקין וס\"ל",
+        "דהיזק ראייה מיקרי **היזק דממילא**",
+        "**ומאחר** שעשה בהיתר",
+        "**על הניזק להרחיק עצמו** ועיין לקמן סימן קנ\"ה:"
+      ],
+      "hungarian": {
+        "title": "*Cházáká* az először nyitott emeleti ablakra",
+        "items": [
+          {
+            "level": 1,
+            "text": "(Ha ablakot nyit a másikra, az engedélyköteles, ld. 3. pont. Itt viszont nem fogadjuk el a tiltakozását – cserébe viszont „sötétítős” cházákát sem nyer az ablakos – *ld. Áh\"S :21*)"
+          },
+          {
+            "level": 1,
+            "text": "*Ros*: az ablakot most kinyithatja, de ha használni kezdi a területét a másik, akkor be kell falaznia"
+          },
+          {
+            "level": 1,
+            "text": "Sőt, az ablakos **fényre sem kap cházákát**, elé is építhet (azért, mert a másiknak nem volt lehetősége tiltakozni, így *cházáká* sincs – vö. 10. pont.)",
+            "gap": 7
+          },
+          {
+            "level": 1,
+            "text": "*Ros* által paszkenolt konkrét eset, ahol ezeket a szabályokat alkalmazza"
+          },
+          {
+            "level": 1,
+            "text": "**Romra** nyitott ablak ugyanez: nem érvelheti a rom tulajdonosa, hogy zavarja a *hezek reijá*",
+            "gap": 18
+          },
+          {
+            "level": 1,
+            "text": "Ezért a romra nyitott ablaknak csak tanúkkal lehet cházákája"
+          },
+          {
+            "level": 1,
+            "text": "Ezért helyes romboláskor tanúkat állítani (különben besötétíthetik)"
+          },
+          {
+            "level": 1,
+            "text": "**Tető** is olyan mint a rom: amíg használhatatlan, rányithat",
+            "gap": 6
+          },
+          {
+            "level": 1,
+            "text": "De amint használni kezdi, bezárattathatja az ablakot"
+          },
+          {
+            "level": 1,
+            "text": "**Tető-rom különbség**: tető ellen tiltakozhat, hogy nem fog találni tanúkat",
+            "gap": 1
+          },
+          {
+            "level": 1,
+            "text": "Romnál nincs mi ellen tiltakozni, mert összedől magától"
+          },
+          {
+            "level": 1,
+            "text": "***Rásbá*** szerint a szomszéd **már most megakadályozhatja**, mondván, hogy mi lesz, ha majd odaépít",
+            "gap": 10
+          },
+          {
+            "level": 1,
+            "text": "Nagyon sokan ezt paszkenolják, ez a halacha (*Mechábér*) – kivéve, ahol más a helyi minhág (*Remo*)"
+          },
+          {
+            "level": 1,
+            "text": "De ***cházákája*** ettől még nem lesz, ha a másik megengedi (*Rámbán*), hiába lett volna lehetősége tiltakozni is",
+            "gap": 15
+          },
+          {
+            "level": 1,
+            "text": "Viszont ha elsőnek épít emeletet az utcafronton (ld. 14. pont), akkor nem alakul ki cházáká, a szembelévő bármikor besötétítheti (pl. egy sokkal nagyobb emelettel)"
+          },
+          {
+            "level": 1,
+            "text": "Ha olyan **fal dől össze magától**, amire nincs ráhatásunk, és eddig hezek reijától védett, akkor az ablakot kell betömni (ld. még 13. pont vége)",
+            "gap": 1
+          },
+          {
+            "level": 1,
+            "text": "Ha egy középső, **elválasztó ház dőlt össze**, ahonnan szintén be lehetett látni",
+            "gap": 5
+          },
+          {
+            "level": 2,
+            "text": "*Remo* szerint ekkor nem kell betömni (*Pitché Chosen* is effelé hajlik), de *Kcot-Netivot* szerint csak akkor, ha övé a ház, és felépíthetné"
+          },
+          {
+            "level": 1,
+            "text": "Van, aki vitatja, hogy be kell-e tömni, hiszen jogosan építette (*Pitché Tesuvá / Rabbi Akiva Eiger* ezt vitatja, de a *Remo* később is felhasználja, ld. 19. pont)",
+            "gap": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "letter": "יז",
+      "hebrew": [
+        "ראובן שפתח חלון **לחצר שותפין**",
+        "והאחד איננו פה",
+        "**והתנה** עם זה שהוא פה שכשיחלוקו",
+        "**אם יפול** חלקו אצל ראובן",
+        "לא יוכל למחות בו",
+        "**אין תנאי זה כלום**:"
+      ],
+      "hungarian": {
+        "title": "Osztozkodás előtti jogszerzés",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha *sutfin*ra nyit ablakot, az egyik elnézi, a másik nincs ott"
+          },
+          {
+            "level": 1,
+            "text": "Még *tenáj* sem elég ahhoz, hogy megtartsa a cházákáját, osztozkodás utánra (*Szmá: dávár selo bá láolám*)"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "letter": "יח",
+      "hebrew": [
+        "ראובן יש לו **בית אצל עכו\"ם**",
+        "ופתח חלון על גגו של עכו\"ם",
+        "**לאחר ימים מכר** העכו\"ם ביתו לישראל",
+        "ובא הלוקח **להגביה ביתו**",
+        "**בְּעִנְיָן** שסותם החלון של ישראל",
+        "וטוען ראובן אתה מאפיל על אורות חלוני",
+        "**אף על פי** שהלוקח **בא מחמת עכו\"ם**",
+        "אסור לו לסתום **כדין ישראל עם ישראל**",
+        "**דלא** אשכחן דקאי במקום עכו\"ם",
+        "**אלא לגריעותא**:",
+        "הגה **וי\"א** דהואיל והעכו\"ם היה יכול לסותמו",
+        "גם הלוקח הבא מכחו יכול לסתמו",
+        "**וכן** כל **כח העכו\"ם** יש לישראל הבא מכחו",
+        "**וכן** הורו מהר\"ם והרא\"ש וכנ\"ל להורות",
+        "**וכ\"ש** במקום דאיכא **דינא דמלכותא** דאזלינן בתרה",
+        "**וצריך** הלוקח להזהר שיחזיק בקרקע העכו\"ם",
+        "קודם שיתן לעכו\"ם המעות",
+        "**כי אם יתן** לו המעות קודם החזקה",
+        "מיד נסתלק העכו\"ם",
+        "**והוי** כהפקר וזכה הישראל השני בחלונות אלו",
+        "**קודם** שיחזיק הישראל השני (מרדכי פרק חזקת)",
+        "**וכל זה** מיירי שידוע שחצירו של עכו\"ם היה",
+        "קודם לחלונות של זה",
+        "**אבל** אם ספק אם החלונות היו קודמין",
+        "והחזיק בשל הפקר",
+        "על הלוקח הבא לסתום להביא ראיה",
+        "(תשובת רמב\"ן סי' י\"ו)",
+        "ואין חזקה מועלת נגד עכו\"ם הבא מכחו",
+        "**אא\"כ** החזיק בו לאחר שלקחו מן העכו\"ם",
+        "(תשובות רשב\"א) ועיין לקמן סי' קצ\"ד:"
+      ],
+      "hungarian": {
+        "title": "Nem zsidótól vásárlás / besötétítés *(koách ákum)*",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha az ablaka a nem zsidó területére nyílott, az új zsidó vevő nem sötétítheti be építkezéssel"
+          },
+          {
+            "level": 1,
+            "text": "*Remo* szerint azonban igenis **megörökölheti** a nem zsidó jogait",
+            "gap": 6
+          },
+          {
+            "level": 1,
+            "text": "A nem zsidó a fizetéssel elveszíti a jogot – a föld ***hefker*** lesz, és a szomszéd jogot szerez az ablakára",
+            "gap": 3
+          },
+          {
+            "level": 2,
+            "text": "Ezért kell előbb birtokba venni, és csak azután fizetni"
+          },
+          {
+            "level": 2,
+            "text": "Ha kétség van, hogy az ablak volt előbb, vagy a nem zsidó birtok, akkor a vevőnek kell bizonyítania (*hefker* témák *ld. CM 194*)"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "letter": "יט",
+      "hebrew": [
+        "ראובן שהיה לו בית אצל חצרו של עכו\"ם",
+        "ופתח עליו חלונות",
+        "**כי** כן דיניהם של עכו\"ם",
+        "**ועתה** מכר העכו\"ם חצרו לשמעון",
+        "ואמר שמעון לראובן",
+        "**סתום חלונותיך** הדין עמו",
+        "ואפילו טען ראובן שלקח מהעכו\"ם",
+        "הגה וכבר נתבאר בסמוך דיש חולקין",
+        "**ראובן** שהיה לו בית אצל עכו\"ם",
+        "**והעכו\"ם פתח** לו חלונות לחצרו של ראובן",
+        "וקנה שמעון הבית מן העכו\"ם",
+        "ובא ראובן לסתום החלונות",
+        "**ומראה שטר** שכן כתב לו העכו\"ם שיוכל לסתום",
+        "ושמעון אומר כי הבית שקנה היה כבר של ישראל",
+        "והוא החזיק בחלונות קודם שמכרו לעכו\"ם",
+        "**אם** העכו\"ם היה צריך לסתמו בדיניהם",
+        "או שכתוב בשטר שמראה ראובן",
+        "שאין לו חזקה בחלונות כי נעשו שלא כדין",
+        "או בדרך שאלה",
+        "שמעון **הבא מכח עכו\"ם** לא עדיף מיניה",
+        "**אבל** אם העכו\"ם לא היה צריך לסתמן",
+        "**גם** לא הודה שאין לחלונותיו חזקה",
+        "**רק** שכתב אני אסתום כשתרצה",
+        "**וחייב** עצמו במה שלא היה מחוייב מדינא",
+        "**אין** צריך שמעון לסתמן (תשובת רשב\"א אלף קכ\"ט)",
+        "**ועכו\"ם** שהחזיק בחלונות",
+        "אינה חזקה מאחר שבדיניהם",
+        "אינם יכולים למחות בהן",
+        "**א\"כ** החזקה אינה חזקה (שם):"
+      ],
+      "hungarian": {
+        "title": "Nem zsidótól örökölhető-e *cházáká*",
+        "items": [
+          {
+            "level": 1,
+            "text": "*Mechábér* szerint nem, *Remo* szerint igen"
+          },
+          {
+            "level": 2,
+            "text": "Ugyanúgy vitáznak mint az előző pontban"
+          },
+          {
+            "level": 2,
+            "text": "Annyi a különbség, hogy melyikőjük nyitotta"
+          },
+          {
+            "level": 1,
+            "text": "*Remo* szerint nem lehet bezáratni, amit nem tilalomban nyitott (*Netivot*, ld. 16. pont legvége, ott *Rabbi Akiva Eiger* vitatkozik)"
+          },
+          {
+            "level": 1,
+            "text": "Ha a nem zsidó nyitott ablakot, akkor az új vevő *Remo* szerint az eladó jogát örökli meg",
+            "gap": 3
+          },
+          {
+            "level": 2,
+            "text": "Az okirattal kapcsolatos esetek is ezt a főszabályt követik"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "letter": "כ",
+      "hebrew": [
+        "ישראל שהיה לו חלון פתוח לחצר העכו\"ם",
+        "וסתם אותו **מבחוץ**",
+        "והניחו פתוח **לצד פנים**",
+        "**לאחר זמן** מכר העכו\"ם חצרו לישראל",
+        "ואותו הישראל בונה כותל",
+        "נזדמן קרן כותלו לסתום החלון",
+        "וטען הישראל אני **מפני העכו\"ם סתמתה**",
+        "מפני היזק ראייה",
+        "**ועתה** ארצה לפתחו",
+        "**אינו יכול לחזור ולפתוח**",
+        "**כיון** שסתם חוצה לו",
+        "ושייר הכותל כולו לפנים",
+        "**גילה בדעתו** שעקרה מלהשתמש לאורה",
+        "ועשאה כחלון שאדם עושה בתוך ביתו",
+        "**ועוד** יכול הקונה לומר",
+        "אני מצאתי חלון זו סתומה",
+        "**מנין** שפתוח היתה ונסתמה",
+        "**יש לחוש** שמא העכו\"ם סתמה",
+        "ונעשית חזקה כדאמרן",
+        "ולסתום לאלתר הוי חזקה:"
+      ],
+      "hungarian": {
+        "title": "Vakablak",
+        "items": [
+          {
+            "level": 1,
+            "text": "A nem zsidó szomszéd elől kívülről bezárta az ablakát, de amikor zsidó költözött oda, kinyitná"
+          },
+          {
+            "level": 2,
+            "text": "Az új szomszéd viszont ráépítene"
+          },
+          {
+            "level": 1,
+            "text": "A befalazás *giluj dáát*, hogy lemondott a fényéről (*Bách:* mert belülről is falazhatta volna, ha csak a szomszéd *hezek reijá*ja zavarná)"
+          },
+          {
+            "level": 1,
+            "text": "Továbbá: lehet hogy még az előző nem zsidó lakó falazta be az ablakot (és akkor nincsen *cházáká*)",
+            "gap": 8
+          },
+          {
+            "level": 2,
+            "text": "Ez hasonlít a 12. pont végén a vitához, de ott éppen a másiknak adunk igazat"
+          },
+          {
+            "level": 2,
+            "text": "*Kcot*: ott kialakul *chezkát márá kámá*, itt a nem zsidóval szemben nem tud kialakulni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "letter": "כא",
+      "hebrew": [
+        "מי שהיתה לו חלון בכותלו",
+        "ובא חבירו **ועשה חצר** בצדו",
+        "**אינו יכול** לומר לבעל החלון זה",
+        "סתום חלון זה כדי שלא תביט בי",
+        "**שהרי החזיק בהיזק זה**",
+        "**אם** בא חבירו לבנות כותלו",
+        "**כנגד** החלון כדי שיסיר היזק ראייתו",
+        "**צריך** להרחיק את כותלו",
+        "מכנגד החלון ד' אמות",
+        "**כדי** שלא יאפיל עליו",
+        "**וכיון** שהרחיק ארבע אמות",
+        "**אף על פי** שמאפיל",
+        "**אינו צריך** להרחיק יותר",
+        "**היתה** החלון **למטה בכותל**",
+        "**כופה** את חבירו לבנות כנגדה",
+        "**ברחוק ד' אמות** ולהגביה בנין ד' אמות",
+        "**כדי** שלא יביט בו מהחלון",
+        "**היתה** החלון **למעלה בכותל**",
+        "ובנה חבירו כותל כנגד החלון מלמטה",
+        "**אם** היה מראש הכותל שבנה עד החלון",
+        "גובה ד' אמות או יותר",
+        "**אינו יכול למנעו**",
+        "**אע\"פ** שלא הרחיק מהכותל **כלום**",
+        "**שהרי** לא האפיל עליו ואינו מזיקו בראייה",
+        "**אבל** אם נשאר גובה",
+        "מראש הכותל עד החלון פחות מד' אמות",
+        "כופהו למעט הכותל",
+        "**כדי** שלא יעמוד על ראש הכותל **וישקיף** מהחלון",
+        "**או יגביה** הכותל על החלון ד' אמות",
+        "ויהיה הכותל רחוק מהחלון ד' אמות",
+        "**כדי** שלא יאפיל ולא יציץ ויראה:",
+        "הגה וכל זה בבונה נגד החלון שעל גבי **חצר**",
+        "**אבל** חלון שהולך **לר\"ה** אין לו חזקה",
+        "כמו שנתבאר סעיף י\"ו",
+        "**ולכן** יכול לבנות כנגדו **אע\"פ** שמאפיל עליו",
+        "(תשובת הרשב\"א אלף פ\"ה ואלף קל\"ה וב\"י דייק לה מלשון הטור)",
+        "ועיין לקמן סימן זה סעיף ל\"א ול\"ב:"
+      ],
+      "hungarian": {
+        "title": "Saját magának okozott *hezek reijá*",
+        "items": [
+          {
+            "level": 1,
+            "text": "Aki ablak alá épített új udvart, nem zárathatja be az ablakot, hiszen ő vállalta (*hechzik báhezek*)"
+          },
+          {
+            "level": 1,
+            "text": "4 ámá távolságban építhet falat: magát védheti, de a másikat nem sötétítheti be"
+          },
+          {
+            "level": 1,
+            "text": "**Alacsony ablakkal szemben** az ablakos megkövetelheti, hogy a másik legalább 4 ámá magas falat építsen",
+            "gap": 9
+          },
+          {
+            "level": 1,
+            "text": "**Magas ablakkal szemben** akár közeli és alacsony falat is építhet",
+            "gap": 1
+          },
+          {
+            "level": 2,
+            "text": "Kivéve, ha a fal tetejéről állva be tud nézni"
+          },
+          {
+            "level": 1,
+            "text": "De közterületen nincsen ilyen korlátozás (*Remo*)",
+            "gap": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "letter": "כב",
+      "hebrew": [
+        "בנה כותל בצד החלון",
+        "צריך להרחיק מהחלון טפח",
+        "ומגביה הכותל ארבע אמות על החלון",
+        "או כונס ראש הכותל",
+        "כדי שלא ישב עליו ויציץ ויראה:",
+        "הגה ומודדין טפח זו מן החלון עצמו",
+        "ולא מן השקיפה",
+        "וכל מי שיש לו חלון יכול לשקפו אח\"כ",
+        "בין מבחוץ בין מבפנים",
+        "ואין חבירו יכול לעכב",
+        "ולכן השקיפה אין לה חזקה (מרדכי פ' לא יחפור):"
+      ],
+      "hungarian": {
+        "title": "V",
+        "items": [
+          {
+            "level": 1,
+            "text": "A"
+          },
+          {
+            "level": 1,
+            "text": "**כב V**",
+            "gap": 9
+          },
+          {
+            "level": 1,
+            "text": "A"
+          }
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "letter": "כג",
+      "hebrew": [
+        "בנה כתלים משני צידי החלון",
+        "צריך להיות ביניהם רוחב ד' אמות",
+        "והחלון באמצע הארבע",
+        "ולא יסכך על גביהם",
+        "אלא א\"כ הרחיק הסיכוך מהכותל",
+        "שיש בו החלון ד\"א",
+        "כדי שלא יאפיל עליו:"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 24,
+      "letter": "כד",
+      "hebrew": [
+        "עשה גג משופע אצל חלון חבירו",
+        "אע\"פ שאין עליו תשמיש קבוע",
+        "צריך להשפיל ממנו ד' אמות:"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 25,
+      "letter": "כה",
+      "hebrew": [
+        "אם פתח בתקרה עלייתו כעין ארובה",
+        "ומשם נכנס אור לביתו",
+        "אם בא שכנו לבנות א\"צ להרחיק כלל",
+        "הגה ראובן שבנה בביתו חדר לאוצר יין ושמן",
+        "וצריך אויר לקרר היין",
+        "ובא חבירו לבנות כותל כנגדו",
+        "יכול ראובן למחות בו",
+        "אע\"פ שהרחיק ד' אמות",
+        "דמאחר שהחדר מוכן לאוצר ועשאו בביתו ברשות",
+        "אין חבירו רשאי לעשות לו היזק בבניינו",
+        "(ב\"י בשם הרשב\"א):"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 26,
+      "letter": "כו",
+      "hebrew": [
+        "אחד מהשותפין",
+        "שרצה להגביה הכותל המשותף ביניהם",
+        "(על) הוצאתו",
+        "יותר על ד' אמות",
+        "אע\"פ שהוא מאפיל החצר",
+        "אין חבירו יכול לעכב עליו:"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 27,
+      "letter": "כז",
+      "hebrew": [
+        "שני אחים שחלקו חצר מדעתן ושמו הבנין והעצים זה כנגד זה ולא השגיחו על שומת האויר והגיע לא' מהם בחלקו תרבץ החצר ולשני האכסדרה אם רצה בעל החצר לבנות כותל בסוף חלקו בונה בפני האכסדרה ואע\"פ שמאפיל עליו שהרי לא שמו האויר והוא הדין אם היו חלונות פתוחות מחצר של זה לשל זה יכול לבנות בפניהם מיהו כל שלא בנה בפניהם אינו יכול לומר לו סתום חלונותיך אע\"פ שיש היזק ראיה. הגה וי\"א דיכול לומר לו סתום חלונותיך (טור בשם הרא\"ש ונראה מהרמב\"ם פ\"ז דשכנים) ודוקא באכסדרה שיש לו אור יותר מדאי אבל החלונות הצריכים לבית אינו יכול לבנות כנגדן וכל שכן שלא לסתמו דבית בלא אור אינו שוה כלום (טור וכ\"כ הרא\"ש):"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 28,
+      "letter": "כח",
+      "hebrew": [
+        "ראובן שנתן או מכר כאחד הבית לשמעון והחצר ללוי והיו חלונות פתוחים מהבית לחצר אם רצה אותו שזכה בחצר לבנות בפניהם (הרשות בידו) וה\"ה אם מכר או נתן החצר ושייר הבית לעצמו דרשאי אותו שזכה בחצר לבנות בפני החלונות (וי\"א דאין יכול לבנות) אא\"כ הרחיק ד' אמות: הגה מכר הבית ושייר החצר לעצמו י\"א דאינו יכול לסתום חלונותיו דמוכר בעין יפה מוכר וה\"ה לנותן (ר' ירוחם נל\"א ח\"י וב\"י) ויש חולקין (נ\"י ס\"פ לא יחפור וב\"י בשם הריטב\"א) (ועיין לקמן סי' קנ\"ה סעיף כ\"ה):"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 29,
+      "letter": "כט",
+      "hebrew": [
+        "מי שהיה מזיק את חבירו בהיזק ראיה וכשראה שהיה חבירו תובעו נתן אותו הכח לבנו קטן אין אומרין נמתין עד שיגדיל אלא מסלקין ההיזק מיד (ואם קדם ומכר הבית לעכו\"ם כופין המוכר לסלק היזקו (ב\"י בשם רשב\"א ):"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 30,
+      "letter": "ל",
+      "hebrew": [
+        "מי שיש לו חלונות על חצר חבירו והן סתומות מכמה שנים אלא שלא נפרצו הפצימין (פי' המשקוף מלמעלה ומלמטה מימין ומשמאל ב\"י א\"נ שיווי החלונות נקרא פצימין וכשרוצה לסתום פורץ השיווי כדי לחבר הכותלים ערוך) אם רצה לחזור ולפתחן הרשות בידו מאחר שלא נפרצו הפצימין:"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 31,
+      "letter": "לא",
+      "hebrew": [
+        "כתב הרשב\"א שאע\"פ שהפותח חלון לרשות הרבים אין חבירו שכנגדו רשאי לפתוח חלון כנגד אותו חלון אם בא להגביה כותלו מגביה ואינו נמנע ואף על פי שאין ביניהם ד' אמות ובלבד שיגביה ד' כדי שלא יציץ ויראה:"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    },
+    {
+      "id": 32,
+      "letter": "לב",
+      "hebrew": [
+        "ראובן שזכה בחורבה של הפקר ובנה בה בתים ועליות בחלונות ופתחים ובא שמעון וזכה גם כן מההפקר ובנה בתים ועליות כנגדו ונמצא השני ניזק מהראשון מהיזק ראיה ותובע מהראשון שיסיר הזיקו אין בדברי השני כלום שהראשון זכה ואין השני יכול למנעו ולא עוד אלא שאם בא השני להזיקו בהיזק ראיה גם הוא כגון שרוצה לפתוח חלון כנגד חצרו של ראשון או לחצרו אינו רשאי:"
+      ],
+      "hungarian": {
+        "title": "",
+        "items": []
+      }
+    }
+  ]
+}
