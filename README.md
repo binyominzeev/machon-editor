@@ -7,8 +7,22 @@ Sulchán Áruch-fejezetek (szimánok) szerkesztése böngészőből / PWA-ból.
     pip install flask
     python -m machon.server                # http://<gép-IP>:8000, docs/ mappa
     python -m machon.server --port 8080    # egyedi port
-    pm2 start python3 --interpreter none --name machon-editor -- -m machon.server --port 8080
     python -m machon.server --cert c.pem --key k.pem   # HTTPS
+
+Ez a beépített Flask fejlesztői szervere, nem éles környezetre való. Production használathoz
+Linuxon telepítsd a Gunicornt, majd indítsd az alkalmazást WSGI szerverként:
+
+    pip install flask gunicorn
+    gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
+
+PM2-vel, virtuális környezet használatakor:
+
+    pm2 start .venv/bin/gunicorn --name machon-editor --interpreter none -- --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
+
+Ha a PM2-től eltérő felhasználóval fut a szerver, gondoskodj róla, hogy az elérje a projekt
+virtuális környezetét és a `docs/` mappát. Internet felől elérhető telepítésnél a Gunicorn elé
+tegyél HTTPS-t kezelő reverse proxyt (például Nginxet); a `--cert` és `--key` opciók csak a
+beépített fejlesztői szerverhez valók.
 
 A PWA-telepítéshez és a service workerhez a tableten HTTPS (vagy localhost) kell:
 pl. `mkcert <gép-IP>` által generált tanúsítvánnyal, vagy Tailscale/`tailscale cert`.
