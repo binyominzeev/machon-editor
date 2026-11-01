@@ -12,10 +12,12 @@ Sulchán Áruch-fejezetek (szimánok) szerkesztése böngészőből / PWA-ból.
 Ez a beépített Flask fejlesztői szervere, nem éles környezetre való. Production használathoz
 Linuxon telepítsd a Gunicornt, majd indítsd az alkalmazást WSGI szerverként:
 
-    pip install flask gunicorn
-    gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
+    python3 -m venv .venv
+    .venv/bin/pip install flask gunicorn
+    .venv/bin/gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
 
-PM2-vel, virtuális környezet használatakor:
+Ezek a parancsok a projekt gyökeréből futtatva létrehozzák a `.venv/` könyvtárat, és abba
+telepítik a függőségeket. PM2-vel ugyanezt a virtuális környezetet használhatod:
 
     pm2 start .venv/bin/gunicorn --name machon-editor --interpreter none -- --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
 
