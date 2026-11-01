@@ -6,6 +6,8 @@ Sulchán Áruch-fejezetek (szimánok) szerkesztése böngészőből / PWA-ból.
 
     pip install flask
     python -m machon.server                # http://<gép-IP>:8000, docs/ mappa
+    python -m machon.server --port 8080    # egyedi port
+    pm2 start python3 --interpreter none --name machon-editor -- -m machon.server --port 8080
     python -m machon.server --cert c.pem --key k.pem   # HTTPS
 
 A PWA-telepítéshez és a service workerhez a tableten HTTPS (vagy localhost) kell:
