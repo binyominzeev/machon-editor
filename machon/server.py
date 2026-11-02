@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """Machon editor server.
 
     python -m machon.server [--host 0.0.0.0] [--port 8000] [--docs docs] [--cert c.pem --key k.pem]
@@ -9,9 +10,9 @@ import re
 import threading
 from pathlib import Path
 
-from flask import Flask, abort, jsonify, request, send_from_directory
+from flask import Flask, abort, jsonify, redirect, request, send_from_directory
 
-from . import markup, render
+from . import ai, auth, markup, render
 
 ROOT = Path(__file__).resolve().parent.parent
 ID_RE = re.compile(r"^[A-Za-z0-9_-]+$")
@@ -20,7 +21,10 @@ lock = threading.Lock()
 
 def create_app(docs_dir):
     docs_dir = Path(docs_dir)
+    ai.load_env()
+    jobs = {}
     app = Flask(__name__, static_folder=str(ROOT / "static"), static_url_path="/static")
+    auth.init_app(app, render.login_html)
 
     def path(doc_id):
         if not ID_RE.match(doc_id):
@@ -55,17 +59,116 @@ def create_app(docs_dir):
         resp.headers["Cache-Control"] = "no-cache"
         return resp
 
+    def parse_id(doc_id):
+        m = re.match(r"^([a-z]{2})-(\d+)$", doc_id)
+        if not m or m.group(1) not in ai.VOLUMES or not 1 <= int(m.group(2)) <= ai.VOLUMES[m.group(1)][2]:
+            abort(404)
+        return m.group(1), int(m.group(2))
+
     @app.get("/")
     def index():
         entries = []
-        for p in sorted(docs_dir.glob("*.json")):
-            t = json.loads(p.read_text("utf8")).get("title", {})
-            entries.append((p.stem, t.get("hu") or t.get("he", "")))
-        return no_cache(app.response_class(render.index_html(entries)))
+        for p in docs_dir.glob("*.json"):
+            m = re.match(r"^([a-z]{2})-(\d+)$", p.stem)
+            if not m or m.group(1) not in ai.VOLUMES:
+                continue
+            doc = json.loads(p.read_text("utf8"))
+            t = doc.get("title", {})
+            entries.append({"id": p.stem, "vol": m.group(1), "n": int(m.group(2)),
+                            "title": t.get("hu") or t.get("he", ""), "mtime": p.stat().st_mtime})
+        return no_cache(app.response_class(render.index_html(entries, auth.can_edit())))
+
+    @app.get("/s/<doc_id>")
+    def open_siman(doc_id):
+        vol, n = parse_id(doc_id)
+        if path(doc_id).exists():
+            return redirect(f"/d/{doc_id}")
+        if not auth.can_edit():
+            return app.response_class(render.login_html(), status=401)
+        return no_cache(app.response_class(render.generate_html(doc_id, vol, n, bool(os.environ.get("OPENAI_API_KEY")))))
+
+    @app.post("/api/generate/<doc_id>")
+    def generate(doc_id):
+        vol, n = parse_id(doc_id)
+        data = request.get_json(silent=True) or {}
+        with lock:
+            if path(doc_id).exists():
+                return jsonify(ok=True, done=True, url=f"/d/{doc_id}")
+            job = jobs.get(doc_id)
+            if job and not job.get("done"):
+                return jsonify(ok=True)
+            job = jobs[doc_id] = {"step": "start", "pct": 1, "message": "Indul…", "done": False}
+
+        def progress(step, pct, message):
+            job.update(step=step, pct=pct, message=message)
+
+        def work():
+            try:
+                doc = ai.generate(vol, n, data.get("text"), progress)
+                with lock:
+                    if not path(doc_id).exists():
+                        save(doc_id, doc)
+                job.update(step="done", pct=100, message="Kész.", done=True, url=f"/d/{doc_id}")
+            except Exception as e:
+                ai.log(f"{doc_id}: HIBA: {e}")
+                job.update(error=str(e), done=True)
+
+        threading.Thread(target=work, daemon=True).start()
+        return jsonify(ok=True)
+
+    @app.post("/api/docs/<doc_id>/regenerate")
+    def regenerate(doc_id):
+        vol, n = parse_id(doc_id)
+        load(doc_id)
+        data = request.get_json(silent=True) or {}
+        seif = int(data["seif"]) if data.get("seif") else None
+        key = f"re:{doc_id}:{seif or 'all'}"
+        with lock:
+            job = jobs.get(key)
+            if job and not job.get("done"):
+                return jsonify(ok=True)
+            job = jobs[key] = {"step": "start", "pct": 1, "message": "Indul…", "done": False}
+
+        def progress(step, pct, message):
+            job.update(step=step, pct=pct, message=message)
+
+        def work():
+            try:
+                new = ai.generate(vol, n, None, progress, only_seif=seif)
+                with lock:
+                    doc = load(doc_id)
+                    if seif:
+                        old = next((i for i, x in enumerate(doc["seifim"]) if x["id"] == seif), None)
+                        if old is None:
+                            raise RuntimeError(f"Nincs {seif}. széif a dokumentumban.")
+                        doc["seifim"][old] = new["seifim"][0]
+                    else:
+                        doc = new
+                    save(doc_id, doc)
+                job.update(step="done", pct=100, message="Kész.", done=True)
+            except Exception as e:
+                ai.log(f"{key}: HIBA: {e}")
+                job.update(error=str(e), done=True)
+
+        threading.Thread(target=work, daemon=True).start()
+        return jsonify(ok=True)
+
+    @app.get("/api/docs/<doc_id>/regenerate")
+    def regenerate_status(doc_id):
+        parse_id(doc_id)
+        seif = request.args.get("seif") or "all"
+        return jsonify(jobs.get(f"re:{doc_id}:{seif}", {"done": False, "step": "idle", "pct": 0, "message": ""}))
+
+    @app.get("/api/generate/<doc_id>")
+    def generate_status(doc_id):
+        parse_id(doc_id)
+        if path(doc_id).exists():
+            return jsonify(done=True, pct=100, url=f"/d/{doc_id}")
+        return jsonify(jobs.get(doc_id, {"done": False, "step": "idle", "pct": 0, "message": ""}))
 
     @app.get("/d/<doc_id>")
     def view(doc_id):
-        return no_cache(app.response_class(render.doc_html(doc_id, load(doc_id))))
+        return no_cache(app.response_class(render.doc_html(doc_id, load(doc_id), auth.can_edit())))
 
     @app.get("/api/docs/<doc_id>")
     def get_doc(doc_id):

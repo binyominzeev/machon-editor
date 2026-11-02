@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "gate": "choshen_mishpat",
+  "siman": 1,
+  "siman_he": "א",
+  "title": {
+    "he": "מינוי השופטים בארץ ובחוצה לארץ",
+    "hu": ""
+  },
+  "description": {
+    "he": "ובו ו סעיפים",
+    "hu": ""
+  },
+  "seifim": [
+    {
+      "id": 1,
+      "letter": "א",
+      "hebrew": [
+        "**בזמן הזה דנים הדיינים**",
+        "דיני הודאות והלוואות",
+        "וכתובות אשה וירושות ומתנות",
+        "ומזיק ממון חבירו",
+        "**שהם הדברים המצויים תמיד**",
+        "ויש בהם **חסרון כיס**",
+        "**אבל** דברים שאינם מצויים",
+        "אע\"פ שיש בהם חסרון כיס",
+        "כגון בהמה שחבלה בחבירתה",
+        "**או** דברים שאין בהם חסרון כיס",
+        "אע\"פ שהם מצויים",
+        "כגון תשלומי כפל",
+        "וכן כל הקנסות שקנסו חכמים",
+        "כתוקע לחבירו",
+        "(פי' שתוקע בקול באזנו ומבעיתו)",
+        "וכסוטר את חבירו",
+        "(פי' מכה בידו על הלחי)",
+        "וכן כל המשלם יותר ממה שהזיק",
+        "**או** שמשלם חצי נזק",
+        "**אין דנין אותו אלא מומחים**",
+        "הסמוכים בא\"י",
+        "**חוץ מחצי נזק צרורות**",
+        "מפני שהוא ממון ואינו קנס:"
+      ],
+      "hungarian": {
+        "title": "A bírák hatásköre ma",
+        "items": [
+          {
+            "level": 1,
+            "text": "A mai bírák tárgyalják a gyakori pénzügyi ügyeket: tartozásokat, házassági okiratokat, örökségeket, ajándékokat és károkozást"
+          },
+          {
+            "level": 1,
+            "text": "A ritka károk és a pénzbeli kár nélküli ügyek, például a kétszeres fizetés vagy a rabbinikus bírságok, nem tartoznak hozzájuk"
+          },
+          {
+            "level": 1,
+            "text": "Ezekben csak Izrael földjén felszentelt szakértő bírák dönthetnek; kivétel a kavics okozta félkár, mert az kártérítés, nem bírság"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "letter": "ב",
+      "hebrew": [
+        "**אדם שחבל בחבירו**",
+        "אין מגבין דיינים שאינם סמוכים בא\"י",
+        "**נזק צער ופגם ובושת וכופר**",
+        "אבל **שבת וריפוי מגבין:**",
+        "הגה **וי\"א** שאף ריפוי ושבת אין דנין",
+        "(טור בשם הרא\"ש)",
+        "ולא ראיתי נוהגין לדקדק בזה",
+        "רק כופין החובל לפייס הנחבל",
+        "ולקנסו כפי הנראה להם",
+        "(ד\"מ לדעת מהר\"ם בפסקיו סי' ר\"ח)",
+        "וכמו שיתבאר בסמוך סעיף ה':"
+      ],
+      "hungarian": {
+        "title": "Személyi sérülés",
+        "items": [
+          {
+            "level": 1,
+            "text": "A nem סמוכים bírák nem hajthatják be a sérülés, fájdalom, szégyen és váltságdíj összegét"
+          },
+          {
+            "level": 1,
+            "text": "Az orvosi költség és a munkakiesés behajtható"
+          },
+          {
+            "level": 1,
+            "text": "A Remo szerint ezekben is vita van, de a gyakorlatban a sértőt kiengesztelésre és megfelelő bírságra kényszerítik"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "letter": "ג",
+      "hebrew": [
+        "**בהמה שהזיקה את האדם**",
+        "אין גובין נזקו דיינים שאינם סמוכים בא\"י",
+        "**מפני שהוא דבר שאינו מצוי**",
+        "אבל **אדם שהזיק בהמת חבירו**",
+        "משלם נזק שלם בכל מקום",
+        "**וכן בהמה שהזיקה בשן ורגל**",
+        "הואיל והיא מועדת (להן) מתחלתה",
+        "הרי זה דבר מצוי",
+        "ומגבין אותו דיינים שאינן סמוכין בא\"י",
+        "**וכן מי שגנב או גזל**",
+        "מגבין ממנו הקרן בלבד:",
+        "הגה **וי\"א** דוקא גזילות דשכיחי",
+        "כגון כופר בפקדון וכדומה",
+        "**אבל גזילה ממש לא שכיחא**",
+        "ואין דנין",
+        "אא\"כ הגזילה קיימת מחייבין להחזירה",
+        "(נימוקי יוסף פ' החובל)"
+      ],
+      "hungarian": {
+        "title": "Állatok és vagyonkárok",
+        "items": [
+          {
+            "level": 1,
+            "text": "Állat embernek okozott kárát nem hajtják be a nem סמוכים bírák"
+          },
+          {
+            "level": 1,
+            "text": "Ember állatban okozott kárát, valamint a szokásos fog- és lábkárt viszont behajtják"
+          },
+          {
+            "level": 1,
+            "text": "Lopásnál és rablásnál csak az alaptőkét szedik be; a Remo szerint ez a gyakori letagadásra vonatkozik"
+          },
+          {
+            "level": 1,
+            "text": "Ha a rablott tárgy még megvan, vissza kell adni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "letter": "ד",
+      "hebrew": [
+        "**דיני דגרמי וכן דין המוסר**",
+        "דנין אותם דיינים שאינם סמוכים בא\"י:",
+        "הגה עדים שהעידו עדות שקר והוזמו",
+        "והוציאו ממון על פיהם",
+        "ואי אפשר למיהדר",
+        "דנין אותן ומחייבין אותן לשלם",
+        "(מרדכי ריש פרק החובל)",
+        "וע' לקמן סי' כ\"ט ס\"ב:"
+      ],
+      "hungarian": {
+        "title": "Közvetett kár és besúgás",
+        "items": [
+          {
+            "level": 1,
+            "text": "A közvetett károkozást és a besúgás ügyét is elbírálhatják a nem סמוכים bírák"
+          },
+          {
+            "level": 1,
+            "text": "A hamis tanúk is fizetnek, ha vallomásuk alapján pénzt hajtottak be, és azt már nem lehet visszaszerezni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "letter": "ה",
+      "hebrew": [
+        "אע\"פ שדיינים שאינם סמוכים בא\"י",
+        "**אינן מגבין קנסות**",
+        "מנדין אותו עד שיפייס לבעל דינו",
+        "**וכיון שיתן לו שיעור הראוי לו**",
+        "מתירין לו",
+        "(בין נתפייס בעל דינו בין לא נתפייס)",
+        "**וכן אם תפס הניזק**",
+        "שיעור מה שראוי לו ליטול",
+        "אין מוציאין מידו:",
+        "הגה **ואם יאמר הניזק** שומו לי נזקי",
+        "שאדע עד כמה אתפוס אין שומעין לו",
+        "**אלא אם כבר תפס שמין לו**",
+        "ואומרים לו כ\"וכ תחזיק וכ\"וכ תחזיר",
+        "(טור בשם הרא\"ש פ' החובל וספ\"ק דב\"ק)",
+        "**וכל זה דוקא בקנסות הכתובים**",
+        "אבל קנסות שבאים חכמים לקנוס מעצמן",
+        "על תקנתן גובין בכל מקום",
+        "וכמו שיתבאר בסי' ב'",
+        "(מרדכי ס\"פ השולח):"
+      ],
+      "hungarian": {
+        "title": "Kényszerítés és behajtás",
+        "items": [
+          {
+            "level": 1,
+            "text": "A bíróság kiközösítheti a vétkest, amíg ki nem engeszteli a károsultat"
+          },
+          {
+            "level": 1,
+            "text": "A megfelelő összeg kifizetése után feloldják a kiközösítést akkor is, ha a károsult nem békült meg"
+          },
+          {
+            "level": 1,
+            "text": "A károsult megtarthatja, amit jogosan lefoglalt, de előzetes becslést nem kérhet"
+          },
+          {
+            "level": 1,
+            "text": "Ez a szabály az írott kényszerbírságokra vonatkozik; a bölcsek által rendelt bírságot mindenütt behajtják"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "letter": "ו",
+      "hebrew": [
+        "**המבייש בדברים**",
+        "מנדין אותו עד שיפייסנו",
+        "**כראוי לפי כבודו:**",
+        "הגה וע' לקמן סי' ת\"כ סעיף ל\"ח",
+        "וע' לקמן סי' ב'",
+        "אם נתחייב לו מלקות",
+        "אם יכול לפדות עצמו בממון:"
+      ],
+      "hungarian": {
+        "title": "Szóbeli megalázás",
+        "items": [
+          {
+            "level": 1,
+            "text": "Akit szavakkal aláz meg, azt kiközösítik, amíg méltóságának megfelelően ki nem engeszteli"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "gate": "orach_chaim",
+  "siman": 62,
+  "siman_he": "סב",
+  "title": {
+    "he": "מי שלא דקדק בקריאת שמע או לא השמיע לאזנו",
+    "hu": ""
+  },
+  "description": {
+    "he": "ובו ה סעיפים",
+    "hu": ""
+  },
+  "seifim": [
+    {
+      "id": 1,
+      "letter": "א",
+      "hebrew": [
+        "אף על פי שמצוה **לדקדק באותיותיה**",
+        "**קראה ולא דקדק בהן יצא:**"
+      ],
+      "hungarian": {
+        "title": "A betűk pontos olvasása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Törekedni kell a *Kriát Smá* betűinek pontos olvasására"
+          },
+          {
+            "level": 1,
+            "text": "Ha pontatlanul olvasta, utólag mégis teljesítette"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "letter": "ב",
+      "hebrew": [
+        "**יכול לקרותה בכל לשון**",
+        "ויזהר מדברי שיבוש שבאותו לשון",
+        "**וידקדק בו כמו בלשון הקודש:**"
+      ],
+      "hungarian": {
+        "title": "Olvasás más nyelven",
+        "items": [
+          {
+            "level": 1,
+            "text": "Bármely nyelven elmondható"
+          },
+          {
+            "level": 1,
+            "text": "Ügyelni kell a nyelvi hibákra, és olyan pontosan olvasni, mint héberül"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "letter": "ג",
+      "hebrew": [
+        "**צריך להשמיע לאזנו**",
+        "מה שמוציא בפיו",
+        "**ואם לא השמיע לאזנו יצא**",
+        "**ובלבד שיוציא בשפתיו:**"
+      ],
+      "hungarian": {
+        "title": "Hallható olvasás",
+        "items": [
+          {
+            "level": 1,
+            "text": "A kimondott szavakat hallania kell"
+          },
+          {
+            "level": 1,
+            "text": "Ha nem hallotta, utólag mégis teljesített, feltéve, hogy ajkával kimondta"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "letter": "ד",
+      "hebrew": [
+        "**אם מחמת חולי או אונס אחר**",
+        "קרא קריאת שמע בלבו",
+        "**יצא:**",
+        "הגה **ואף לכתחלה יעשה כן**",
+        "אם הוא במקום שאינו נקי לגמרי",
+        "ואינו יכול לנקותו משום אונס",
+        "**יהרהר בלבו**",
+        "ובלבד שלא יהא המקום מטונף לגמרי",
+        "**דאסור להרהר בד\"ת** במקום הטנופת [ב\"י סי' פ\"ה]"
+      ],
+      "hungarian": {
+        "title": "Olvasás gondolatban",
+        "items": [
+          {
+            "level": 1,
+            "text": "Betegség vagy más kényszer esetén gondolatban olvasva is teljesít"
+          },
+          {
+            "level": 1,
+            "text": "Nem teljesen tiszta helyen, ha nem tudja megtisztítani, eleve gondolatban olvassa"
+          },
+          {
+            "level": 1,
+            "text": "Teljesen szennyezett helyen tilos Tóráról gondolkodni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "letter": "ה",
+      "hebrew": [
+        "**צריך ש\"ץ להשמיע קולו**",
+        "בשמע ישראל",
+        "**כדי שישמעו הקהל**",
+        "וימליכו שם שמים ביחד:"
+      ],
+      "hungarian": {
+        "title": "A közösség együtt mondja",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az előimádkozó hallhatóan mondja a Smá Jiszráélt"
+          },
+          {
+            "level": 1,
+            "text": "Így a közösség is hallja, és együtt ismeri el az Örökkévaló uralmát"
+          }
+        ]
+      }
+    }
+  ],
+  "ai_new_terms": [
+    {
+      "hu": "Kriát Smá",
+      "he": "קריאת שמע"
+    }
+  ]
+}

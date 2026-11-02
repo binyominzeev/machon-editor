@@ -1,0 +1,1535 @@
+{
+  "version": 1,
+  "gate": "orach_chaim",
+  "siman": 32,
+  "siman_he": "לב",
+  "title": {
+    "he": "סדר כתיבת התפילין",
+    "hu": ""
+  },
+  "description": {
+    "he": "ובו נב סעיפים",
+    "hu": ""
+  },
+  "seifim": [
+    {
+      "id": 1,
+      "letter": "א",
+      "hebrew": [
+        "**מצות תפילין** שיכתוב ארבע פרשיות",
+        "שהן קדש לי כל בכור עד למועדה",
+        "והיה כי יביאך עד כי בחוזק יד",
+        "הוציאנו ה' ממצרים",
+        "ופ' שמע עד ובשעריך",
+        "ופ' והיה אם שמוע עד על הארץ:",
+        "הגה **וצריך לכתבם בסדר הזה**",
+        "לכתוב תחלה הקודמת בתורה",
+        "**ואם שינה פסול**",
+        "ולכתחלה יכתוב של יד קודם של ראש."
+      ],
+      "hungarian": {
+        "title": "סדר הפרשיות",
+        "items": [
+          {
+            "level": 1,
+            "text": "בתפילין נכתבות 4 פרשיות מסוימות, עד הפסוקים המפורטים"
+          },
+          {
+            "level": 1,
+            "text": "Előbb a Tórában korábban szereplő פרשה következik; a sorrend felcserélése פסול"
+          },
+          {
+            "level": 1,
+            "text": "Kezdetben a kézre való תפילין-t írd meg előbb"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "letter": "ב",
+      "hebrew": [
+        "**בשל ראש** יכתוב כל אחת",
+        "בקלף לבדה",
+        "**ושל יד** כותב כולם",
+        "בקלף אחד:"
+      ],
+      "hungarian": {
+        "title": "Különálló és egyesített írás",
+        "items": [
+          {
+            "level": 1,
+            "text": "A fejre való תפילין minden פרשה-ja külön pergamenre kerül"
+          },
+          {
+            "level": 1,
+            "text": "A kézre való négy פרשה-ja egyetlen pergamenre kerül"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "letter": "ג",
+      "hebrew": [
+        "**יכתבם בדיו שחור**",
+        "בין שיש בו מי עפצים",
+        "בין שלא במי עפצים:",
+        "הגה **ולכתחלה יחמיר**",
+        "לכתוב בדיו העשויה מעשן עצים",
+        "או שמנים שרויה במי עפצים",
+        "[מהרי\"ל סי' קי\"ט]",
+        "וכמו שיתבאר ביו\"ד סי' רע\"א",
+        "**כתב אפילו אות א'**",
+        "בשאר מיני צבעונים או בזהב",
+        "הרי אלו פסולין",
+        "אם זרק עפרות זהב על האותיות",
+        "מעביר הזהב וישאר כתב התחתון",
+        "וכשר",
+        "**אבל** אם זרק הזהב על אות מאזכרה",
+        "אין לו תקנה לפי שאסור להעביר הזהב",
+        "משום דהוי כמוחק את השם:"
+      ],
+      "hungarian": {
+        "title": "A tinta és a színezés",
+        "items": [
+          {
+            "level": 1,
+            "text": "Fekete tintával kell írni; lehet benne gubacsvíz, de nem kötelező"
+          },
+          {
+            "level": 1,
+            "text": "Kezdetben ajánlott füstből és gubacsvízből készült tintát használni"
+          },
+          {
+            "level": 1,
+            "text": "Más szín vagy aranyírás פסול; a betűkről az arany eltávolítható, de az istennévéről nem"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "letter": "ד",
+      "hebrew": [
+        "**צריך שלא תדבק** שום אות בחברתה",
+        "אלא כל אות תהיה מוקפת גויל:",
+        "הגה **ויכתוב כתיבה תמה**",
+        "שלא יחסר אפילו קוצו של יו\"ד",
+        "ויהא מתוייג כהלכתו [טור א\"ח]",
+        "ולכתחלה יכתוב כתיבה גסה קצת",
+        "שלא יהיו נמחקים מהרה",
+        "וכן מצוה ליפותן מבחוץ ומבפנים:",
+        "[דברי מרדכי]"
+      ],
+      "hungarian": {
+        "title": "Betűk alakja és elkülönítése",
+        "items": [
+          {
+            "level": 1,
+            "text": "Egyetlen betű sem érhet a másikhoz; mindegyiket pergamennek kell körülvennie"
+          },
+          {
+            "level": 1,
+            "text": "A betűk legyenek hibátlanok, a י legkisebb vonása se hiányozzon"
+          },
+          {
+            "level": 1,
+            "text": "Kissé vastagabb írás és kívül-belül szép תפילין ajánlott"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "letter": "ה",
+      "hebrew": [
+        "**צריך שיכתוב בימינו**",
+        "אפילו אם הוא שולט בשני ידיו",
+        "ואם כתב בשמאל פסול",
+        "אם אפשר למצוא אחרים כתובים בימין",
+        "ואיטר יד שמאל דידיה הוה ימין:"
+      ],
+      "hungarian": {
+        "title": "Írás a domináns kézzel",
+        "items": [
+          {
+            "level": 1,
+            "text": "Jobb kézzel kell írni, akkor is, ha mindkét kézzel ügyes"
+          },
+          {
+            "level": 1,
+            "text": "Bal kézzel írt תפילין פסול, ha található jobb kézzel írt"
+          },
+          {
+            "level": 1,
+            "text": "Balkezesnél a bal kéz számít jobb kéznek"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "letter": "ו",
+      "hebrew": [
+        "אין (צריך) לשרטט",
+        "כי אם שטה עליונה",
+        "ואם אינו יודע ליישר השטה בלא שרטוט",
+        "ישרטט כל השורות",
+        "ולא ישרטט בעופרת",
+        "מפני שמקום השרטוט נשאר צבוע:",
+        "הגה **וי\"א שצריך לשרטט תמיד**",
+        "למעלה ולמטה ומן הצדדים",
+        "אע\"פ שיודע לכתוב בלא שרטוט",
+        "וכן נוהגין",
+        "[ברוך שאמר מרדכי וספר תרומה וסמ\"ג]"
+      ],
+      "hungarian": {
+        "title": "Vonalazás",
+        "items": [
+          {
+            "level": 1,
+            "text": "Alapesetben csak a felső sort kell vonalazni; aki nem tud egyenesen írni, minden sort vonalazzon"
+          },
+          {
+            "level": 1,
+            "text": "Ólommal ne vonalazz, mert nyoma marad"
+          },
+          {
+            "level": 1,
+            "text": "A Remo szerint mindig vonalazni kell, felül, alul és oldalt is"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "letter": "ז",
+      "hebrew": [
+        "**הלכה למשה מסיני** תפילין על הקלף",
+        "ולא על הדוכסוסטוס ולא על הגויל",
+        "כותבין על הקלף במקום בשר",
+        "**ואם שינה פסול**",
+        "מהו קלף ומהו דוכסוסטוס",
+        "העור בשעת עיבודו חולקין אותו לשנים",
+        "והחלק החיצון שהוא לצד השער נקרא קלף",
+        "והפנימי הדבוק לבשר נקרא דוכסוסטוס",
+        "לפי זה כי אמרינן כותבים על הקלף",
+        "במקום בשר היינו מקום היותר קרוב לבשר",
+        "דהיינו במקום חבורו",
+        "כשהוא דבוק לדוכסוסטוס",
+        "וקלפים שלנו שאין חולקים אותם",
+        "יש להם דין קלף וכותבים עליהם לצד בשר",
+        "שמה שמגררים קליפתו העליונה",
+        "שבמקום שער אינו אלא כדי מה שצריך לתקנו",
+        "להחליקו ואפילו אם היו חולקים העור לשנים",
+        "היה צריך לגרר ממנו כך",
+        "ומצד הבשר גוררים הרבה",
+        "עד שאין נשאר אלא הקלף בלבד:"
+      ],
+      "hungarian": {
+        "title": "A megfelelő pergamen",
+        "items": [
+          {
+            "level": 1,
+            "text": "A תפילין-t pergamenre kell írni, nem a másik két bőrrétegre"
+          },
+          {
+            "level": 1,
+            "text": "A pergamen hús felőli oldalára írj; más oldal פסול"
+          },
+          {
+            "level": 1,
+            "text": "A nálunk használt, rétegeire nem választott pergament is a hús felőli oldalán írják"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "letter": "ח",
+      "hebrew": [
+        "**צריך הקלף להיות מעובד**",
+        "בעפצים או בסיד",
+        "וצריך שיהיה מעובד לשמו",
+        "טוב להוציא בשפתיו בתחלת העיבוד",
+        "שהוא מעבדו לשם תפילין או לשם ס\"ת",
+        "**אבל** אם עיבדו לשם מזוזה פסול:"
+      ],
+      "hungarian": {
+        "title": "A pergamen feldolgozása",
+        "items": [
+          {
+            "level": 1,
+            "text": "A pergament gubaccsal vagy mésszel kell feldolgozni, kifejezetten תפילין céljára"
+          },
+          {
+            "level": 1,
+            "text": "Jó ezt a feldolgozás kezdetén szóban is kimondani"
+          },
+          {
+            "level": 1,
+            "text": "Ha מזוזה céljára készült, פסול"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "letter": "ט",
+      "hebrew": [
+        "אם עיבדו עכו\"ם להרמב\"ם פסול",
+        "אפילו א\"ל ישראל לעבדו לשמו",
+        "ולהרא\"ש כשר",
+        "אם ישראל עומד על גבו וסייעו",
+        "[קצת בעיבודה]",
+        "[ב\"י בשם הרא\"ש וכן נוהגין ועיין לעיל סימן י\"א סעיף ב]"
+      ],
+      "hungarian": {
+        "title": "Nem zsidó által feldolgozott pergamen",
+        "items": [
+          {
+            "level": 1,
+            "text": "A Rambam szerint פסול, akkor is, ha a zsidó előírta a megfelelő célt"
+          },
+          {
+            "level": 1,
+            "text": "A רא\"ש szerint כשר, ha a zsidó felügyelte és valamennyit segített"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "letter": "י",
+      "hebrew": [
+        "כשמסמנין הנקבים במרצע",
+        "כעין אותיות",
+        "אע\"פ שנקל לעכו\"ם לזייף אין חוששין",
+        "משום דמרתת כותי",
+        "פן יכיר ישראל בטביעות עין:"
+      ],
+      "hungarian": {
+        "title": "A pergamen jelölése",
+        "items": [
+          {
+            "level": 1,
+            "text": "A lyukakat betűszerűen jelölhetik árral, bár ezt könnyű lenne hamisítani"
+          },
+          {
+            "level": 1,
+            "text": "Nem tartanak ettől, mert a nem zsidó fél, hogy a zsidó felismeri a hamisítást"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "letter": "יא",
+      "hebrew": [
+        "עור שעיבדו שלא לשמו",
+        "אם יש תיקון לחזור לעבדו לשמו",
+        "יתבאר בטור יורה דעה סי' רע\"א:"
+      ],
+      "hungarian": {
+        "title": "Nem megfelelő célra feldolgozott bőr",
+        "items": [
+          {
+            "level": 1,
+            "text": "A javíthatóságot a Jore Deá 271. fejezete tárgyalja"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "letter": "יב",
+      "hebrew": [
+        "**יהיה הקלף מעור** בהמה חיה ועוף הטהורים",
+        "אפילו מנבלה וטריפה שלהם",
+        "**אבל לא** מעור בהמה וחיה ועוף הטמאים",
+        "דכתיב למען תהיה תורת ה' בפיך",
+        "ממין המותר לפיך",
+        "ולא מעור דג אפילו הוא טהור",
+        "משום דנפיש זוהמיה:"
+      ],
+      "hungarian": {
+        "title": "A pergamen állati eredete",
+        "items": [
+          {
+            "level": 1,
+            "text": "Tiszta állat bőre használható, még akkor is, ha az állat נבלה vagy טרפה"
+          },
+          {
+            "level": 1,
+            "text": "Tisztátalan állat vagy hal bőre nem megfelelő, még tiszta halé sem"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "letter": "יג",
+      "hebrew": [
+        "**יהיה הקלף שלם**",
+        "שלא יהא בו נקבים שאין הדיו עובר עליו",
+        "דהיינו שלא תהא האות נראית בו",
+        "חלוקה לשתים:"
+      ],
+      "hungarian": {
+        "title": "Szakadásmentes pergamen",
+        "items": [
+          {
+            "level": 1,
+            "text": "A pergamen ne legyen kilyukadva ott, ahol a tinta nem halad át"
+          },
+          {
+            "level": 1,
+            "text": "Ne tűnjön úgy, mintha a betű két részre szakadt volna"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "letter": "יד",
+      "hebrew": [
+        "הסופרים הזריזים עושים שלשה מיני קלפים",
+        "העב יותר לכתוב בו פרשת שמע",
+        "שהיא קטנה",
+        "והדק ממנו לפרשת והיה אם שמוע",
+        "שהיא יותר גדולה",
+        "ולפרשת קדש ולפרשת והיה כי יביאך",
+        "שהם ארוכות עושים קלף דק מאוד",
+        "ובזה יתמלאו הבתים בשוה",
+        "וזהו נוי לתפילין:"
+      ],
+      "hungarian": {
+        "title": "A pergamen vastagsága",
+        "items": [
+          {
+            "level": 1,
+            "text": "A különböző hosszúságú פרשיות-hoz eltérő vastagságú pergament készítenek"
+          },
+          {
+            "level": 1,
+            "text": "Így a תפילין házai egyenletesen telnek meg, ami szépíti őket"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "letter": "טו",
+      "hebrew": [
+        "אם לאחר שנכתב ניקב בתוך הה\"א או המ\"ם",
+        "**כשר** אפילו ניקב כל תוכו",
+        "שהנקב ממלא כל החלל",
+        "אבל בירושלמי משמע",
+        "שגם בפנים צריך שיהא מוקף קלף",
+        "ניקב רגל פנימי של ה\"א",
+        "אפילו לא נשאר ממנו אלא כל שהוא כשר להרא\"ש:",
+        "הגה **אבל שאר פוסקים מצריכין**",
+        "כמלא אות קטנה והכי הלכתא [ב\"י]",
+        "ניקב רגל הימני",
+        "אם נשתייר ממנו מלא אות קטנה כשר",
+        "ואם לאו פסול:"
+      ],
+      "hungarian": {
+        "title": "Lyuk a betűben",
+        "items": [
+          {
+            "level": 1,
+            "text": "A ה vagy מ belsejében lévő lyuk akkor is כשר lehet, ha a teljes belső teret kitölti"
+          },
+          {
+            "level": 1,
+            "text": "A ה belső lábánál a רא\"ש szerint már bármennyi megmaradt rész elegendő"
+          },
+          {
+            "level": 1,
+            "text": "Más vélemény szerint legalább egy kis betűnyi rész maradjon; a jobb láb lyukánál ez a döntő"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "letter": "טז",
+      "hebrew": [
+        "נפסק אחת מהאותיות",
+        "הגה הפשוטות כגון וי\"ו זיי\"ן",
+        "או שנפסק רגל הנו\"ן וכיוצא בה",
+        "[מרדכי ה\"ק ד' צ\"ב]",
+        "אם תינוק שאינו לא חכם ולא טפש",
+        "יודע לקרותו כשר ואם לאו פסול",
+        "ואין צריך לכסות לו שאר אותיות",
+        "כמו שנוהגים:",
+        "מיהו אם אנו רואים",
+        "שלא נשאר צורת האות כתיקונו פסול",
+        "אע\"פ שהתינוק קורא אותו כהלכתו",
+        "[מרדכי ומהרי\"ק שורש ס\"ט וריב\"ש]",
+        "הא דמכשרינן כשנפסק אות",
+        "דוקא כשנכתב בכשרות ואח\"כ נפסק",
+        "אבל אם מתחלה כשנכתב היה שם נקב",
+        "ונפסק בו",
+        "או אם רגל הכף הפשוטה או כיוצא בה",
+        "מגיע לסוף הקלף בלי היקף קלף",
+        "מתחלתו פסול:"
+      ],
+      "hungarian": {
+        "title": "Megszakadt betű",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha egy egyszerű betű lába megszakadt, egy átlagos gyerek olvasata alapján dönthető el, כשר-e"
+          },
+          {
+            "level": 1,
+            "text": "Ha a betű alakja szemmel láthatóan hibás, פסול akkor is, ha a gyerek felismeri"
+          },
+          {
+            "level": 1,
+            "text": "Ez csak utólagos szakadásra vonatkozik; eleve lyuknál vagy a pergamen széléig érő betűnél פסול"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "letter": "יז",
+      "hebrew": [
+        "אם נפלה טפת דיו לתוך האות",
+        "ואינה ניכרת האות",
+        "**אין תקנה לגרור הדיו**",
+        "וע\"י כך יהיה ניכר האות",
+        "דהוי חק תוכות ופסול",
+        "משום דבעינן וכתב ולא וחקק",
+        "וה\"ה אם טעה וכתב דלי\"ת במקום רי\"ש",
+        "או בי\"ת במקום כ\"ף",
+        "אין תקנה למחוק התג לתקן האות",
+        "משום דהוי כחק תוכות:"
+      ],
+      "hungarian": {
+        "title": "A betű megkaparása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha a tintafolt miatt a betű nem felismerhető, kaparással nem javítható"
+          },
+          {
+            "level": 1,
+            "text": "Ez חק תוכות, vagyis a betű kivájása, nem pedig megírása"
+          },
+          {
+            "level": 1,
+            "text": "A ד helyett írt ר vagy ב helyett írt כ sem javítható a felesleges rész lekaparásával"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "letter": "יח",
+      "hebrew": [
+        "מ\"ם פתוחה שנדבק פתיחתה ונסתמה",
+        "**אין מועיל לגרור הדבק ולפתחה**",
+        "משום דהוי כחק תוכות",
+        "ומה תקנתה שיגרור כל החרטום",
+        "ותשאר כצורת נו\"ן כפופה",
+        "ואח\"כ יכתוב מה שגרר",
+        "ורי\"ש שעשאה כמין דלי\"ת",
+        "יש להחמיר ולומר דלא סגי",
+        "כשיגרור הירך לבד או הגג לבד",
+        "ויחזור ויכתבנו כמין רי\"ש",
+        "משום דבין הגג בין הירך נעשו בפיסול",
+        "הלכך צריך לגרור שניהם",
+        "אם נדבקה אות לאות",
+        "בין קודם שתגמר בין אחר שנגמרה פסול",
+        "ואם גרר והפרידה כשר",
+        "ולא מיקרי חק תוכות",
+        "מאחר שהאות עצמה היתה כתובה כתקנה",
+        "אם נגעו רגלי הה\"א והקו\"ף בגג",
+        "יגרר הרגל ויחזור ויכתבנו",
+        "ואין צריך לגרור כל האות",
+        "כי הגג כדין נכתב",
+        "אם נגע רגל האל\"ף בגג האל\"ף",
+        "או פני האל\"ף בפנים בגג שתחתיה פסול",
+        "ואין תקנה בגרירה להפרידה",
+        "דהוי כחק תוכות",
+        "אלא יגרור כל מה שנעשה בפיסול",
+        "ויחזור ויכתבנו:",
+        "הגה וכן הדין ביו\"די השי\"ן והצד\"י",
+        "והעי\"ן והפ\"א",
+        "אם נגעו בגוף האות יותר ממקום דבוקה:",
+        "[בית יוסף]"
+      ],
+      "hungarian": {
+        "title": "Összeragadt betűk javítása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az összezárult מ nyílását nem szabad a ragasztás lekaparásával megnyitni"
+          },
+          {
+            "level": 1,
+            "text": "A hibás ד alakú ר-nél mindkét részt le kell kaparni, majd újraírni"
+          },
+          {
+            "level": 1,
+            "text": "Az egymáshoz tapadt betűk szétválaszthatók, ha maguk a betűk helyesen íródtak"
+          },
+          {
+            "level": 1,
+            "text": "A hibásan összeérő vonásokat az érintett rész lekaparásával és újraírásával javítsd"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "letter": "יט",
+      "hebrew": [
+        "**בתחלת הכתיבה יאמר בפיו**",
+        "אני כותב לשם קדושת תפילין",
+        "ומלבד זה בכל פעם שכותב אזכרה",
+        "צריך לומר שכותבה לשם קדושת השם:",
+        "הגה וי\"א דסגי כשמחשב",
+        "שכותב האזכרות לשמן",
+        "הואיל והוציא בתחלת הכתיבה בפיו סגי בהכי",
+        "[הרא\"ש ה\"ת וס\"ת וטור יורה דעה וא\"ח]",
+        "ויש להקל בדיעבד",
+        "וכשבא לנמנם לא יכתוב",
+        "דאינו כותב אז בכונה",
+        "[א\"ז]"
+      ],
+      "hungarian": {
+        "title": "A szándék kimondása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Írás előtt mondd ki, hogy תפילין szent céljára írsz"
+          },
+          {
+            "level": 1,
+            "text": "Minden istennév írásakor külön is mondd ki a szándékot"
+          },
+          {
+            "level": 1,
+            "text": "Utólag elegendő lehet a szándék gondolata, ha az elején kimondta; álmosan ne írj"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "letter": "כ",
+      "hebrew": [
+        "**צריך לדקדק בחסרות ויתרות**",
+        "שאם חסר או יתר אות אחת פסולים",
+        "ונמצאו המניחים אותם",
+        "מברכים בכל יום ברכה לבטלה",
+        "וגם שרוי בכל יום בלא מצות תפילין",
+        "ונמצא עונש הסופר מרובה",
+        "לכן צריך להיות מאד ירא שמים",
+        "וחרד לדבר השם",
+        "המתעסק בכתיבת תפילין ותיקונן:"
+      ],
+      "hungarian": {
+        "title": "A hiányzó és többletbetűk",
+        "items": [
+          {
+            "level": 1,
+            "text": "Egyetlen betű hiánya vagy többlete is פסול-lá teszi a תפילין-t"
+          },
+          {
+            "level": 1,
+            "text": "A használó így naponta hiábavaló áldást mondhat, és nem teljesíti a micvát"
+          },
+          {
+            "level": 1,
+            "text": "Ezért csak istenfélő ember foglalkozzon תפילין írásával és javításával"
+          }
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "letter": "כא",
+      "hebrew": [
+        "כל פרשה אחר שיכתבנה",
+        "**יקראנה היטב בכוונה ודקדוק**",
+        "פעמים ושלש",
+        "ויחזור ויקראנה קודם שיתננה בתוך ביתה",
+        "כדי שלא תתחלף פרשה בפרשה:"
+      ],
+      "hungarian": {
+        "title": "A פרשה ellenőrző olvasása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Minden פרשה-t írás után olvass el figyelmesen 2–3 alkalommal"
+          },
+          {
+            "level": 1,
+            "text": "A házba helyezés előtt olvasd el újra, hogy ne cserélődjenek fel a פרשיות"
+          }
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "letter": "כב",
+      "hebrew": [
+        "טוב לנסות הקולמוס",
+        "קודם שיתחיל לכתוב הפרשה",
+        "שלא יהא עליו דיו יותר מדאי ויפסיד",
+        "וכן יזהר קודם שיכתוב כל שם",
+        "לקרות כל מה שכתב",
+        "כדי שלא יבואו לידי גניזה על ידו:"
+      ],
+      "hungarian": {
+        "title": "Ellenőrzés írás közben",
+        "items": [
+          {
+            "level": 1,
+            "text": "Próbáld ki a tollat, nehogy túl sok tinta kerüljön rá és elrontsa az írást"
+          },
+          {
+            "level": 1,
+            "text": "Minden istennév előtt olvasd át az addigi szöveget, hogy ne kelljen elrejteni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "letter": "כג",
+      "hebrew": [
+        "אם מצא שחסר אות אחת אין לו תקנה",
+        "שאם כן היו כתובין שלא כסדרן",
+        "ופסולין משום דכתיב והיו בהווייתן יהו",
+        "**ואם יתר אות אחת יש לו תקנה**",
+        "ע\"י שיגרור אותה",
+        "אם היא בסוף תיבה או בתחלתה",
+        "אבל אם היא באמצע תיבה לא",
+        "משום דכשיגרור יהיה נראה כשתי תיבות:"
+      ],
+      "hungarian": {
+        "title": "Hiányzó vagy fölösleges betű",
+        "items": [
+          {
+            "level": 1,
+            "text": "A hiányzó betű nem pótolható, mert a szöveg sorrendje már hibás lenne"
+          },
+          {
+            "level": 1,
+            "text": "A fölösleges betű a szó elején vagy végén lekaparható"
+          },
+          {
+            "level": 1,
+            "text": "A szó közepén nem, mert két külön szónak látszana"
+          }
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "letter": "כד",
+      "hebrew": [
+        "מותר לכתוב על מקום הגרר",
+        "ועל מקום המחק אפילו אזכרה",
+        "ולא ימחק בעודו לח",
+        "אלא ייבשנו יפה",
+        "כי אז יגרר בקל",
+        "ולא ישאר לו שום רושם:"
+      ],
+      "hungarian": {
+        "title": "Írás a lekapart helyre",
+        "items": [
+          {
+            "level": 1,
+            "text": "A lekapart vagy törölt helyre is szabad írni, akár istennevet"
+          },
+          {
+            "level": 1,
+            "text": "Ne töröld nedvesen; szárítsd meg, hogy könnyen lekaparható legyen és ne maradjon nyom"
+          }
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "letter": "כה",
+      "hebrew": [
+        "כל אות שהיא כתובה שלא כתקנה",
+        "ואין צורתה עליה",
+        "כגון נגע רגל האל\"ף בגג האל\"ף",
+        "או פני האל\"ף בפנים בגג שתחתיה",
+        "או שהיה רגל הה\"א או רגל הקו\"ף נוגעים",
+        "או שהיתה אות אחת חלוקה לשתי אותיות",
+        "כגון צד\"י שכתב יו\"ד נו\"ן",
+        "או שי\"ן שכתב עי\"ן יו\"ד",
+        "או חי\"ת שני זיי\"ן",
+        "ואחר שכתב לפניה חזר ותקנם",
+        "**הוי שלא כסדרן ופסולין**",
+        "אבל להפריד האותיות הדבוקות",
+        "אחר שכתב לפניהם שפיר דמי",
+        "דכיון שהאות צורתה עליה",
+        "כשמפרידה מחבירתה לא הוי ככותב",
+        "וה\"ה שאם לא היו מקצת יודי\"ן",
+        "שעל האלפי\"ן והשיני\"ן והעייני\"ן",
+        "ורגלי התוי\"ן נוגעים בגוף האות",
+        "והתינוק דלא חכים ולא טפש מכירם",
+        "שאע\"פ שכתב לפניהם יכול לחזור ולתקנם",
+        "דכיון דצורת האות היתה ניכרת",
+        "ליכא משום כתבן שלא כסדרן",
+        "ויש מי שאומר דה\"ה אם חוטרא דחי\"ת",
+        "למעלה אין נוגעים זה לזה",
+        "אך אין ניכר להדיא פרידתן",
+        "אע\"פ שהתינוק קורא שני זיי\"ן",
+        "מותר להדביקם:"
+      ],
+      "hungarian": {
+        "title": "Utólagos betűjavítás",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha egy betű eleve elvesztette alakját, és csak a későbbi javítás után válik felismerhetővé, פסול"
+          },
+          {
+            "level": 1,
+            "text": "A helyesen megírt, összetapadt betűk később szétválaszthatók"
+          },
+          {
+            "level": 1,
+            "text": "Bizonyos apró, felismerhető hiányokat is lehet később javítani"
+          },
+          {
+            "level": 1,
+            "text": "Vita szerint a ח felső vonásainak összeérintése is megengedett lehet"
+          }
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "letter": "כו",
+      "hebrew": [
+        "אם אותיות של שם דבוקות",
+        "**יכול להפרידם:**"
+      ],
+      "hungarian": {
+        "title": "Összetapadt istennév",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az istennév összetapadt betűit szabad szétválasztani"
+          }
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "letter": "כז",
+      "hebrew": [
+        "אותיות ותיבות שנמחקו קצת",
+        "אם רישומן ניכר כל כך",
+        "שתינוק דלא חכים ולא טיפש יכול לקרותם",
+        "מותר להעביר קולמוס עליה",
+        "להטיב הכתב ולחדש",
+        "ולא הוי שלא כסדרן:"
+      ],
+      "hungarian": {
+        "title": "Elhalványult betűk",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha egy átlagos gyerek még el tudja olvasni a halvány betűket, újra át lehet húzni őket"
+          },
+          {
+            "level": 1,
+            "text": "Ez nem számít a szövegsorrend megsértésének"
+          }
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "letter": "כח",
+      "hebrew": [
+        "יש ליזהר שלא יכנס ראש הלמ\"ד",
+        "באויר הה\"א או החי\"ת",
+        "אפילו בלא נגיעה:"
+      ],
+      "hungarian": {
+        "title": "A ל betű felső szára",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ügyelj, hogy a ל felső szára ne nyúljon a ה vagy ח belső terébe, érintés nélkül se"
+          }
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "letter": "כט",
+      "hebrew": [
+        "אם אין הפרשיות שגורות בפיו",
+        "**צריך שיכתוב מתוך הכתב:**"
+      ],
+      "hungarian": {
+        "title": "Írás emlékezetből",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha nem tudja biztosan fejből a פרשיות-t, másolt szövegből írjon"
+          }
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "letter": "ל",
+      "hebrew": [
+        "**אינו רשאי לכתוב**",
+        "אלא אם כן יודע לקרות:"
+      ],
+      "hungarian": {
+        "title": "Az író olvasási tudása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Csak az írhat תפילין-t, aki tud olvasni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "letter": "לא",
+      "hebrew": [
+        "אם אינו כותב מתוך הכתב",
+        "לא יכתוב על פה שמקרא אותו אחר",
+        "אא\"כ יחזור הוא ויקרא בפיו:"
+      ],
+      "hungarian": {
+        "title": "Diktálás és visszaolvasás",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ha nem másol, ne írjon pusztán más diktálása alapján"
+          },
+          {
+            "level": 1,
+            "text": "Kivétel, ha ő maga is hangosan visszaolvassa a szöveget"
+          }
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "letter": "לב",
+      "hebrew": [
+        "צריך להניח חלק למעלה",
+        "כדי גגה של למ\"ד:",
+        "הגה שיהיו גם הם מוקפים גויל",
+        "[תשובת מהרי\"ל סי' קל\"ד וב\"ש]",
+        "ולמטה כשיעור כ\"ף ונו\"ן פשוטה",
+        "ובתחילתן וסופן אין צריך להניח כלל:",
+        "מיהו נהגו הסופרים להניח קצת בתחלה וסוף",
+        "[אגור רוקח]",
+        "וצריך להניח בין כל תיבה ותיבה כמלא אות",
+        "וכן בין השיטים כמלא שיטה",
+        "ובין כל אות כמלא חוט השערה",
+        "כמו בספר תורה וכמו שיתבאר בטור י\"ד",
+        "גם צריך להניח מעט חלק בין פסוק לפסוק:"
+      ],
+      "hungarian": {
+        "title": "Margók és térközök",
+        "items": [
+          {
+            "level": 1,
+            "text": "Felül hagyj helyet egy ל magasságának, alul pedig egy ך és ן magasságának"
+          },
+          {
+            "level": 1,
+            "text": "A betűk és szavak között, valamint a sorok és versek között is kell hézag"
+          },
+          {
+            "level": 1,
+            "text": "A másolók a szöveg elején és végén is hagynak valamennyi üres helyet"
+          }
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "letter": "לג",
+      "hebrew": [
+        "**יעשה השורות שוות**",
+        "שלא תהא אחת נכנסת ואחת יוצאת",
+        "ולפחות יזהר שלא יכתוב",
+        "ג' אותיות חוץ לשיטה",
+        "ואם כתבם לא פסל:"
+      ],
+      "hungarian": {
+        "title": "Egyenletes sorok",
+        "items": [
+          {
+            "level": 1,
+            "text": "A sorok legyenek egyenletesek, ne váltakozzon a behúzás"
+          },
+          {
+            "level": 1,
+            "text": "Legalább arra ügyelj, hogy 3 betűnél több ne lógjon ki; ha mégis, nem פסול"
+          }
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "letter": "לד",
+      "hebrew": [
+        "ב' אותיות שהם תיבה אחת",
+        "**לא יכתוב חוץ לשיטה:**"
+      ],
+      "hungarian": {
+        "title": "Rövid szó a sor végén",
+        "items": [
+          {
+            "level": 1,
+            "text": "Egyetlen kétsz betűs szót se írj a soron kívülre"
+          }
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "letter": "לה",
+      "hebrew": [
+        "אותיות השם צריך שיהיו כלם בתוך הדף",
+        "ולא יצא מהם כלל חוץ לדף:"
+      ],
+      "hungarian": {
+        "title": "Az istennév a lapon belül",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az istennév minden betűje maradjon a lap határain belül"
+          }
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "letter": "לו",
+      "hebrew": [
+        "**יעשה כל פרשיותיה פתוחות**",
+        "חוץ מפרשה אחרונה הכתובה בתורה",
+        "שהיא והיה אם שמוע",
+        "**שיעשנה סתומה ואם שינה פסול:**",
+        "ויש מכשירין בכולם פתוחות",
+        "[מהר\"ם פאדווה סימן ע\"ז בשם אורחות חיים וב\"י בשם העיטור]",
+        "ובמדינות אלו נוהגים",
+        "אף פרשת והיה אם שמוע בראש השטה",
+        "כשאר הפרשיות",
+        "ולכן נהגו שפרשת קדש לי",
+        "והיה כי יביאך ופ' שמע",
+        "מתחילין בראש שטה",
+        "ובסוף קדש לי ובסוף והיה כי יביאך",
+        "מניחים חלק כדי לכתוב ט' אותיות",
+        "ובסוף שמע אין מניחים חלק",
+        "ואם מניחים הוא פחות מכדי לכתוב ט' אותיות",
+        "ופ' והיה אם שמוע מתחילים באמצע שטה עליונה",
+        "ומניח לפניה חלק כדי לכתוב ט' אותיות",
+        "ונמצא ששלשה פרשיות הם פתוחות",
+        "בין להרמב\"ם בין להרא\"ש",
+        "ופ' אחרונה היא סתומה לדעת הרמב\"ם"
+      ],
+      "hungarian": {
+        "title": "Nyitott és zárt szakaszok",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az első három פרשה legyen nyitott, az utolsó, והיה אם שמוע, zárt; eltérés esetén פסול"
+          },
+          {
+            "level": 1,
+            "text": "Van vélemény, amely mindet nyitottan כשר-nak tartja"
+          },
+          {
+            "level": 1,
+            "text": "A helyi szokás szerint az utolsó פרשה is a sor elején kezdődik, előtte kilenc betűnyi hellyel"
+          }
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "letter": "לז",
+      "hebrew": [
+        "**עור הבתים** צריך להיות מעור בהמה",
+        "חיה ועוף הטהורים",
+        "אפילו מנבלה או טרפה שלהם",
+        "ורשאי לעשות מקלף או מעור שליל:",
+        "הגה וכן הרצועות יכול לעשותן מקלף",
+        "ועור שליל [מרדכי דף צ\"ד]",
+        "צריך שיהיה מעובד לשמו היכא דאפשר:"
+      ],
+      "hungarian": {
+        "title": "A תפילין házainak anyaga",
+        "items": [
+          {
+            "level": 1,
+            "text": "A házak tiszta állat bőréből, pergamenből vagy magzatbőrből készülhetnek"
+          },
+          {
+            "level": 1,
+            "text": "A szíjak is készülhetnek pergamenből vagy magzatbőrből"
+          },
+          {
+            "level": 1,
+            "text": "Ha lehetséges, az anyagot a תפילין céljára dolgozd fel"
+          }
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "letter": "לח",
+      "hebrew": [
+        "**יעשה ד' בתים**",
+        "מעור אחד לשל ראש",
+        "ובית אחת לשל יד:"
+      ],
+      "hungarian": {
+        "title": "A házak száma",
+        "items": [
+          {
+            "level": 1,
+            "text": "A fejre való תפילין négy háza egy bőrből készüljön"
+          },
+          {
+            "level": 1,
+            "text": "A kézre való תפילין egyetlen házból áll"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "letter": "לט",
+      "hebrew": [
+        "**תפילין בין של ראש בין של יד**",
+        "הלכה למשה מסיני שיהיו מרובעות",
+        "בתפרן ובאלכסונן",
+        "דהיינו שיהיה ריבוען מכוון",
+        "ארכו כרחבו",
+        "כדי שיהא להם אותו אלכסון שאמרו חז\"ל",
+        "כל אמתא בריבועא אמתא ותרי חומשי באלכסונא",
+        "וצריך לרבע מקום מושבן וגם הבתים:",
+        "הגה אבל על גובה הבתים אין להקפיד",
+        "אם הוא יותר מרחבן וארכן",
+        "[ב\"י בשם אשר\"י וסמ\"ק והמרדכי ורמב\"ם פ\"ג]",
+        "עשאן מרובעות ואחר זמן נתקלקל ריבוען",
+        "יש מי שאומר שצריך לרבען:",
+        "ויעשה כל הד' בתים בשוה",
+        "שלא יהא אחד גדול מחבירו:",
+        "[ברוך שאמר]"
+      ],
+      "hungarian": {
+        "title": "A házak négyzetes alakja",
+        "items": [
+          {
+            "level": 1,
+            "text": "A fej- és kézre való תפילין házainak alulnézetben és átlósan is négyzetesnek kell lenniük"
+          },
+          {
+            "level": 1,
+            "text": "A házak magassága lehet nagyobb az oldalaiknál"
+          },
+          {
+            "level": 1,
+            "text": "Ha később eltorzul a négyzetesség, egy vélemény szerint újra kell igazítani; a négy ház legyen egyforma"
+          }
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "letter": "מ",
+      "hebrew": [
+        "עור הבתים מצוה לעשותו שחור",
+        "[וע\"ל סימן ל\"ג]",
+        "חריץ שבין בית לבית",
+        "צריך שיגיע עד התפר",
+        "ואם לא הגיע כשרה",
+        "והוא שיהיה ניכר החריץ",
+        "כדי שיהיו ד' ראשיה נראין לכל:"
+      ],
+      "hungarian": {
+        "title": "A házak színe és elválasztása",
+        "items": [
+          {
+            "level": 1,
+            "text": "A házak bőrét micva feketére készíteni"
+          },
+          {
+            "level": 1,
+            "text": "A barázda érjen a varrásig; ha nem ér el, akkor is כשר, ha a négy rész látható"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "letter": "מא",
+      "hebrew": [
+        "אורך ורחב הבתים וגובהן",
+        "**אין לו שיעור:**"
+      ],
+      "hungarian": {
+        "title": "A házak mérete",
+        "items": [
+          {
+            "level": 1,
+            "text": "A házak hosszának, szélességének és magasságának nincs meghatározott mérete"
+          }
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "letter": "מב",
+      "hebrew": [
+        "**שי\"ן של תפילין** הלכה למשה מסיני",
+        "שיעשה בעור הבתים של ראש",
+        "כמין שי\"ן בולטת מקמטי העור",
+        "אחד מימינו ואחד משמאלו",
+        "של ימין המניח של ג' ראשים",
+        "ושל שמאל המניח של ארבע ראשים:",
+        "הגה מיהו אם היפך אינו נפסל",
+        "(מרדכי וסמ\"ג ותוספות פ' הקומץ)"
+      ],
+      "hungarian": {
+        "title": "A kiemelkedő ש betű",
+        "items": [
+          {
+            "level": 1,
+            "text": "A fejre való תפילין két oldalán kiemelkedő ש betű legyen"
+          },
+          {
+            "level": 1,
+            "text": "A jobb oldali három-, a bal oldali négyfejű"
+          },
+          {
+            "level": 1,
+            "text": "Ha felcseréli az oldalakat, a Remo szerint nem פסול"
+          }
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "letter": "מג",
+      "hebrew": [
+        "חריץ של שי\"ן דהיינו חודה למטה",
+        "יגיע עד מקום התפר:",
+        "הגה וכן היו\"ד שבשי\"ן",
+        "צריך ליגע למטה בשולי השי\"ן",
+        "[סמ\"ג]",
+        "ולא ימשוך השי\"ן הרבה",
+        "אלא שגם שולי השי\"ן יהיה נראה על התפר:",
+        "[ברוך שאמר]"
+      ],
+      "hungarian": {
+        "title": "A ש barázdái",
+        "items": [
+          {
+            "level": 1,
+            "text": "A ש alsó csúcsa érjen a varrásig"
+          },
+          {
+            "level": 1,
+            "text": "A י is érjen a ש aljához, de ne húzd túl hosszúra a betűt"
+          }
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "letter": "מד",
+      "hebrew": [
+        "**תיתורא דתפילין הלכה למשה מסיני**",
+        "והיינו שישים עור למטה",
+        "לכסות פי הבתים",
+        "ונראה כעין דף של גשר",
+        "הנקרא תיתורא",
+        "**מעברתא דתפילין הלכה למשה מסיני**",
+        "והיינו שיעור התיתורא יהא ארוך מצד אחד",
+        "ויעשה בו המעברתא",
+        "כיצד יחתכנו משני צדדים",
+        "שלא תהא רחבה כמו רוחב התיתורא",
+        "כדי שיהא ניכר ריבוע התיתורא",
+        "ובאותה מעברתא עוברת הרצועה",
+        "ועל שם כך נקראת מעברתא",
+        "גם בתפילין של יד יעשה תיתורא ומעברתא",
+        "יגלגל כל פרשה מסופה לתחלתה",
+        "וכורכם בקלף קטן",
+        "ויש מקפידין מלכורכן אלא בקלף כשר",
+        "והלכה למשה מסיני שיכרוך עליה",
+        "שער בהמה או חיה הטהורים:",
+        "הגה ונוהגין לכרוך שער על הפרשה",
+        "ואח\"כ כורכין עליו קלף כשר",
+        "וחוזרים וכורכים עליו שער",
+        "[אגור סי' מ\"ה]",
+        "ונהגו שיהיה שער זה של עגל",
+        "ואם לא מצא של עגל",
+        "כורך בשל פרה או של שור",
+        "ורוחץ השער היטב בתחלה",
+        "עד שיהא נקי קצת",
+        "שער זה צריך שיראה חוץ לבתים:"
+      ],
+      "hungarian": {
+        "title": "Alap, átvezető rész és tekercselés",
+        "items": [
+          {
+            "level": 1,
+            "text": "A házak alját bőr fedi; a hosszabb részbe kerül a szíj"
+          },
+          {
+            "level": 1,
+            "text": "A פרשיות-t a végüktől a kezdetük felé tekerd fel, és tiszta állat szőrével csavard körbe"
+          },
+          {
+            "level": 1,
+            "text": "A szokás szerint előbb szőr, majd pergamen, végül ismét szőr kerül rá; a szőr látszódjon ki"
+          }
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "letter": "מה",
+      "hebrew": [
+        "יתן כל פרשה בבית שלה",
+        "**שתהא זקופה מעומד בביתה:**"
+      ],
+      "hungarian": {
+        "title": "A פרשיות elhelyezése",
+        "items": [
+          {
+            "level": 1,
+            "text": "Minden פרשה a saját házába, álló helyzetben kerüljön"
+          }
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "letter": "מו",
+      "hebrew": [
+        "יהיה הגליון עליון תחלה",
+        "שזהו שורה העליונה",
+        "וגליון תחתון לצד פה הבתים:",
+        "הגה וראש הפרשה יהיה מונח",
+        "לצד ימין הקורא",
+        "שאם בא לפתחן ולקוראן",
+        "יהיה מונחים לפניו כהלכתן",
+        "[תרומת הדשן ובית יוסף בשם אורחות חיים]"
+      ],
+      "hungarian": {
+        "title": "A tekercs iránya",
+        "items": [
+          {
+            "level": 1,
+            "text": "A felső margó kerüljön előre, az alsó a házak nyílása felé"
+          },
+          {
+            "level": 1,
+            "text": "A פרשה kezdete az olvasó jobb oldalára kerüljön"
+          }
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "letter": "מז",
+      "hebrew": [
+        "אם כתב כל הארבע פרשיות בקלף אחד",
+        "**כשרים אפילו אין ריוח ביניהם**",
+        "ובלבד שיהא חוט או משיחה",
+        "בין כל בית ובית",
+        "של יד כותב הארבעה פרשיות בקלף אחד",
+        "וגולל אותן מסופן לתחלתן",
+        "וכורך קלף עליהם ושער עגל",
+        "ומכניסם בביתם כמו של ראש",
+        "אם כתבם על ארבע קלפים",
+        "והניחם בארבעה בתים יצא",
+        "והוא שיטלה עור על הארבעה בתים",
+        "שיהיו נראים כבית אחד",
+        "הגה והמנהג לדבקם בדבק",
+        "שיהא הכל כקלף אחד",
+        "ויזהרו ליטול דבק כשר",
+        "[ברוך שאמר ואגור סי' נ\"ז]"
+      ],
+      "hungarian": {
+        "title": "Egy vagy több pergamen",
+        "items": [
+          {
+            "level": 1,
+            "text": "A négy פרשה egy pergamenen is כשר, ha a házak között fonál vagy szíj választja el őket"
+          },
+          {
+            "level": 1,
+            "text": "Négy külön pergamen is כשר, ha bőrrel egyetlen háznak látszanak"
+          },
+          {
+            "level": 1,
+            "text": "A szokás szerint ragasztóval egyesítik a pergameneket; megfelelő ragasztót használj"
+          }
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "letter": "מח",
+      "hebrew": [
+        "אם צפה הבתים בזהב",
+        "או בעור בהמה טמאה",
+        "**פסולים:**"
+      ],
+      "hungarian": {
+        "title": "Bevont házak",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az arannyal vagy tisztátalan állat bőrével bevont házak פסול-ok"
+          }
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "letter": "מט",
+      "hebrew": [
+        "**הלכה למשה מסיני** שיהו תפילין",
+        "נתפרים בגידי בהמה וחיה טהורים",
+        "וטוב לתפור בגידי שור:"
+      ],
+      "hungarian": {
+        "title": "Varrás tiszta állat inával",
+        "items": [
+          {
+            "level": 1,
+            "text": "A תפילין-t tiszta állat inával kell összevarrni"
+          },
+          {
+            "level": 1,
+            "text": "Jó ökörinakat használni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "letter": "נ",
+      "hebrew": [
+        "אין לקנות גידים מעכו\"ם",
+        "משום דחיישינן שמא של בהמה טמאה הם",
+        "מקום שאין גידים מצוים",
+        "תופרים בטאליאדוראש שעושים מן הקלף",
+        "עד שיזדמנו להם גידים:"
+      ],
+      "hungarian": {
+        "title": "Inak beszerzése",
+        "items": [
+          {
+            "level": 1,
+            "text": "Ne vásárolj inakat nem zsidótól, mert származhatnak tisztátalan állatból"
+          },
+          {
+            "level": 1,
+            "text": "Ahol nincs ín, pergamencsíkokkal varrnak, amíg nem szereznek"
+          }
+        ]
+      }
+    },
+    {
+      "id": 51,
+      "letter": "נא",
+      "hebrew": [
+        "יתפור שלשה תפירות בכל צד",
+        "וחוט התפירה יהיה סובב משתי רוחות",
+        "ויעביר חוט התפירה בין כל בית ובית:",
+        "הגה מיהו אם לא עשה רק י' תפירות",
+        "או פחות מזה אינו נפסל",
+        "[מרדכי]",
+        "ויש מי שאומר שי\"ב תפירות אלו",
+        "יהיו בחוט אחד:"
+      ],
+      "hungarian": {
+        "title": "A varrások száma",
+        "items": [
+          {
+            "level": 1,
+            "text": "Minden oldalon 3 öltés legyen, a fonál két oldalról kerüljön körbe"
+          },
+          {
+            "level": 1,
+            "text": "A varrófonál haladjon át minden ház között"
+          },
+          {
+            "level": 1,
+            "text": "A tíznél kevesebb öltés nem teszi פסול-lá; egy vélemény szerint a 12 öltés egy fonálból legyen"
+          }
+        ]
+      }
+    },
+    {
+      "id": 52,
+      "letter": "נב",
+      "hebrew": [
+        "יכניס הרצועה תוך המעברתא",
+        "ויעשה קשר כמין דלי\"ת בשל ראש",
+        "וכמין יו\"ד בשל יד",
+        "להשלים אותיות שדי עם השי\"ן",
+        "שבשל ראש:",
+        "הגה ונוהגים להעביר עור על הבית של יד",
+        "לרוחב הזרוע",
+        "ויהי רחבו כרוחב הבית",
+        "(טור)",
+        "ולא יעשה הקשרים אלא לאחר שעשה",
+        "השי\"ן בתפילין",
+        "ואח\"כ יעשה הדלי\"ת",
+        "ואחר כך היו\"ד",
+        "כסדר אותיות השם:"
+      ],
+      "hungarian": {
+        "title": "A szíj és a csomók",
+        "items": [
+          {
+            "level": 1,
+            "text": "A szíj a házak közötti átvezető részbe kerül; a fejre való תפילין-en ד, a kézre valón י alakú csomó készül"
+          },
+          {
+            "level": 1,
+            "text": "A csomók a ש betű elkészülte után, a שדי név betűinek sorrendjében készüljenek"
+          },
+          {
+            "level": 1,
+            "text": "A kézre való תפילין házán bőrcsík fusson keresztben a kar szélességében"
+          }
+        ]
+      }
+    }
+  ],
+  "ai_flags": [
+    "9. szeif: a forrásban a Remo-glossza jelző nélkül folytatódik a להרמב\"ם kezdetű mondat után",
+    "25. szeif: a ויש מי שאומר kezdetű kiegészítés nincs külön Remo-jelöléssel",
+    "36. szeif: a ויש מכשירין kezdetű glosszának nincs külön הגה jelzője",
+    "40. szeif: a וע\"ל סימן ל\"ג hivatkozást forrásmegjelölésként jelöltem"
+  ]
+}

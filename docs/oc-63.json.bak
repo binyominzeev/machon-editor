@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "gate": "orach_chaim",
+  "siman": 63,
+  "siman_he": "סג",
+  "title": {
+    "he": "לישב בשעת ק\"ש ושלא ישן",
+    "hu": ""
+  },
+  "description": {
+    "he": "ובו ט סעיפים",
+    "hu": ""
+  },
+  "seifim": [
+    {
+      "id": 1,
+      "letter": "א",
+      "hebrew": [
+        "קורא אותה **מהלך או עומד**",
+        "או שוכב או רוכב על גבי בהמה",
+        "או יושב",
+        "**אבל לא פרקדן** דהיינו שפניו טוחות בקרקע",
+        "או מושלך על גבו ופניו למעלה",
+        "**אבל קורא והוא שוכב על צדו:**",
+        "הגה **מאחר שכבר שוכב** ואיכא טרחא לעמוד",
+        "[הר\"י פ' מי שמתו]",
+        "**ואם היה בעל בשר הרבה** ואינו יכול",
+        "להתהפך על צדו או שהיה חולה",
+        "נוטה מעט לצדו וקורא:"
+      ],
+      "hungarian": {
+        "title": "Testhelyzet olvasás közben",
+        "items": [
+          {
+            "level": 1,
+            "text": "A *keriát Smá* olvasható járva, állva, ülve vagy fekve, de hanyatt nem"
+          },
+          {
+            "level": 1,
+            "text": "Oldalra fordulva olvasható; aki már fekszik, nem kell felálljon"
+          },
+          {
+            "level": 1,
+            "text": "Aki teste vagy betegsége miatt nem tud oldalra fordulni, kissé dőljön oldalra"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "letter": "ב",
+      "hebrew": [
+        "מי שרוצה להחמיר לעמוד",
+        "כשהוא יושב ולקרותה מעומד",
+        "**נקרא עבריין:**"
+      ],
+      "hungarian": {
+        "title": "Felállás szigorításból",
+        "items": [
+          {
+            "level": 1,
+            "text": "Aki ülve van, és szigorításból felállva olvasná, azt vétkesnek nevezik"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "letter": "ג",
+      "hebrew": [
+        "היה מהלך בדרך וצריך לקרות ק\"ש",
+        "**צריך לעמוד** בפסוק ראשון:"
+      ],
+      "hungarian": {
+        "title": "Olvasás útközben",
+        "items": [
+          {
+            "level": 1,
+            "text": "Útközben a *keriát Smá* első versére meg kell állni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "letter": "ד",
+      "hebrew": [
+        "**עיקר הכוונה הוא בפסוק ראשון**",
+        "**הלכך** אם קרא ולא כיון לבו",
+        "בפסוק ראשון **לא יצא ידי חובתו**",
+        "וחוזר וקורא",
+        "ואפילו למ\"ד מצות אינן צריכות כוונה",
+        "**מודה הכא:**"
+      ],
+      "hungarian": {
+        "title": "Szándék az első versben",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az első versre kell összpontosítani"
+          },
+          {
+            "level": 1,
+            "text": "Ha nem figyelt rá, nem teljesítette a kötelességét, ezért ismételje meg"
+          },
+          {
+            "level": 1,
+            "text": "Ez akkor is érvényes, ha más micváknál nem szükséges külön szándék"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "letter": "ה",
+      "hebrew": [
+        "אם היה ישן מצערים אותו ומעירים אותו",
+        "**עד שיקרא פסוק ראשון והוא ער ממש**",
+        "**מכאן ואילך אין מצערים אותו**",
+        "כדי שיקרא והוא ער ממש",
+        "שאף על פי שהוא קורא מתנמנם יצא:",
+        "הגה ודין שתוי ושכור",
+        "ע' לקמן סי' צ\"ט סעיף א':"
+      ],
+      "hungarian": {
+        "title": "Olvasás álmosságban",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az első vershez teljesen fel kell ébreszteni"
+          },
+          {
+            "level": 1,
+            "text": "Utána az álmosan olvasás is érvényes"
+          },
+          {
+            "level": 1,
+            "text": "A részeg és ittas ember szabályát másutt tárgyalja"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "letter": "ו",
+      "hebrew": [
+        "הקורא קריאת שמע",
+        "**לא ירמוז בעיניו** ולא יקרוץ בשפתיו",
+        "ולא יראה באצבעותיו",
+        "**בפרשה ראשונה** שהוא",
+        "עיקר קבלת עול מלכות שמים",
+        "**מפני שנראה כקורא עראי**",
+        "וכתיב ודברת בם ודרשינן",
+        "**עשה אותם קבע:**"
+      ],
+      "hungarian": {
+        "title": "Figyelem az első szakaszban",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az első szakasz olvasásakor ne jelezzen szemmel, ajakkal vagy ujjal"
+          },
+          {
+            "level": 1,
+            "text": "Ezek a mozdulatok alkalmi olvasás benyomását keltik, pedig állandó elfoglaltsággá kell tenni"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "letter": "ז",
+      "hebrew": [
+        "היה עוסק במלאכה ורוצה לקרות קריאת שמע",
+        "**יתבטל ממלאכתו** עד שיקרא",
+        "**פרשה ראשונה** כדי שלא יהא כקורא עראי:"
+      ],
+      "hungarian": {
+        "title": "Munka megszakítása",
+        "items": [
+          {
+            "level": 1,
+            "text": "Munka közben az első szakasz elolvasásáig abba kell hagyni a munkát"
+          },
+          {
+            "level": 1,
+            "text": "Így az olvasás nem tűnik alkalminak"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "letter": "ח",
+      "hebrew": [
+        "האומנין וכן בעל הבית",
+        "שהיו עושים מלאכה",
+        "**בראש האילן או בראש שורות הבנין**",
+        "קורין ק\"ש במקומם",
+        "**ואינם צריכים לירד:**"
+      ],
+      "hungarian": {
+        "title": "Olvasás magasban dolgozva",
+        "items": [
+          {
+            "level": 1,
+            "text": "A fán vagy az épület sorain dolgozók a helyükön olvashatják a *keriát Smá*t"
+          },
+          {
+            "level": 1,
+            "text": "Nem kell lejönniük"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "letter": "ט",
+      "hebrew": [
+        "הכתף אע\"פ שמשאו על כתפיו",
+        "**קורא ק\"ש**",
+        "אבל לא יתחיל בשעה שטוען",
+        "ולא בשעה שפורק",
+        "**מפני שאין לבו מיושב:**"
+      ],
+      "hungarian": {
+        "title": "Olvasás teherhordás közben",
+        "items": [
+          {
+            "level": 1,
+            "text": "A teherhordó a vállán lévő rakománnyal is olvashat"
+          },
+          {
+            "level": 1,
+            "text": "A rakodást és a lerakodást ne kezdje meg olvasás közben, mert nem tud összpontosítani"
+          }
+        ]
+      }
+    }
+  ],
+  "ai_new_terms": [
+    {
+      "hu": "keriát Smá",
+      "he": "קריאת שמע"
+    }
+  ]
+}

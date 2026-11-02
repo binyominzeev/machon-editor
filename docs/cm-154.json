@@ -1279,17 +1279,26 @@
       "id": 23,
       "letter": "כג",
       "hebrew": [
-        "בנה כתלים משני צידי החלון",
-        "צריך להיות ביניהם רוחב ד' אמות",
-        "והחלון באמצע הארבע",
-        "ולא יסכך על גביהם",
-        "אלא א\"כ הרחיק הסיכוך מהכותל",
-        "שיש בו החלון ד\"א",
+        "**בנה כתלים** משני צידי החלון",
+        "צריך להיות ביניהם **רוחב ד' אמות**",
+        "והחלון **באמצע הארבע**",
+        "**ולא יסכך** על גביהם",
+        "**אלא א\"כ הרחיק הסיכוך**",
+        "מהכותל שיש בו החלון **ד\"א**",
         "כדי שלא יאפיל עליו:"
       ],
       "hungarian": {
-        "title": "",
-        "items": []
+        "title": "Falak és fedés az ablaknál",
+        "items": [
+          {
+            "level": 1,
+            "text": "Az ablak két oldalán emelt falak között 4 könyök legyen, az ablak középre kerüljön"
+          },
+          {
+            "level": 1,
+            "text": "Föléjük csak akkor kerüljön fedés, ha az ablakos faltól 4 könyökre kezdődik, hogy ne sötétítse el az ablakot"
+          }
+        ]
       }
     },
     {

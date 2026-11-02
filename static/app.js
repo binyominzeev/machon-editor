@@ -51,6 +51,8 @@
   addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(updateActive); }, { passive: true });
   updateActive();
 
+  if (main.hasAttribute("data-readonly")) return; // olvasó mód: nincs szerkesztés
+
   /* ---------- serialization (DOM -> runs) ---------- */
   const isBold = (el) => /^(B|STRONG)$/.test(el.tagName) || /^(bold|[6-9]00)$/.test(el.style.fontWeight);
   const isItalic = (el) => /^(I|EM)$/.test(el.tagName) || el.style.fontStyle === "italic";
@@ -133,6 +135,39 @@
   }
 
   /* ---------- saving with offline queue ---------- */
+  /* ---------- AI regeneration ---------- */
+  let regenBusy = false;
+  async function regenerate(which) {
+    if (regenBusy) return;
+    const label = which === "all" ? "Az egész szimán" : "A(z) " + which + ". széif";
+    if (!confirm(label + " tartalmát felülírja az AI új változata (a szerkesztéseid elvesznek; az előző állapot a .bak fájlban megmarad). Folytatod?")) return;
+    regenBusy = true;
+    const box = $("#regenbox"), msg = $(".rmsg", box), fill = $("#rfill");
+    box.hidden = false; box.classList.remove("err"); fill.style.width = "1%"; msg.textContent = "Indítás…";
+    try {
+      saveNow();
+      const base = "/api/docs/" + docId + "/regenerate";
+      const r = await MachonAuth.fetch(base, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seif: which === "all" ? null : +which }) });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      for (;;) {
+        await new Promise((res) => setTimeout(res, 1000));
+        const j = await (await MachonAuth.fetch(base + "?seif=" + which)).json();
+        if (j.error) throw new Error(j.error);
+        fill.style.width = (j.pct || 0) + "%";
+        msg.textContent = (j.pct || 0) + "% – " + (j.message || "");
+        if (j.done) { location.reload(); return; }
+      }
+    } catch (e) {
+      box.classList.add("err"); msg.textContent = "Hiba: " + e.message;
+      setTimeout(() => { box.hidden = true; }, 8000);
+      regenBusy = false;
+    }
+  }
+  main.addEventListener("click", (e) => {
+    const b = e.target.closest(".regen");
+    if (b) { e.preventDefault(); e.stopPropagation(); regenerate(b.dataset.regen); }
+  });
+
   const statusEl = $("#status");
   const PEND = "pending-saves:" + docId;
   const pending = () => JSON.parse(localStorage.getItem(PEND) || "{}");
@@ -147,7 +182,7 @@
     setStatus("dirty", "mentés…");
     for (const k of keys) {
       try {
-        const r = await fetch(p[k].url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p[k].body), keepalive: true });
+        const r = await MachonAuth.fetch(p[k].url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p[k].body), keepalive: true });
         if (!r.ok) throw new Error(r.status);
         const now = pending();
         if (JSON.stringify(now[k]) === JSON.stringify(p[k])) { delete now[k]; setPending(now); }

@@ -13,7 +13,7 @@ Ez a beépített Flask fejlesztői szervere, nem éles környezetre való. Produ
 Linuxon telepítsd a Gunicornt, majd indítsd az alkalmazást WSGI szerverként:
 
     python3 -m venv .venv
-    .venv/bin/pip install flask gunicorn
+    .venv/bin/pip install flask gunicorn pyjwt cryptography
     .venv/bin/gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
 
 Ezek a parancsok a projekt gyökeréből futtatva létrehozzák a `.venv/` könyvtárat, és abba
@@ -29,7 +29,51 @@ beépített fejlesztői szerverhez valók.
 A PWA-telepítéshez és a service workerhez a tableten HTTPS (vagy localhost) kell:
 pl. `mkcert <gép-IP>` által generált tanúsítvánnyal, vagy Tailscale/`tailscale cert`.
 Sima HTTP-n is lehet szerkeszteni, csak telepíthető app / offline gyorsítótár nincs.
-A szerver nem kér bejelentkezést: csak megbízható hálózaton futtasd.
+Bejelentkezés nélkül (alapállapot) a szerver nem kér azonosítást: ilyenkor csak megbízható hálózaton futtasd; internet felé a lenti Pocket ID bejelentkezést kapcsold be.
+
+## Bejelentkezés (Pocket ID / OIDC)
+
+Opcionális: ha a `.env`-ben az `OIDC_ISSUER` be van állítva, a szerkesztés bejelentkezéshez kötött (Pocket ID, Authorization Code + PKCE). Aki be tud lépni,
+mindenki ugyanazokat a dokumentumokat látja és szerkesztheti (nincs felhasználónkénti adat).
+Bejelentkezés nélkül a meglévő szimánok csak olvasható módban, a szerkesztővel azonos
+kinézettel megnyithatók (nincs szerkesztés, újragenerálás, AI-előkészítés; az új szimán csempék
+inaktívak). Az írási API-k (PUT/POST) és az `/s/<új szimán>` oldal belépést kér. Ha az
+`OIDC_ISSUER` üres vagy hiányzik, a hitelesítés ki van kapcsolva.
+
+1. Pocket ID adminban hozz létre egy OIDC klienst. A **Redirect URI** pontosan `https://<domain>/`
+   legyen (záró perjellel, ugyanaz a séma és host, mint amin az app elérhető). Jegyezd fel a
+   Client ID-t és a Client Secretet.
+2. Add meg a `.env` fájlban (lásd `.env.example`):
+
+       OIDC_ISSUER=https://auth.example.com
+       OIDC_CLIENT_ID=...
+       OIDC_CLIENT_SECRET=...          # csak a szerver ismeri, a böngészőbe nem kerül
+       OIDC_REDIRECT_URI=https://<domain>/   # karakterre egyezzen a Pocket ID-ban megadottal
+       # OIDC_AUDIENCE=...             # opcionális `aud` ellenőrzés
+
+3. Szükséges csomagok: `pip install flask pyjwt cryptography` (gunicornnal együtt).
+4. Indítsd újra a szervert. A bejelentkezéshez HTTPS (vagy localhost) ajánlott, reverse proxy mögött.
+
+Működés: a böngésző PKCE-vel a Pocket ID-hoz irányít, a `code`→token cserét és a refresh-t a
+szerver `/api/auth/token` és `/api/auth/refresh` végpontja végzi (itt adódik hozzá a
+`client_secret`; a Pocket ID token endpointja `/api/oidc/token`). Az `/api/*` hívások
+`Authorization: Bearer` fejlécet kapnak, amit a szerver a Pocket ID JWKS-e alapján ellenőriz;
+az oldalak betöltését ugyanennek az access tokennek a `machon_at` sütije védi (`static/auth.js`
+állítja be). Bejelentkezés nélkül egy belépőoldal jelenik meg. A refresh token a böngésző
+`localStorage`-ában van (egyszerű, dokumentált kompromisszum). Lejáratkor a token magától
+megújul; sikertelen megújításnál kijelentkeztet.
+
+Hibakeresés: token cserénél 400 → a `redirect_uri` nem egyezik pontosan; nincs refresh token →
+a Pocket ID kliensnél engedélyezett-e az `offline_access`; naplók: a szerver stdout-ján `[auth] …`
+sorok (PM2 naplóba kerülnek).
+
+## Nyitóképernyő és AI-előkészítés
+
+A kezdőlap a 4 kötet szimán-csempéit mutatja (a már létező dokumentumok kiemelve), fent a
+legutóbb szerkesztettekkel. Dokumentum-azonosító: `oc-590`, `yd-…`, `eh-…`, `cm-154`.
+Új szimánnál az „Előkészítés AI-val” gomb a Sefaria héber szövegéből és a `prompt.md`-ből az
+OpenAI API-val létrehozza a kezdeti tördelést és magyar vázlatot. Kell hozzá egy `.env` fájl
+(lásd `.env.example`): `OPENAI_API_KEY=…`, opcionálisan `OPENAI_MODEL` (alapértelmezett: gpt-4.1).
 
 ## Betűtípusok
 

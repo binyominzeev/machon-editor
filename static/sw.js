@@ -1,5 +1,5 @@
-const CACHE = "machon-v2";
-const PRECACHE = ["/static/app.css", "/static/app.js", "/static/icon-192.png", "/static/icon-512.png",
+const CACHE = "machon-v6";
+const PRECACHE = ["/static/app.css", "/static/app.js", "/static/auth.js", "/static/icon-192.png", "/static/icon-512.png",
   ...["DavidCLM-Medium", "DavidCLM-Bold", "LiberationSerif-Regular", "LiberationSerif-Bold", "LiberationSerif-Italic", "LiberationSerif-BoldItalic"].map((f) => `/static/fonts/${f}.woff2`)];
 
 self.addEventListener("install", (e) => {
