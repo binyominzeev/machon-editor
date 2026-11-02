@@ -4,22 +4,39 @@ Sulchán Áruch-fejezetek (szimánok) szerkesztése böngészőből / PWA-ból.
 
 ## Futtatás
 
-    pip install flask
+Első használat előtt hozz létre egy virtuális környezetet, és telepítsd bele a projekt
+függőségeit:
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
+
+Windows PowerShellben az aktiválás parancsa:
+
+    .venv\Scripts\Activate.ps1
+
+Az aktivált környezetben a fejlesztői szerver és az importáló is ugyanazt a Python-környezetet
+használja:
+
     python -m machon.server                # http://<gép-IP>:8000, docs/ mappa
     python -m machon.server --port 8080    # egyedi port
     python -m machon.server --cert c.pem --key k.pem   # HTTPS
 
 Ez a beépített Flask fejlesztői szervere, nem éles környezetre való. Production használathoz
-Linuxon telepítsd a Gunicornt, majd indítsd az alkalmazást WSGI szerverként:
+Linuxon indítsd az alkalmazást WSGI szerverként a telepített Gunicornnal:
 
-    python3 -m venv .venv
-    .venv/bin/pip install flask gunicorn pyjwt cryptography
-    .venv/bin/gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
+    gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
 
-Ezek a parancsok a projekt gyökeréből futtatva létrehozzák a `.venv/` könyvtárat, és abba
-telepítik a függőségeket. PM2-vel ugyanezt a virtuális környezetet használhatod:
+PM2-vel ugyanezt a virtuális környezetet használhatod:
 
     pm2 start .venv/bin/gunicorn --name machon-editor --interpreter none -- --bind 0.0.0.0:8080 --workers 1 --threads 4 machon.wsgi:app
+
+Az aktivált környezetből kilépni a `deactivate` paranccsal lehet. Új függőség esetén add hozzá a
+`requirements.txt`-hez, majd futtasd újra a `python -m pip install -r requirements.txt`
+parancsot; ne telepíts csomagot külön a rendszer-Pythonba. A `.venv/` helyi, nem verziókezelt
+könyvtár. Ha újra kell építeni, töröld ezt a könyvtárat, majd futtasd újra a fenti létrehozási
+és telepítési parancsokat.
 
 Ha a PM2-től eltérő felhasználóval fut a szerver, gondoskodj róla, hogy az elérje a projekt
 virtuális környezetét és a `docs/` mappát. Internet felől elérhető telepítésnél a Gunicorn elé
@@ -51,7 +68,8 @@ inaktívak). Az írási API-k (PUT/POST) és az `/s/<új szimán>` oldal belép�
        OIDC_REDIRECT_URI=https://<domain>/   # karakterre egyezzen a Pocket ID-ban megadottal
        # OIDC_AUDIENCE=...             # opcionális `aud` ellenőrzés
 
-3. Szükséges csomagok: `pip install flask pyjwt cryptography` (gunicornnal együtt).
+3. Az OIDC-hez szükséges csomagok már a `requirements.txt`-ben vannak; ellenőrizd, hogy
+   telepítetted őket az aktív virtuális környezetbe (`python -m pip install -r requirements.txt`).
 4. Indítsd újra a szervert. A bejelentkezéshez HTTPS (vagy localhost) ajánlott, reverse proxy mögött.
 
 Működés: a böngésző PKCE-vel a Pocket ID-hoz irányít, a `code`→token cserét és a refresh-t a
@@ -115,4 +133,5 @@ Tab / Shift+Tab: vázlatpont szintje (magyar oldal), Esc: kilép. Mentés automa
 
     python -m machon.sla_import cm-154-hu.sla docs/cm-154.json
 
+Az importálót is az aktivált `.venv`-ből futtasd.
 Mentéskor a korábbi változat `docs/<id>.json.bak` néven megmarad.
