@@ -129,6 +129,14 @@ Kattintás (vagy fókusz + Enter) a mezőre → szerkesztés. Ctrl/Cmd+B félkö
 Tab / Shift+Tab: vázlatpont szintje (magyar oldal), Esc: kilép. Mentés automatikus
 (offline esetén a böngésző sorba állítja, és újra próbálja).
 
+Az offline szerkesztéshez előbb online nyisd meg a dokumentumot, hogy a böngésző eltárolhassa
+az oldalát és a szükséges fájlokat. A módosított mezők helyi másolata és a feltöltésre váró
+mentések automatikusan megmaradnak; kapcsolat nélkül is szerkeszthetsz, visszatéréskor pedig
+automatikusan szinkronizálódnak. A fejléc diszkrét állapotjelzése mutatja a kapcsolatot és a
+mentést. Bejelentkezéses módban a helyi piszkozatok felhasználónként elkülönülnek. Ha a szerver
+ütközésre utaló HTTP 409/412 választ ad, a kliens jelzi a lehetséges ütközést, de annak feloldása
+egyelőre kézi feladat.
+
 ## Import Scribusból
 
     python -m machon.sla_import cm-154-hu.sla docs/cm-154.json

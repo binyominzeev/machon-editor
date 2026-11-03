@@ -3,6 +3,7 @@
   const tokenKey = 'machon.accessToken';
   const refreshTokenKey = 'machon.refreshToken';
   const userNameKey = 'machon.userName';
+  const userIdKey = 'machon.userId';
   const verifierKey = 'machon.pkceVerifier';
   const returnPathKey = 'machon.returnPath';
   const shellReloadKey = 'machon.shellReload';
@@ -13,6 +14,7 @@
   let accessToken = localStorage.getItem(tokenKey);
   let refreshToken = localStorage.getItem(refreshTokenKey);
   let userName = localStorage.getItem(userNameKey) || '';
+  let userId = localStorage.getItem(userIdKey) || decodeJwtPayload(accessToken).sub || '';
   let refreshTimer = null;
   let refreshing = null;
 
@@ -63,8 +65,10 @@
     const claims = decodeJwtPayload(tokens.id_token || accessToken);
     const accessClaims = decodeJwtPayload(accessToken);
     userName = claims.name || claims.preferred_username || claims.email || 'felhasználó';
+    userId = claims.sub || accessClaims.sub || '';
     localStorage.setItem(tokenKey, accessToken);
     localStorage.setItem(userNameKey, userName);
+    if (userId) localStorage.setItem(userIdKey, userId);
     if (refreshToken) localStorage.setItem(refreshTokenKey, refreshToken);
     syncCookie(accessClaims.exp);
     scheduleRefresh(accessClaims.exp);
@@ -149,10 +153,12 @@
     accessToken = null;
     refreshToken = null;
     userName = '';
+    userId = '';
     if (refreshTimer) clearTimeout(refreshTimer);
     localStorage.removeItem(tokenKey);
     localStorage.removeItem(refreshTokenKey);
     localStorage.removeItem(userNameKey);
+    localStorage.removeItem(userIdKey);
     syncCookie();
     document.dispatchEvent(new CustomEvent('machon-auth-updated'));
     if (reload) window.location.reload();
@@ -181,7 +187,11 @@
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible' || !accessToken) return;
     const exp = decodeJwtPayload(accessToken).exp;
-    if (exp && exp * 1000 - Date.now() < 60000) refreshAccessToken().catch(() => logout(false));
+    if (exp && exp * 1000 - Date.now() < 60000) {
+      refreshAccessToken().catch(error => {
+        if (navigator.onLine && !(error instanceof TypeError)) logout(false);
+      });
+    }
   });
 
   function showError(message) {
@@ -214,7 +224,11 @@
       if (accessToken) {
         const exp = decodeJwtPayload(accessToken).exp;
         if (!exp || exp * 1000 - Date.now() < 60000) {
-          if (refreshToken) await refreshAccessToken().catch(() => logout(false));
+          if (refreshToken) {
+            await refreshAccessToken().catch(error => {
+              if (navigator.onLine && !(error instanceof TypeError)) logout(false);
+            });
+          }
           else logout(false);
         } else {
           syncCookie(exp);
@@ -248,7 +262,8 @@
     logout,
     ready,
     isAuthenticated: () => Boolean(accessToken),
-    getUserName: () => userName
+    getUserName: () => userName,
+    getUserId: () => userId || 'anonymous'
   };
 
   document.addEventListener('DOMContentLoaded', updateControls);

@@ -9,6 +9,30 @@
   if (!main) return;
   const docId = main.dataset.doc;
   const narrow = () => matchMedia("(max-width:900px)").matches;
+  function createOfflinePageHtml() {
+    const copy = document.documentElement.cloneNode(true);
+    copy.querySelector("#auth-status")?.replaceChildren();
+    const loginButton = copy.querySelector("#login-button");
+    if (loginButton) loginButton.textContent = "Belépés";
+    copy.querySelectorAll(".edit").forEach((edit) => {
+      edit.removeAttribute("contenteditable");
+      edit.classList.remove("editing");
+    });
+    const status = copy.querySelector("#status");
+    if (status) { status.className = "sync-status offline"; status.textContent = "● offline · helyben mentve"; }
+    return `<!doctype html>\n${copy.outerHTML}`;
+  }
+  const offlinePageHtml = main.hasAttribute("data-readonly") ? null : createOfflinePageHtml();
+  function cacheOfflinePage(worker = navigator.serviceWorker?.controller) {
+    if (!worker || !offlinePageHtml) return;
+    worker.postMessage({ type: "CACHE_PAGE", url: location.href, html: offlinePageHtml });
+  }
+  function cacheOfflinePageWhenReady() {
+    if (!("serviceWorker" in navigator)) return;
+    navigator.serviceWorker.ready.then((registration) => {
+      cacheOfflinePage(registration.active);
+    }).catch(() => {});
+  }
 
   /* ---------- sidebar / TOC ---------- */
   const setToc = (open) => {
@@ -52,6 +76,7 @@
   updateActive();
 
   if (main.hasAttribute("data-readonly")) return; // olvasó mód: nincs szerkesztés
+  if (window.MACHON_CONFIG?.enabled && !MachonAuth.isAuthenticated()) return;
 
   /* ---------- serialization (DOM -> runs) ---------- */
   const isBold = (el) => /^(B|STRONG)$/.test(el.tagName) || /^(bold|[6-9]00)$/.test(el.style.fontWeight);
@@ -135,6 +160,103 @@
   }
 
   /* ---------- saving with offline queue ---------- */
+  const userId = MachonAuth.getUserId();
+  const PEND = `pending-saves:${userId}:${docId}`;
+  const LOCAL = `local-doc:${userId}:${docId}`;
+  const pending = () => JSON.parse(localStorage.getItem(PEND) || "{}");
+  const setPending = (p) => localStorage.setItem(PEND, JSON.stringify(p));
+  const localCopy = () => JSON.parse(localStorage.getItem(LOCAL) || "{}");
+  const setLocalCopy = (p) => localStorage.setItem(LOCAL, JSON.stringify(p));
+  const statusEl = $("#status");
+  const setStatus = (state) => {
+    const messages = {
+      offline: "● offline · helyben mentve",
+      edited: "✎ szerkesztve",
+      syncing: "↻ szinkronizálás…",
+      synced: "✓ szinkronizálva",
+      conflict: "⚠ lehetséges ütközés",
+      error: "⚠ nincs szinkronizálva"
+    };
+    statusEl.className = `sync-status ${state}`;
+    statusEl.textContent = messages[state];
+    statusEl.title = state === "conflict"
+      ? "A szerver elutasította a mentést; ellenőrizd a helyi és a szerverpéldányt."
+      : messages[state];
+  };
+  const renderRuns = (runs) => {
+    const fragment = document.createDocumentFragment();
+    if (!Array.isArray(runs)) return fragment;
+    for (const [text, bold, italic] of runs) {
+      let node = document.createTextNode(text);
+      if (italic) { const el = document.createElement("i"); el.append(node); node = el; }
+      if (bold) { const el = document.createElement("b"); el.append(node); node = el; }
+      fragment.append(node);
+    }
+    return fragment;
+  };
+  function applyLocalEntry(key, body) {
+    const seifMatch = /^s(\d+)\.(he|hu)$/.exec(key);
+    if (seifMatch) {
+      const sec = $(`[data-seif="${seifMatch[1]}"]`, main);
+      const field = seifMatch[2];
+      const edit = sec && $(".edit", $(`[data-field="${field}"]`, sec));
+      if (!edit) return;
+      edit.replaceChildren();
+      if (field === "he") {
+        (body.hebrew || []).forEach((runs) => {
+          const line = document.createElement("div");
+          line.className = "l";
+          line.append(renderRuns(runs));
+          if (!line.textContent) line.append(document.createElement("br"));
+          edit.append(line);
+        });
+        if (!edit.childElementCount) edit.innerHTML = '<div class="l"><br></div>';
+      } else {
+        const title = document.createElement("div");
+        title.className = "t";
+        title.append(renderRuns(body.hungarian.title));
+        if (!title.textContent) title.append(document.createElement("br"));
+        edit.append(title);
+        (body.hungarian.items || []).forEach((item) => {
+          for (let i = 0; i < (item.gap || 0); i++) {
+            const gap = document.createElement("div");
+            gap.className = "p gap";
+            gap.dataset.level = "1";
+            gap.append(document.createElement("br"));
+            edit.append(gap);
+          }
+          const point = document.createElement("div");
+          point.className = "p";
+          point.dataset.level = item.level === 2 ? "2" : "1";
+          point.append(renderRuns(item.runs));
+          if (!point.textContent) point.append(document.createElement("br"));
+          edit.append(point);
+        });
+        const link = tocLinks.get(sec.id);
+        if (link) $(".tt", link).textContent = title.textContent || "–";
+      }
+      return;
+    }
+    const metaKey = /^meta\.(title|description)\.(he|hu)$/.exec(key);
+    if (metaKey) {
+      const field = $$(".mf", main).find((el) => el.dataset.meta === `${metaKey[1]}.${metaKey[2]}`);
+      const runs = body[`${metaKey[1]}.${metaKey[2]}`];
+      if (field && Array.isArray(runs)) field.replaceChildren(renderRuns(runs));
+    }
+  }
+  function restoreLocalCopy() {
+    const saved = localCopy();
+    const queued = pending();
+    if (!navigator.onLine || Object.keys(queued).length) {
+      Object.entries(saved).forEach(([key, body]) => applyLocalEntry(key, body));
+      Object.entries(queued).forEach(([key, entry]) => {
+        if (!saved[key]) applyLocalEntry(key, entry.body);
+      });
+    } else if (Object.keys(saved).length) {
+      setLocalCopy({});
+    }
+  }
+
   /* ---------- AI regeneration ---------- */
   let regenBusy = false;
   async function regenerate(which) {
@@ -168,44 +290,60 @@
     if (b) { e.preventDefault(); e.stopPropagation(); regenerate(b.dataset.regen); }
   });
 
-  const statusEl = $("#status");
-  const PEND = "pending-saves:" + docId;
-  const pending = () => JSON.parse(localStorage.getItem(PEND) || "{}");
-  const setPending = (p) => localStorage.setItem(PEND, JSON.stringify(p));
-  const setStatus = (cls, text) => { statusEl.className = cls; statusEl.textContent = text; };
   const timers = new Map();
+  let flushing = false;
+  let conflictDetected = false;
 
   async function flush() {
-    const p = pending();
-    const keys = Object.keys(p);
-    if (!keys.length) return setStatus("", "✓ mentve");
-    setStatus("dirty", "mentés…");
-    for (const k of keys) {
-      try {
-        const r = await MachonAuth.fetch(p[k].url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p[k].body), keepalive: true });
-        if (!r.ok) throw new Error(r.status);
-        const now = pending();
-        if (JSON.stringify(now[k]) === JSON.stringify(p[k])) { delete now[k]; setPending(now); }
-      } catch (e) {
-        return setStatus("err", "⚠ nincs mentve");
+    if (flushing || conflictDetected) return;
+    if (!navigator.onLine) return setStatus("offline");
+    flushing = true;
+    try {
+      while (true) {
+        const p = pending();
+        const keys = Object.keys(p);
+        if (!keys.length) return setStatus("synced");
+        setStatus("syncing");
+        for (const k of keys) {
+          try {
+            const r = await MachonAuth.fetch(p[k].url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p[k].body), keepalive: true });
+            if (r.status === 409 || r.status === 412) {
+              conflictDetected = true;
+              return setStatus("conflict");
+            }
+            if (!r.ok) throw new Error(`HTTP ${r.status}`);
+            const now = pending();
+            if (JSON.stringify(now[k]) === JSON.stringify(p[k])) { delete now[k]; setPending(now); }
+          } catch (e) {
+            setStatus(!navigator.onLine || e instanceof TypeError ? "offline" : "error");
+            return;
+          }
+        }
       }
+    } finally {
+      flushing = false;
     }
-    return Object.keys(pending()).length ? flush() : setStatus("", "✓ mentve");
   }
 
   function queue(key, url, body, delay = 900) {
     const p = pending();
+    const saved = localCopy();
+    saved[key] = body;
+    setLocalCopy(saved);
     p[key] = { url, body };
     setPending(p);
-    setStatus("dirty", "…");
+    setStatus(navigator.onLine ? "edited" : "offline");
     clearTimeout(timers.get(key));
     timers.set(key, setTimeout(flush, delay));
   }
   const saveNow = () => { timers.forEach(clearTimeout); flush(); };
   addEventListener("online", flush);
+  addEventListener("offline", () => setStatus("offline"));
   addEventListener("pagehide", saveNow);
   document.addEventListener("visibilitychange", () => document.hidden && saveNow());
   setInterval(() => Object.keys(pending()).length && flush(), 15000);
+  restoreLocalCopy();
+  cacheOfflinePageWhenReady();
   flush();
 
   const queueSeif = (sec, field) => queue(`s${sec.dataset.seif}.${field}`, `/api/docs/${docId}/seif/${sec.dataset.seif}`, payload(sec, field));

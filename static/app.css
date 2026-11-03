@@ -16,8 +16,11 @@ body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Liberation Se
 #bar button{background:none;border:0;color:#fff;font-size:24px;width:44px;height:40px;cursor:pointer}
 #bar .home{color:#fff;text-decoration:none;opacity:.8}
 #cur{flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#status{font-size:14px;opacity:.9;min-width:5em;text-align:right}
-#status.dirty{color:#ffd37a}#status.err{color:#ff9a9a}
+#status{font-size:12px;opacity:.9;min-width:0;text-align:right;white-space:nowrap}
+#status.offline,#status.edited{color:#ffd37a}
+#status.syncing{color:#d7e5ff}
+#status.synced{color:#d7f0dc}
+#status.conflict,#status.error{color:#ff9a9a}
 
 #toc{position:fixed;top:var(--bar);bottom:0;left:0;width:var(--toc);background:var(--paper);border-right:1px solid var(--line);overflow-y:auto;z-index:20;transform:translateX(0);transition:transform .2s;font-family:system-ui,sans-serif;font-size:15px;-webkit-overflow-scrolling:touch}
 body.toc-closed #toc{transform:translateX(-100%)}

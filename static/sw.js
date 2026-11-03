@@ -1,4 +1,4 @@
-const CACHE = "machon-v6";
+const CACHE = "machon-v7";
 const PRECACHE = ["/static/app.css", "/static/app.js", "/static/auth.js", "/static/icon-192.png", "/static/icon-512.png",
   ...["DavidCLM-Medium", "DavidCLM-Bold", "LiberationSerif-Regular", "LiberationSerif-Bold", "LiberationSerif-Italic", "LiberationSerif-BoldItalic"].map((f) => `/static/fonts/${f}.woff2`)];
 
@@ -9,6 +9,16 @@ self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())
   );
+});
+self.addEventListener("message", (e) => {
+  const data = e.data;
+  if (data?.type !== "CACHE_PAGE" || typeof data.url !== "string" || typeof data.html !== "string") return;
+  const url = new URL(data.url);
+  if (url.origin !== self.location.origin || !/^\/d\/[A-Za-z0-9_-]+$/.test(url.pathname)) return;
+  e.waitUntil(caches.open(CACHE).then((c) => c.put(
+    url.href,
+    new Response(data.html, { headers: { "Content-Type": "text/html; charset=utf-8" } })
+  )));
 });
 self.addEventListener("fetch", (e) => {
   const r = e.request;

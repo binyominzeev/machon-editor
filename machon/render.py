@@ -87,7 +87,7 @@ def doc_html(doc_id, doc, editable=True):
 def page(main, toc, title, doc_id, editable=True):
     ro_cls = "" if editable else " readonly"
     ro_attr = "" if editable else " data-readonly"
-    status = '<span id="status">✓</span>' if editable else ""
+    status = '<span id="status" class="sync-status" role="status" aria-live="polite">…</span>' if editable else ""
     help_box = ('<div id="help">Ctrl+B félkövér · Ctrl+I dőlt · Tab/Shift+Tab: szint · Esc: kilép</div>'
                 if editable else "")
     return f"""<!doctype html>
