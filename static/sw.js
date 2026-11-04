@@ -1,4 +1,4 @@
-const CACHE = "machon-v7";
+const CACHE = "machon-v10";
 const PRECACHE = ["/static/app.css", "/static/app.js", "/static/auth.js", "/static/icon-192.png", "/static/icon-512.png",
   ...["DavidCLM-Medium", "DavidCLM-Bold", "LiberationSerif-Regular", "LiberationSerif-Bold", "LiberationSerif-Italic", "LiberationSerif-BoldItalic"].map((f) => `/static/fonts/${f}.woff2`)];
 

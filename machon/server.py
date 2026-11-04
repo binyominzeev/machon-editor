@@ -46,7 +46,12 @@ def create_app(docs_dir):
         os.replace(tmp, p)
 
     def runs_to_markup(runs):
-        return markup.serialize([(str(t), bool(b), bool(i)) for t, b, i in runs])
+        return markup.serialize([
+            (str(run[0]), bool(run[1]), bool(run[2]),
+             bool(run[3]) if len(run) > 3 else False,
+             bool(run[4]) if len(run) > 4 else False)
+            for run in runs
+        ])
 
     def item(it):
         out = {"level": 2 if it.get("level") == 2 else 1, "text": runs_to_markup(it["runs"])}

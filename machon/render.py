@@ -31,7 +31,8 @@ def login_html():
 
 
 def seif_html(s, editable=True):
-    he = "".join(f'<div class="l">{markup.to_html(l) or "<br>"}</div>' for l in s["hebrew"]) or '<div class="l"><br></div>'
+    hebrew = markup.mark_remo(s["hebrew"])
+    he = "".join(f'<div class="l">{markup.to_html(l) or "<br>"}</div>' for l in hebrew) or '<div class="l"><br></div>'
     hu = s["hungarian"]
     items = "".join(
         '<div class="p gap" data-level="1"><br></div>' * int(i.get("gap", 0))
@@ -41,12 +42,15 @@ def seif_html(s, editable=True):
     tab = ' tabindex="0"' if editable else ""
     return (
         f'<section class="seif" id="s{s["id"]}" data-seif="{s["id"]}">'
+        f'<button class="bookmark" type="button" data-bookmark="{s["id"]}" aria-label="Könyvjelző beállítása"'
+        f' aria-pressed="false" title="Könyvjelző beállítása">'
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.75h12v17l-6-4-6 4z"/></svg></button>'
         f'<div class="numwrap"><div class="num" dir="rtl">{esc(s["letter"])}</div>'
         + (f'<button class="regen" data-regen="{s["id"]}" title="Széif újragenerálása AI-val" aria-label="Újragenerálás">↻ Újragenerálás</button>' if editable else "")
         + f'</div>'
         f'<div class="col hu" data-field="hu" lang="hu">'
         f'<div class="edit"{tab}><div class="t">{markup.to_html(hu["title"]) or "<br>"}</div>{items}</div></div>'
-        f'<div class="col he" data-field="he" dir="rtl" lang="he"><div class="edit"{tab}>{he}</div></div>'
+        f'<div class="col he" data-field="he" dir="rtl" lang="he"><div class="edit" dir="rtl"{tab}>{he}</div></div>'
         f"</section>"
     )
 
@@ -88,7 +92,9 @@ def page(main, toc, title, doc_id, editable=True):
     ro_cls = "" if editable else " readonly"
     ro_attr = "" if editable else " data-readonly"
     status = '<span id="status" class="sync-status" role="status" aria-live="polite">…</span>' if editable else ""
-    help_box = ('<div id="help">Ctrl+B félkövér · Ctrl+I dőlt · Tab/Shift+Tab: szint · Esc: kilép</div>'
+    help_box = ('<div id="help">Ctrl+B félkövér · Ctrl+I dőlt · Tab/Shift+Tab: szint · Esc: kilép'
+                '<button type="button" data-mark="remo">Remo −2 pt</button>'
+                '</div>'
                 if editable else "")
     return f"""<!doctype html>
 <html lang="hu"><head><meta charset="utf-8">
@@ -101,7 +107,9 @@ def page(main, toc, title, doc_id, editable=True):
 <link rel="stylesheet" href="/static/app.css"></head>
 <body class="editor{ro_cls}"{ro_attr}>
 <div id="bar"><button id="tocBtn" aria-label="Tartalom">☰</button>
-<a href="/" class="home">Machon</a><span id="cur"></span>{status}{AUTH_BAR}</div>
+<a href="/" class="home">Machon</a><span id="cur"></span>
+<button id="bookmark-jump" type="button" aria-label="Ugrás a könyvjelzőhöz" title="Ugrás a könyvjelzőhöz" hidden>
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.75h12v17l-6-4-6 4z"/></svg></button>{status}{AUTH_BAR}</div>
 <nav id="toc" aria-label="Széifek">{toc}</nav>
 <div id="scrim"></div>
 <div id="regenbox" hidden><div class="rmsg"></div><div class="bar"><div id="rfill"></div></div></div>

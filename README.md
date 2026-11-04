@@ -119,15 +119,23 @@ Licenc: Liberation = SIL OFL, David CLM = GPL-2 + Bitstream (lásd `static/fonts
 magasságú), így a rövid összefoglaló a hosszú héber szöveg megfelelő magasságában folytatódhat.
 Szerkesztőben az üres sor = hézag: Enter-rel szúrható be, Backspace-szel törölhető.
 A szöveg utáni (utolsó pont alatti) üres sorok nem mentődnek.
+A héber sorok és a magyar cím, illetve pontok sormagassága azonos; a betűtípusok és betűméretek
+ettől függetlenül változatlanok.
 
 Inline jelölés: `**félkövér**`, `*dőlt*`, a `*` és `\` jelek `\`-rel escape-elhetők.
+A héber szövegben a `הגה` utáni rész automatikusan Remóként jelenik meg; a `הגה` előtti kerek vagy
+szögletes zárójeles szöveg is Remo-méretet kap, de nem forrásként. A Remo-szövegen belüli
+zárójeles források további 2 ponttal kisebbek. A szerkesztőben kijelölés után a „Remo −2 pt”
+gombbal kézzel is jelölhető a szöveg; a sormagasság változatlan.
+A formázás a JSON-ban `<r>…</r>` és `<s>…</s>` jelölésként tárolódik.
 A HTML-t a `machon/render.py` állítja elő (a későbbi PDF-generátor is erre a modellre épülhet).
 
 ## Billentyűk szerkesztés közben
 
 Kattintás (vagy fókusz + Enter) a mezőre → szerkesztés. Ctrl/Cmd+B félkövér, Ctrl/Cmd+I dőlt,
 Tab / Shift+Tab: vázlatpont szintje (magyar oldal), Esc: kilép. Mentés automatikus
-(offline esetén a böngésző sorba állítja, és újra próbálja).
+(offline esetén a böngésző sorba állítja, és újra próbálja). Magyar szövegben a `--` automatikusan
+`–` gondolatjellé alakul.
 
 Az offline szerkesztéshez előbb online nyisd meg a dokumentumot, hogy a böngésző eltárolhassa
 az oldalát és a szükséges fájlokat. A módosított mezők helyi másolata és a feltöltésre váró
@@ -136,6 +144,10 @@ automatikusan szinkronizálódnak. A fejléc diszkrét állapotjelzése mutatja 
 mentést. Bejelentkezéses módban a helyi piszkozatok felhasználónként elkülönülnek. Ha a szerver
 ütközésre utaló HTTP 409/412 választ ad, a kliens jelzi a lehetséges ütközést, de annak feloldása
 egyelőre kézi feladat.
+
+Minden szimánban egy széif jelölhető meg könyvjelzővel. A széif melletti ikonra újra kattintva
+törölhető a jelölés; a felső sávban megjelenő könyvjelző gomb egy kattintással visszaugrik hozzá.
+A könyvjelző böngészőnként és felhasználónként, helyben tárolódik, és olvasó módban is használható.
 
 ## Import Scribusból
 

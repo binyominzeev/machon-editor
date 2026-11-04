@@ -75,23 +75,66 @@
   addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(updateActive); }, { passive: true });
   updateActive();
 
+  /* ---------- seif bookmark ---------- */
+  const bookmarkKey = `bookmark:${MachonAuth.getUserId()}:${docId}`;
+  const bookmarkButtons = $$(".bookmark", main);
+  const bookmarkJump = $("#bookmark-jump");
+  let bookmarkedSeif = localStorage.getItem(bookmarkKey);
+  if (!seifs.some((seif) => seif.dataset.seif === bookmarkedSeif)) {
+    bookmarkedSeif = null;
+    localStorage.removeItem(bookmarkKey);
+  }
+  function updateBookmarkUi() {
+    bookmarkButtons.forEach((button) => {
+      const selected = button.dataset.bookmark === bookmarkedSeif;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
+      button.setAttribute("aria-label", selected ? "Könyvjelző eltávolítása" : "Könyvjelző beállítása");
+      button.title = selected ? "Könyvjelző eltávolítása" : "Könyvjelző beállítása";
+    });
+    const target = seifs.find((seif) => seif.dataset.seif === bookmarkedSeif);
+    bookmarkJump.hidden = !target;
+    if (target) {
+      const label = target.querySelector(".num").textContent.trim();
+      bookmarkJump.setAttribute("aria-label", `Ugrás a ${label}. széif könyvjelzőjéhez`);
+      bookmarkJump.title = `Ugrás a ${label}. széif könyvjelzőjéhez`;
+    }
+  }
+  updateBookmarkUi();
+  main.addEventListener("click", (e) => {
+    const button = e.target.closest(".bookmark");
+    if (!button) return;
+    e.preventDefault();
+    e.stopPropagation();
+    bookmarkedSeif = bookmarkedSeif === button.dataset.bookmark ? null : button.dataset.bookmark;
+    if (bookmarkedSeif) localStorage.setItem(bookmarkKey, bookmarkedSeif);
+    else localStorage.removeItem(bookmarkKey);
+    updateBookmarkUi();
+  });
+  bookmarkJump.addEventListener("click", () => {
+    const target = seifs.find((seif) => seif.dataset.seif === bookmarkedSeif);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
   if (main.hasAttribute("data-readonly")) return; // olvasó mód: nincs szerkesztés
   if (window.MACHON_CONFIG?.enabled && !MachonAuth.isAuthenticated()) return;
 
   /* ---------- serialization (DOM -> runs) ---------- */
   const isBold = (el) => /^(B|STRONG)$/.test(el.tagName) || /^(bold|[6-9]00)$/.test(el.style.fontWeight);
   const isItalic = (el) => /^(I|EM)$/.test(el.tagName) || el.style.fontStyle === "italic";
+  const hasStyle = (el, style) => el.classList?.contains(style) || el.dataset?.[style] === "true";
 
-  function walk(node, b, i, out) {
+  function walk(node, b, i, r, s, out) {
     if (node.nodeType === 3) {
       const t = node.nodeValue.replace(/\u00a0/g, " ").replace(/[\r\n]+/g, " ");
-      if (t) out.push([t, b, i]);
+      if (t) out.push([t, b, i, r, s]);
     } else if (node.nodeType === 1 && node.tagName !== "BR") {
       const nb = b || isBold(node), ni = i || isItalic(node);
-      node.childNodes.forEach((c) => walk(c, nb, ni, out));
+      const nr = r || hasStyle(node, "remo"), ns = s || hasStyle(node, "source");
+      node.childNodes.forEach((c) => walk(c, nb, ni, nr, ns, out));
     }
   }
-  const runsOf = (el) => { const out = []; walk(el, false, false, out); return out; };
+  const runsOf = (el) => { const out = []; walk(el, false, false, false, false, out); return out; };
   const isEmpty = (runs) => !runs.some((r) => r[0].trim());
 
   // Wrap stray inline content into block divs and return all leaf block elements.
@@ -186,10 +229,12 @@
   const renderRuns = (runs) => {
     const fragment = document.createDocumentFragment();
     if (!Array.isArray(runs)) return fragment;
-    for (const [text, bold, italic] of runs) {
+    for (const [text, bold, italic, remo, source] of runs) {
       let node = document.createTextNode(text);
       if (italic) { const el = document.createElement("i"); el.append(node); node = el; }
       if (bold) { const el = document.createElement("b"); el.append(node); node = el; }
+      if (source) { const el = document.createElement("span"); el.className = "source"; el.append(node); node = el; }
+      if (remo) { const el = document.createElement("span"); el.className = "remo"; el.append(node); node = el; }
       fragment.append(node);
     }
     return fragment;
@@ -414,6 +459,25 @@
       }
     }
   });
+  main.addEventListener("beforeinput", (e) => {
+    if (e.inputType !== "insertText" || e.data !== "-" || e.isComposing) return;
+    const edit = e.target.closest && e.target.closest(".hu .edit, .hu .mf");
+    const selection = getSelection();
+    if (!edit?.isContentEditable || !selection?.isCollapsed || !selection.rangeCount) return;
+    const range = selection.getRangeAt(0);
+    const node = range.startContainer;
+    if (!edit.contains(node) || node.nodeType !== Node.TEXT_NODE || range.startOffset === 0 || node.textContent[range.startOffset - 1] !== "-") return;
+    e.preventDefault();
+    range.setStart(node, range.startOffset - 1);
+    range.deleteContents();
+    const dash = document.createTextNode("–");
+    range.insertNode(dash);
+    range.setStartAfter(dash);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    edit.dispatchEvent(new Event("input", { bubbles: true }));
+  });
   main.addEventListener("input", (e) => {
     const edit = e.target.closest && e.target.closest(".seif .edit");
     if (!edit) return;
@@ -438,6 +502,32 @@
     });
   });
   main.addEventListener("drop", (e) => e.preventDefault());
+
+  /* ---------- Hebrew Remo/source formatting ---------- */
+  const help = $("#help");
+  help?.querySelectorAll("[data-mark]").forEach((button) => {
+    button.addEventListener("mousedown", (e) => e.preventDefault());
+    button.addEventListener("click", () => {
+      const selection = getSelection();
+      if (!selection || selection.isCollapsed || !selection.rangeCount) return;
+      const range = selection.getRangeAt(0);
+      const edit = range.commonAncestorContainer.parentElement?.closest(".he .edit");
+      const line = range.commonAncestorContainer.nodeType === 1
+        ? range.commonAncestorContainer.closest(".he .l")
+        : range.commonAncestorContainer.parentElement?.closest(".he .l");
+      if (!edit?.isContentEditable || !line || !line.contains(range.startContainer) || !line.contains(range.endContainer)) return;
+      const content = range.extractContents();
+      const wrapper = document.createElement("span");
+      wrapper.className = button.dataset.mark;
+      wrapper.append(content);
+      range.insertNode(wrapper);
+      selection.removeAllRanges();
+      const caret = document.createRange();
+      caret.selectNodeContents(wrapper);
+      selection.addRange(caret);
+      edit.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+  });
 
   /* ---------- header fields (always editable, single line) ---------- */
   $$(".mf").forEach((f) => {
