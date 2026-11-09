@@ -70,6 +70,27 @@ def create_app(docs_dir):
             abort(404)
         return m.group(1), int(m.group(2))
 
+    def load_toc():
+        """A machon.toc_import / toc_translate által készített témák szerinti tartalomjegyzék (hiányában None)."""
+        try:
+            toc = json.loads((ROOT / "data" / "toc.he.json").read_text("utf8"))
+        except (OSError, ValueError):
+            return None
+        try:
+            hu = json.loads((ROOT / "data" / "toc.hu.json").read_text("utf8"))
+        except (OSError, ValueError):
+            hu = {}
+        for vol, v in toc.get("volumes", {}).items():
+            for g in v["groups"]:
+                t = hu.get("groups", {}).get(f"{vol}|{g['title_he']}")
+                if t:
+                    g["title_hu"] = t
+                for s in g["simanim"]:
+                    key = f"{vol}-{s['n']}" + (f"-{s['part']}" if s.get("part") else "")
+                    if hu.get("simanim", {}).get(key):
+                        s["title_hu"] = hu["simanim"][key]
+        return toc
+
     @app.get("/")
     def index():
         entries = []
@@ -81,7 +102,7 @@ def create_app(docs_dir):
             t = doc.get("title", {})
             entries.append({"id": p.stem, "vol": m.group(1), "n": int(m.group(2)),
                             "title": t.get("hu") or t.get("he", ""), "mtime": p.stat().st_mtime})
-        return no_cache(app.response_class(render.index_html(entries, auth.can_edit())))
+        return no_cache(app.response_class(render.index_html(entries, auth.can_edit(), load_toc())))
 
     @app.get("/s/<doc_id>")
     def open_siman(doc_id):

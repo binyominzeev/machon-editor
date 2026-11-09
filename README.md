@@ -155,3 +155,56 @@ A könyvjelző böngészőnként és felhasználónként, helyben tárolódik, �
 
 Az importálót is az aktivált `.venv`-ből futtasd.
 Mentéskor a korábbi változat `docs/<id>.json.bak` néven megmarad.
+
+## Témák szerinti tartalomjegyzék letöltése (előkészítés)
+
+A Sulchán Áruch négy kötetének témacsoportjait és szimáncímeit (héberül) a Torat Emet
+„Halacha 1” gyűjteményének „תצוגה משולבת” kötetoldalairól tölti le a `machon/toc_import.py`
+(csak a standard könyvtárat használja):
+
+    python -m machon.toc_import                    # mind a 4 kötet -> data/toc.he.json
+    python -m machon.toc_import --only eh,cm       # csak egyes kötetek (oc, yd, eh, cm)
+    python -m machon.toc_import --delay 2 --out data/toc.he.json --cache data/.toc-cache
+
+Forrás: <https://www.toratemetfreeware.com/online/d_root__040_halacha1.html> (a kötetoldalak:
+`f_01975` OC, `f_01976` YD, `f_01974` EH, `f_01977` CM). A script minden csoportoldalnak csak az
+elejét (a tartalomjegyzékét) olvassa, a törzsszöveget nem; az oldalrészleteket a
+`data/.toc-cache/` mappában tárolja (nem verziókezelt), így újrafuttatáskor nem tölt le újra semmit.
+Új letöltéshez töröld a gyorsítótárat. Két letöltés között `--delay` másodpercet vár (alapból 1).
+A forrás windows-1255 kódolású, a kimenet UTF-8.
+
+Kimenet (`data/toc.he.json`):
+
+    {"version": 1, "source": "...", "retrieved": "...",
+     "volumes": {"oc": {"gate": "orach_chaim", "groups": [
+        {"title_he": "הלכות ציצית", "source": "f_01975_part_2.html",
+         "simanim": [{"n": 8, "n_he": "ח", "title_he": "..."}],
+         "extras_he": ["סדר ..."]}]}}}
+
+Az `extras_he` a nem szimán jellegű fejezeteket (pl. „סדר הגט”) tartalmazza; ezek nem számítanak a
+lefedettségbe. A forrás néhány sajátossága: a `n_to` mező egy sorban összevont szimánokat jelöl
+(168–169: „קסחקסט”), a `part` ugyanazon szimán további részét (297 és 297 „א”), néhány szimánnak
+(OC 22, 29, 430, 598, 599, 625) a forrásban sincs címe – ezekhez nem találunk ki címet. Futás végén a
+script ellenőrzi mindegyik kötetet az `ai.VOLUMES` szimánszámaival (hiányzó, duplikált, tartományon
+kívüli, rossz sorrendű szimánok). Hiba esetén `FIGYELEM:` sorokat ír és nem menti a fájlt;
+`--allow-incomplete`-tel a hiányos eredmény is mentésre kerül. Eredmény: 149 csoport, 1705
+szimánbejegyzés (OC 697, YD 403, EH 178, CM 427).
+
+### Magyar fordítás (AI)
+
+    python -m machon.toc_translate                 # data/toc.he.json -> data/toc.hu.json
+    python -m machon.toc_translate --only eh       # csak egy kötet
+
+Az OpenAI API-val (`.env`: `OPENAI_API_KEY`, `OPENAI_MODEL`) fordítja a csoport- és szimáncímeket
+(csak ezek a rövid címek kerülnek az AI-szolgáltatóhoz). Inkrementális: ami már szerepel a
+`data/toc.hu.json`-ban, azt nem fordítja újra, így a kézzel javított fordítások megmaradnak – javításhoz
+elég átírni az értéket a fájlban. A kulcsok: `"<kötet>|<csoport héber címe>"` és `"<kötet>-<szám>"`
+(részeknél `"<kötet>-<szám>-<rész>"`). A fordítások AI-val készültek, szakmai átnézést igényelnek.
+
+### Megjelenítés
+
+A kezdőlapon a „Szám szerint” és a „Téma szerint” nézet között lehet váltani. A témanézet a
+`data/toc.he.json` és (ha van) a `data/toc.hu.json` alapján jelenik meg, héber és magyar címmel,
+kereshetően. Ha a fájlok hiányoznak, a témanézetben a letöltés parancsa látszik.
+
+A letöltött címek felhasználása a forrás jogi feltételeinek ellenőrzése után a te felelősséged.

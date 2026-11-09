@@ -130,7 +130,40 @@ def _head(title):
 <title>{esc(title)}</title></head>"""
 
 
-def index_html(entries, editable=True):
+def topics_html(toc, tile_state):
+    """Témák szerinti nézet: kötetenként lenyitható csoportok, bennük a szimánok (héber, ha van, magyar cím is)."""
+    if not toc:
+        return ('<p class="notoc" hidden>A témák szerinti tartalomjegyzék még nincs letöltve. '
+                'Futtasd: <code>python -m machon.toc_import</code>, majd frissítsd az oldalt.</p>')
+    out = []
+    for vol, _ in VOL_LABELS:
+        groups = (toc.get("volumes", {}).get(vol) or {}).get("groups", [])
+        parts = []
+        for g in groups:
+            rows = []
+            for s in g.get("simanim", []):
+                n = int(s["n"])
+                state = tile_state(vol, n)
+                title = s.get("title_he", "")
+                hu = s.get("title_hu", "")
+                label = f"{n}–{s['n_to']}" if s.get("n_to") else f"{n} ({s['part']})" if s.get("part") else str(n)
+                q = esc(f"{label} {s.get('n_he', '')} {title} {hu}".lower())
+                inner = (f'<span class="tn">{label}</span><span class="tt he" dir="rtl">{esc(title) or "–"}</span>'
+                         + (f'<span class="tt hu">{esc(hu)}</span>' if hu else ""))
+                if state == "off":
+                    rows.append(f'<span class="trow off" data-q="{q}">{inner}</span>')
+                else:
+                    rows.append(f'<a class="trow{" done" if state == "done" else ""}" href="/s/{vol}-{n}" data-q="{q}">{inner}</a>')
+            ghu = g.get("title_hu", "")
+            parts.append(
+                f'<details class="tgroup"><summary><span class="gt he" dir="rtl">{esc(g.get("title_he", ""))}</span>'
+                + (f'<span class="gt hu">{esc(ghu)}</span>' if ghu else "")
+                + f'<span class="gc">{len(rows)}</span></summary><div class="tlist">{"".join(rows)}</div></details>')
+        out.append(f'<div class="topics" data-vol="{vol}" hidden>{"".join(parts) or "<p>Ehhez a kötethez nincs adat.</p>"}</div>')
+    return "".join(out)
+
+
+def index_html(entries, editable=True, toc=None):
     done = {e["id"]: e for e in entries}
     recent = sorted(entries, key=lambda e: -e["mtime"])[:8]
     label = dict(VOL_LABELS)
@@ -154,14 +187,38 @@ def index_html(entries, editable=True):
         for v, _ in VOL_LABELS
     )
     ro_attr = "" if editable else " data-readonly"
+
+    def tile_state(vol, n):
+        if f"{vol}-{n}" in done:
+            return "done"
+        return "new" if editable else "off"
+
+    modes = ('<div class="vmodes"><button class="vmode" data-mode="num">Szám szerint</button>'
+             '<button class="vmode" data-mode="topic">Téma szerint</button></div>')
+    search = '<input id="tsearch" type="search" placeholder="Keresés: szám vagy cím (héber / magyar)" hidden>'
     script = """<script>
-(()=>{const tabs=[...document.querySelectorAll('.vtab')],grids=[...document.querySelectorAll('.grid')];
-const show=v=>{tabs.forEach(t=>t.classList.toggle('on',t.dataset.vol===v));grids.forEach(g=>g.hidden=g.dataset.vol!==v);localStorage.setItem('vol',v)};
-tabs.forEach(t=>t.onclick=()=>show(t.dataset.vol));show(localStorage.getItem('vol')||'oc');
+(()=>{const tabs=[...document.querySelectorAll('.vtab')],grids=[...document.querySelectorAll('.grid')],
+topics=[...document.querySelectorAll('.topics')],modes=[...document.querySelectorAll('.vmode')],
+search=document.getElementById('tsearch'),notoc=document.querySelector('.notoc');
+let vol=localStorage.getItem('vol')||'oc',mode=localStorage.getItem('vmode')||'num';
+const filter=()=>{const q=search.value.trim().toLowerCase();
+ topics.filter(t=>!t.hidden).forEach(t=>t.querySelectorAll('.tgroup').forEach(g=>{let any=0;
+  g.querySelectorAll('.trow').forEach(r=>{const ok=!q||r.dataset.q.includes(q);r.hidden=!ok;if(ok)any++});
+  g.hidden=!any;if(q)g.open=true}))};
+const show=()=>{tabs.forEach(t=>t.classList.toggle('on',t.dataset.vol===vol));
+ modes.forEach(m=>m.classList.toggle('on',m.dataset.mode===mode));
+ grids.forEach(g=>g.hidden=!(mode==='num'&&g.dataset.vol===vol));
+ topics.forEach(t=>t.hidden=!(mode==='topic'&&t.dataset.vol===vol));
+ search.hidden=mode!=='topic'||!!notoc;if(notoc)notoc.hidden=mode!=='topic';
+ filter();localStorage.setItem('vol',vol);localStorage.setItem('vmode',mode)};
+tabs.forEach(t=>t.onclick=()=>{vol=t.dataset.vol;show()});
+modes.forEach(m=>m.onclick=()=>{mode=m.dataset.mode;show()});
+search.oninput=filter;show();
 if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});})();
 </script>"""
     body = (f'<main class="home"><h1>Machon szerkesztő</h1>{recent_sec}'
-            f'<h2>Kötet</h2><div class="vtabs">{tabs}</div><h2>Szimán</h2>{grids}</main>')
+            f'<h2>Kötet</h2><div class="vtabs">{tabs}</div><h2>Szimán</h2>{modes}{search}{grids}'
+            f'{topics_html(toc, tile_state)}</main>')
     return f"{_head('Machon')}<body{ro_attr}>{body}{AUTH_BAR}{AUTH_SCRIPTS}{script}</body></html>"
 
 
