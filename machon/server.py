@@ -49,7 +49,8 @@ def create_app(docs_dir):
         return markup.serialize([
             (str(run[0]), bool(run[1]), bool(run[2]),
              bool(run[3]) if len(run) > 3 else False,
-             bool(run[4]) if len(run) > 4 else False)
+             bool(run[4]) if len(run) > 4 else False,
+             bool(run[5]) if len(run) > 5 else False)
             for run in runs
         ])
 

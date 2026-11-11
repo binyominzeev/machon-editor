@@ -93,7 +93,10 @@ def page(main, toc, title, doc_id, editable=True):
     ro_attr = "" if editable else " data-readonly"
     status = '<span id="status" class="sync-status" role="status" aria-live="polite">…</span>' if editable else ""
     help_box = ('<div id="help">Ctrl+B félkövér · Ctrl+I dőlt · Tab/Shift+Tab: szint · Esc: kilép'
+                ' · Héber kijelölés:'
                 '<button type="button" data-mark="remo">Remo −2 pt</button>'
+                '<button type="button" data-mark="source">Forrás −4 pt</button>'
+                '<button type="button" data-mark="main-text" title="Kijelölt szöveg visszaállítása főszövegre, az automatikus felismerés felülírásával">Főszöveg</button>'
                 '</div>'
                 if editable else "")
     return f"""<!doctype html>

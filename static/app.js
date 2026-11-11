@@ -124,17 +124,21 @@
   const isItalic = (el) => /^(I|EM)$/.test(el.tagName) || el.style.fontStyle === "italic";
   const hasStyle = (el, style) => el.classList?.contains(style) || el.dataset?.[style] === "true";
 
-  function walk(node, b, i, r, s, out) {
+  function walk(node, b, i, r, s, m, out) {
     if (node.nodeType === 3) {
       const t = node.nodeValue.replace(/\u00a0/g, " ").replace(/[\r\n]+/g, " ");
-      if (t) out.push([t, b, i, r, s]);
+      if (t) out.push([t, b, i, r, s, m]);
     } else if (node.nodeType === 1 && node.tagName !== "BR") {
       const nb = b || isBold(node), ni = i || isItalic(node);
-      const nr = r || hasStyle(node, "remo"), ns = s || hasStyle(node, "source");
-      node.childNodes.forEach((c) => walk(c, nb, ni, nr, ns, out));
+      const mainText = hasStyle(node, "main-text");
+      const hasRemo = hasStyle(node, "remo"), hasSource = hasStyle(node, "source");
+      const nm = mainText || (m && !hasRemo && !hasSource);
+      const nr = mainText ? false : hasRemo ? true : nm ? false : r;
+      const ns = mainText ? false : hasSource ? true : nm ? false : s;
+      node.childNodes.forEach((c) => walk(c, nb, ni, nr, ns, nm, out));
     }
   }
-  const runsOf = (el) => { const out = []; walk(el, false, false, false, false, out); return out; };
+  const runsOf = (el) => { const out = []; walk(el, false, false, false, false, false, out); return out; };
   const isEmpty = (runs) => !runs.some((r) => r[0].trim());
 
   // Wrap stray inline content into block divs and return all leaf block elements.
@@ -229,12 +233,13 @@
   const renderRuns = (runs) => {
     const fragment = document.createDocumentFragment();
     if (!Array.isArray(runs)) return fragment;
-    for (const [text, bold, italic, remo, source] of runs) {
+    for (const [text, bold, italic, remo, source, mainText] of runs) {
       let node = document.createTextNode(text);
       if (italic) { const el = document.createElement("i"); el.append(node); node = el; }
       if (bold) { const el = document.createElement("b"); el.append(node); node = el; }
       if (source) { const el = document.createElement("span"); el.className = "source"; el.append(node); node = el; }
       if (remo) { const el = document.createElement("span"); el.className = "remo"; el.append(node); node = el; }
+      if (mainText) { const el = document.createElement("span"); el.className = "main-text"; el.append(node); node = el; }
       fragment.append(node);
     }
     return fragment;
@@ -517,8 +522,12 @@
         : range.commonAncestorContainer.parentElement?.closest(".he .l");
       if (!edit?.isContentEditable || !line || !line.contains(range.startContainer) || !line.contains(range.endContainer)) return;
       const content = range.extractContents();
+      content.querySelectorAll?.(".remo, .source, .main-text").forEach((el) => {
+        el.classList.remove("remo", "source", "main-text");
+        if (!el.className) el.removeAttribute("class");
+      });
       const wrapper = document.createElement("span");
-      wrapper.className = button.dataset.mark;
+      wrapper.classList.add(...(button.dataset.mark === "source" ? ["remo", "source"] : [button.dataset.mark]));
       wrapper.append(content);
       range.insertNode(wrapper);
       selection.removeAllRanges();
