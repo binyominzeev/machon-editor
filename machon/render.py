@@ -85,10 +85,12 @@ def doc_html(doc_id, doc, editable=True):
     body = "".join(seif_html(s, editable) for s in doc["seifim"])
     short = f'{doc.get("siman_he", "")} · {doc["siman"]}'
     ro = "" if editable else " data-readonly"
-    return page(f'<main id="doc" data-doc="{esc(doc_id)}"{ro}>{head}{body}</main>', toc, short, esc(doc_id), editable)
+    siman_title = markup.to_html(t.get("hu") or t.get("he", ""))
+    return page(f'<main id="doc" data-doc="{esc(doc_id)}"{ro}>{head}{body}</main>', toc, short, esc(doc_id), editable,
+                int(doc["siman"]), siman_title)
 
 
-def page(main, toc, title, doc_id, editable=True):
+def page(main, toc, title, doc_id, editable=True, siman=None, siman_title=""):
     ro_cls = "" if editable else " readonly"
     ro_attr = "" if editable else " data-readonly"
     status = '<span id="status" class="sync-status" role="status" aria-live="polite">…</span>' if editable else ""
@@ -110,7 +112,9 @@ def page(main, toc, title, doc_id, editable=True):
 <link rel="stylesheet" href="/static/app.css"></head>
 <body class="editor{ro_cls}"{ro_attr}>
 <div id="bar"><button id="tocBtn" aria-label="Tartalom">☰</button>
-<a href="/" class="home">Machon</a><span id="cur"></span>
+<a href="/" class="bar-home" aria-label="Machon – főoldal">⌂ <span>Machon</span></a>
+<div class="bar-context"><div class="bar-siman"><span>{siman}. szimán</span><span id="siman-title" dir="auto">{siman_title}</span></div>
+<div id="cur"></div></div>
 <button id="bookmark-jump" type="button" aria-label="Ugrás a könyvjelzőhöz" title="Ugrás a könyvjelzőhöz" hidden>
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.75h12v17l-6-4-6 4z"/></svg></button>{status}{AUTH_BAR}</div>
 <nav id="toc" aria-label="Széifek">{toc}</nav>

@@ -142,7 +142,8 @@ Az offline szerkesztéshez előbb online nyisd meg a dokumentumot, hogy a böng�
 az oldalát és a szükséges fájlokat. A módosított mezők helyi másolata és a feltöltésre váró
 mentések automatikusan megmaradnak; kapcsolat nélkül is szerkeszthetsz, visszatéréskor pedig
 automatikusan szinkronizálódnak. A fejléc diszkrét állapotjelzése mutatja a kapcsolatot és a
-mentést. Bejelentkezéses módban a helyi piszkozatok felhasználónként elkülönülnek. Ha a szerver
+mentést; itt látható a szimán címe és az aktuális széif is, a Machon gomb pedig a főoldalra vezet.
+Bejelentkezéses módban a helyi piszkozatok felhasználónként elkülönülnek. Ha a szerver
 ütközésre utaló HTTP 409/412 választ ad, a kliens jelzi a lehetséges ütközést, de annak feloldása
 egyelőre kézi feladat.
 

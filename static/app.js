@@ -53,8 +53,17 @@
   const seifs = $$(".seif");
   const tocLinks = new Map($$("#toc a").map((a) => [a.dataset.target, a]));
   let active = null;
+  const updateCurrentLabel = () => {
+    $("#cur").textContent = active ? active.querySelector(".num").textContent + " – " + active.querySelector(".t").textContent : "";
+  };
+  const updateSimanTitle = () => {
+    const title = $("#siman-title");
+    if (!title) return;
+    title.textContent = $('[data-meta="title.hu"]', main).textContent.trim()
+      || $('[data-meta="title.he"]', main).textContent.trim();
+  };
   const updateActive = () => {
-    const line = 80 + 20;
+    const line = $("#bar").getBoundingClientRect().bottom + 20;
     let cur = null;
     for (const s of seifs) {
       if (s.getBoundingClientRect().top <= line) cur = s;
@@ -64,7 +73,7 @@
     active = cur;
     seifs.forEach((s) => s.classList.toggle("current", s === cur));
     tocLinks.forEach((a, id) => a.classList.toggle("active", cur && cur.id === id));
-    $("#cur").textContent = cur ? cur.querySelector(".num").textContent + " – " + cur.querySelector(".t").textContent : "";
+    updateCurrentLabel();
     const a = cur && tocLinks.get(cur.id);
     if (a) {
       const toc = $("#toc"), r = a.getBoundingClientRect(), tr = toc.getBoundingClientRect();
@@ -393,6 +402,8 @@
   document.addEventListener("visibilitychange", () => document.hidden && saveNow());
   setInterval(() => Object.keys(pending()).length && flush(), 15000);
   restoreLocalCopy();
+  updateCurrentLabel();
+  updateSimanTitle();
   cacheOfflinePageWhenReady();
   flush();
 
@@ -487,6 +498,7 @@
     const edit = e.target.closest && e.target.closest(".seif .edit");
     if (!edit) return;
     const sec = edit.closest(".seif");
+    if (sec === active) updateCurrentLabel();
     queueSeif(sec, edit.parentElement.dataset.field);
   });
   main.addEventListener("focusout", (e) => {
@@ -547,7 +559,10 @@
         document.execCommand(e.key.toLowerCase() === "b" ? "bold" : "italic");
       }
     });
-    f.addEventListener("input", () => queue("meta." + f.dataset.meta, `/api/docs/${docId}/meta`, { [f.dataset.meta]: runsOf(f) }));
+    f.addEventListener("input", () => {
+      if (f.dataset.meta.startsWith("title.")) updateSimanTitle();
+      queue("meta." + f.dataset.meta, `/api/docs/${docId}/meta`, { [f.dataset.meta]: runsOf(f) });
+    });
     f.addEventListener("blur", saveNow);
   });
 })();
