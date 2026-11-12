@@ -127,7 +127,8 @@ A héber szövegben a `הגה` utáni rész automatikusan Remóként jelenik meg
 szögletes zárójeles szöveg is Remo-méretet kap, de nem forrásként. A Remo-szövegen belüli
 zárójeles források további 2 ponttal kisebbek. Ha a felismerés téves, szerkesztés közben jelöld ki a
 szöveget, majd válaszd a „Remo −2 pt”, „Forrás −4 pt” vagy „Főszöveg” gombot. A „Főszöveg”
-felülírja az automatikus felismerést is. A sormagasság változatlan. A formázás a JSON-ban
+felülírja az automatikus felismerést is, és több sor kijelölésére is alkalmazható. A sormagasság
+változatlan. A formázás a JSON-ban
 `<r>…</r>`, `<s>…</s>` és `<m>…</m>` jelölésként tárolódik.
 A HTML-t a `machon/render.py` állítja elő (a későbbi PDF-generátor is erre a modellre épülhet).
 

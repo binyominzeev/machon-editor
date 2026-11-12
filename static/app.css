@@ -92,10 +92,14 @@ body.toc-closed main#doc{margin-left:auto;margin-right:auto;max-width:1100px}
 body.is-editing #help{display:block}
 #help button{margin-left:.5rem;padding:.15rem .45rem;border:1px solid #aaa;border-radius:4px;background:#444;color:#fff;font:inherit;cursor:pointer}
 #help button:hover{background:#555}
-.he .l .remo,.he .l .source{line-height:inherit}
+.he .l .remo,.he .l .source,.he .l .main-text{line-height:inherit}
 .he .l .remo{font-size:calc(1em - 2pt)}
 .he .l .source{font-size:calc(1em - 4pt)}
 .he .l .remo .source{font-size:calc(1em - 2pt)}
+.he .l .source .remo{font-size:calc(1em + 2pt)}
+.he .l .remo .main-text{font-size:calc(1em + 2pt)}
+.he .l .source .main-text,.he .l .remo .source .main-text{font-size:calc(1em + 4pt)}
+.he .l .source .remo .main-text{font-size:calc(1em + 2pt)}
 
 /* home screen */
 .home{max-width:980px;margin:0 auto;padding:1rem 1rem 3rem;font-family:system-ui,sans-serif}

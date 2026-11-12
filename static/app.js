@@ -143,7 +143,7 @@
       const hasRemo = hasStyle(node, "remo"), hasSource = hasStyle(node, "source");
       const nm = mainText || (m && !hasRemo && !hasSource);
       const nr = mainText ? false : hasRemo ? true : nm ? false : r;
-      const ns = mainText ? false : hasSource ? true : nm ? false : s;
+      const ns = mainText || hasRemo ? false : hasSource ? true : nm ? false : s;
       node.childNodes.forEach((c) => walk(c, nb, ni, nr, ns, nm, out));
     }
   }
@@ -528,24 +528,44 @@
       const selection = getSelection();
       if (!selection || selection.isCollapsed || !selection.rangeCount) return;
       const range = selection.getRangeAt(0);
-      const edit = range.commonAncestorContainer.parentElement?.closest(".he .edit");
-      const line = range.commonAncestorContainer.nodeType === 1
-        ? range.commonAncestorContainer.closest(".he .l")
-        : range.commonAncestorContainer.parentElement?.closest(".he .l");
-      if (!edit?.isContentEditable || !line || !line.contains(range.startContainer) || !line.contains(range.endContainer)) return;
-      const content = range.extractContents();
-      content.querySelectorAll?.(".remo, .source, .main-text").forEach((el) => {
-        el.classList.remove("remo", "source", "main-text");
-        if (!el.className) el.removeAttribute("class");
-      });
-      const wrapper = document.createElement("span");
-      wrapper.classList.add(...(button.dataset.mark === "source" ? ["remo", "source"] : [button.dataset.mark]));
-      wrapper.append(content);
-      range.insertNode(wrapper);
+      const closestEdit = (node) => (node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement)?.closest(".he .edit");
+      const edit = closestEdit(range.startContainer);
+      if (!edit?.isContentEditable || closestEdit(range.endContainer) !== edit) return;
+
+      const textNodes = [];
+      const walker = document.createTreeWalker(edit, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (!node.nodeValue || !range.intersectsNode(node)) continue;
+        const start = node === range.startContainer ? range.startOffset : 0;
+        const end = node === range.endContainer ? range.endOffset : node.length;
+        if (start < end) textNodes.push({ node, start, end });
+      }
+      if (!textNodes.length) return;
+
+      const sourceMark = button.dataset.mark === "source";
+      const selectedNodes = [];
+      for (const { node, start, end } of textNodes.reverse()) {
+        const selected = node.splitText(start);
+        selected.splitText(end - start);
+        const wrapper = document.createElement("span");
+        wrapper.classList.add(sourceMark ? "remo" : button.dataset.mark);
+        selected.replaceWith(wrapper);
+        if (sourceMark) {
+          const source = document.createElement("span");
+          source.className = "source";
+          source.append(selected);
+          wrapper.append(source);
+        } else {
+          wrapper.append(selected);
+        }
+        selectedNodes.push(selected);
+      }
       selection.removeAllRanges();
-      const caret = document.createRange();
-      caret.selectNodeContents(wrapper);
-      selection.addRange(caret);
+      const selectedRange = document.createRange();
+      selectedRange.setStart(selectedNodes.at(-1), 0);
+      selectedRange.setEnd(selectedNodes[0], selectedNodes[0].length);
+      selection.addRange(selectedRange);
       edit.dispatchEvent(new Event("input", { bubbles: true }));
     });
   });
