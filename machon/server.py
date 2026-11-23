@@ -105,6 +105,12 @@ def create_app(docs_dir):
                             "title": t.get("hu") or t.get("he", ""), "mtime": p.stat().st_mtime})
         return no_cache(app.response_class(render.index_html(entries, auth.can_edit(), load_toc())))
 
+    @app.get("/auth-popup")
+    def auth_popup():
+        response = app.response_class(render.login_html(popup=True))
+        response.headers["Cache-Control"] = "no-store"
+        return response
+
     @app.get("/s/<doc_id>")
     def open_siman(doc_id):
         vol, n = parse_id(doc_id)

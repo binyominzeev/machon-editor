@@ -10,6 +10,7 @@
   const shellReloadKey = 'machon.shellReload';
   const cookieName = 'machon_at';
   const isLoginShell = document.body.hasAttribute('data-login');
+  const isLoginPopup = document.body.hasAttribute('data-login-popup');
   // Olvasó módban kapott oldal: ha közben van érvényes token, újratöltjük szerkeszthetőként.
   const isReadonlyPage = document.body.hasAttribute('data-readonly');
   let accessToken = localStorage.getItem(tokenKey);
@@ -18,6 +19,7 @@
   let userId = localStorage.getItem(userIdKey) || decodeJwtPayload(accessToken).sub || '';
   let refreshTimer = null;
   let refreshing = null;
+  let loginPopup = null;
 
   function decodeJwtPayload(token) {
     try {
@@ -111,7 +113,7 @@
     const verifier = createVerifier();
     targetWindow.sessionStorage.setItem(verifierKey, verifier);
     targetWindow.sessionStorage.setItem(returnPathKey, `${window.location.pathname}${window.location.search}`);
-    if (targetWindow !== window) targetWindow.sessionStorage.setItem(popupLoginKey, '1');
+    if (isLoginPopup || targetWindow !== window) targetWindow.sessionStorage.setItem(popupLoginKey, '1');
     const params = new URLSearchParams({
       response_type: 'code',
       client_id: config.oidcClientId,
@@ -151,6 +153,9 @@
     sessionStorage.removeItem(popupLoginKey);
     window.history.replaceState(null, '', returnPath);
     if (popupLogin) {
+      if (window.opener && !window.opener.closed) {
+        window.opener.postMessage({ type: 'machon-auth-popup', tokens }, window.location.origin);
+      }
       window.close();
       return true;
     }
@@ -210,15 +215,10 @@
   }
 
   function startPopupLogin() {
-    const popup = window.open('about:blank', 'machon-login', 'popup');
-    if (!popup) {
+    loginPopup = window.open('/auth-popup', 'machon-login', 'popup');
+    if (!loginPopup) {
       showError('A bejelentkezési ablak megnyitása nem sikerült.');
-      return;
     }
-    login(popup).catch(error => {
-      if (!popup.closed) popup.close();
-      showError(error.message);
-    });
   }
 
   function updateControls() {
@@ -241,10 +241,23 @@
     if (event.key === tokenKey && event.newValue) window.location.reload();
   });
 
+  window.addEventListener('message', event => {
+    if (event.origin !== window.location.origin || event.source !== loginPopup) return;
+    const tokens = event.data?.type === 'machon-auth-popup' ? event.data.tokens : null;
+    if (!tokens || typeof tokens.access_token !== 'string') return;
+    loginPopup = null;
+    applyTokens(tokens);
+    window.location.reload();
+  });
+
   async function initialize() {
     if (!config.enabled) return;
     try {
-      await handleCallback();
+      const callbackHandled = await handleCallback();
+      if (isLoginPopup) {
+        if (!callbackHandled) await login();
+        return;
+      }
       if (accessToken) {
         const exp = decodeJwtPayload(accessToken).exp;
         if (!exp || exp * 1000 - Date.now() < 60000) {

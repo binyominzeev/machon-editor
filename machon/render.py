@@ -19,12 +19,13 @@ AUTH_BAR = '<div id="auth-controls" class="authbar" hidden><span id="auth-status
 AUTH_SCRIPTS = '<script src="/auth-config.js"></script><script src="/static/auth.js"></script>'
 
 
-def login_html():
+def login_html(popup=False):
+    popup_attr = " data-login-popup" if popup else ""
     return f"""<!doctype html><html lang="hu"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#2b3a55"><link rel="stylesheet" href="/static/app.css">
 <title>Belépés – Machon</title></head>
-<body data-login><main class="home"><h1>Machon szerkesztő</h1>
+<body data-login{popup_attr}><main class="home"><h1>Machon szerkesztő</h1>
 <p id="auth-status">Bejelentkezés…</p>
 <button id="login-button" class="primary" type="button" hidden>Belépés</button></main>
 {AUTH_SCRIPTS}</body></html>"""
