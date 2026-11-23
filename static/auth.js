@@ -6,6 +6,7 @@
   const userIdKey = 'machon.userId';
   const verifierKey = 'machon.pkceVerifier';
   const returnPathKey = 'machon.returnPath';
+  const popupLoginKey = 'machon.popupLogin';
   const shellReloadKey = 'machon.shellReload';
   const cookieName = 'machon_at';
   const isLoginShell = document.body.hasAttribute('data-login');
@@ -101,15 +102,16 @@
     return refreshing;
   }
 
-  async function login() {
+  async function login(targetWindow = window) {
     if (!config.oidcClientId) throw new Error('OIDC client ID is not configured');
     const issuer = config.oidcIssuer.replace(/\/$/, '');
     const response = await fetch(`${issuer}/.well-known/openid-configuration`);
     if (!response.ok) throw new Error('OIDC discovery failed');
     const metadata = await response.json();
     const verifier = createVerifier();
-    sessionStorage.setItem(verifierKey, verifier);
-    sessionStorage.setItem(returnPathKey, `${window.location.pathname}${window.location.search}`);
+    targetWindow.sessionStorage.setItem(verifierKey, verifier);
+    targetWindow.sessionStorage.setItem(returnPathKey, `${window.location.pathname}${window.location.search}`);
+    if (targetWindow !== window) targetWindow.sessionStorage.setItem(popupLoginKey, '1');
     const params = new URLSearchParams({
       response_type: 'code',
       client_id: config.oidcClientId,
@@ -119,7 +121,7 @@
       code_challenge: await createCodeChallenge(verifier),
       code_challenge_method: 'S256'
     });
-    window.location.assign(`${metadata.authorization_endpoint}?${params}`);
+    targetWindow.location.assign(`${metadata.authorization_endpoint}?${params}`);
   }
 
   // Visszatérés a Pocket ID-ból: code -> token csere a saját backendünkön át.
@@ -145,7 +147,13 @@
     sessionStorage.removeItem(verifierKey);
     const returnPath = sessionStorage.getItem(returnPathKey) || '/';
     sessionStorage.removeItem(returnPathKey);
+    const popupLogin = sessionStorage.getItem(popupLoginKey) === '1';
+    sessionStorage.removeItem(popupLoginKey);
     window.history.replaceState(null, '', returnPath);
+    if (popupLogin) {
+      window.close();
+      return true;
+    }
     return true;
   }
 
@@ -201,6 +209,18 @@
     if (button && isLoginShell) button.hidden = false;
   }
 
+  function startPopupLogin() {
+    const popup = window.open('about:blank', 'machon-login', 'popup');
+    if (!popup) {
+      showError('A bejelentkezési ablak megnyitása nem sikerült.');
+      return;
+    }
+    login(popup).catch(error => {
+      if (!popup.closed) popup.close();
+      showError(error.message);
+    });
+  }
+
   function updateControls() {
     const status = document.getElementById('auth-status');
     const button = document.getElementById('login-button');
@@ -213,9 +233,13 @@
     if (status) status.textContent = accessToken ? userName : 'Csak olvasható';
     if (button) {
       button.textContent = accessToken ? 'Kilépés' : 'Belépés';
-      button.onclick = () => accessToken ? logout() : login().catch(e => showError(e.message));
+      button.onclick = () => accessToken ? logout() : startPopupLogin();
     }
   }
+
+  window.addEventListener('storage', event => {
+    if (event.key === tokenKey && event.newValue) window.location.reload();
+  });
 
   async function initialize() {
     if (!config.enabled) return;
