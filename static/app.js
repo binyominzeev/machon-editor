@@ -52,6 +52,10 @@
 
   const seifs = $$(".seif");
   const tocLinks = new Map($$("#toc a").map((a) => [a.dataset.target, a]));
+  const permalinkMatch = location.pathname.match(/^\/d\/[^/]+\/(\d+)\/?$/);
+  let initialPermalinkTarget = permalinkMatch
+    ? seifs.find((seif) => seif.dataset.seif === permalinkMatch[1])
+    : null;
   let active = null;
   const updateCurrentLabel = () => {
     $("#cur").textContent = active ? active.querySelector(".num").textContent + " – " + active.querySelector(".t").textContent : "";
@@ -79,10 +83,17 @@
       const toc = $("#toc"), r = a.getBoundingClientRect(), tr = toc.getBoundingClientRect();
       if (r.top < tr.top || r.bottom > tr.bottom) toc.scrollTop += r.top - tr.top - tr.height / 2;
     }
+    if (initialPermalinkTarget && cur !== initialPermalinkTarget) return;
+    if (cur === initialPermalinkTarget) initialPermalinkTarget = null;
+    const path = `/d/${encodeURIComponent(docId)}${cur ? `/${encodeURIComponent(cur.dataset.seif)}` : ""}`;
+    if (location.pathname !== path) {
+      history.replaceState(null, "", path + location.search + location.hash);
+    }
   };
   let raf = 0;
   addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(updateActive); }, { passive: true });
   updateActive();
+  initialPermalinkTarget?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   /* ---------- seif bookmark ---------- */
   const bookmarkKey = `bookmark:${MachonAuth.getUserId()}:${docId}`;

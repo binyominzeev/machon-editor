@@ -200,8 +200,12 @@ def create_app(docs_dir):
         return jsonify(jobs.get(doc_id, {"done": False, "step": "idle", "pct": 0, "message": ""}))
 
     @app.get("/d/<doc_id>")
-    def view(doc_id):
-        return no_cache(app.response_class(render.doc_html(doc_id, load(doc_id), auth.can_edit())))
+    @app.get("/d/<doc_id>/<int:seif_id>")
+    def view(doc_id, seif_id=None):
+        doc = load(doc_id)
+        if seif_id is not None and not any(s["id"] == seif_id for s in doc["seifim"]):
+            abort(404)
+        return no_cache(app.response_class(render.doc_html(doc_id, doc, auth.can_edit())))
 
     @app.get("/api/docs/<doc_id>")
     def get_doc(doc_id):

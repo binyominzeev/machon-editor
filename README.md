@@ -144,6 +144,8 @@ az oldalát és a szükséges fájlokat. A módosított mezők helyi másolata �
 mentések automatikusan megmaradnak; kapcsolat nélkül is szerkeszthetsz, visszatéréskor pedig
 automatikusan szinkronizálódnak. A fejléc diszkrét állapotjelzése mutatja a kapcsolatot és a
 mentést; itt látható a szimán címe és az aktuális széif is, a Machon gomb pedig a főoldalra vezet.
+Egy széif közvetlen linkje a `/d/<szimán>/<széif>` formátumú URL; görgetés közben a cím az aktuális
+széifre frissül, így a böngésző címsorából kimásolható a permalink.
 Bejelentkezéses módban a helyi piszkozatok felhasználónként elkülönülnek. Ha a szerver
 ütközésre utaló HTTP 409/412 választ ad, a kliens jelzi a lehetséges ütközést, de annak feloldása
 egyelőre kézi feladat.
