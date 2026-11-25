@@ -1,7 +1,7 @@
 """Pocket ID (OIDC) bejelentkezés: JWT-ellenőrzés és token-proxy (a client_secret csak itt él).
 
 A böngésző Authorization-fejlécet küld az /api/* hívásokhoz; az oldalak (HTML) navigációját a
-`machon_at` süti védi, amit a static/auth.js az access tokenből állít be. Ugyanazt a JWT-t
+`machon_at` süti vagy egy hitelesített GET-kérés védi. Ugyanazt a JWT-t
 ellenőrizzük mindkét esetben. Bejelentkezés nélkül csak olvasás (GET /, /d/*, /s/*, /api/docs/*). Ha az OIDC_ISSUER nincs beállítva, a hitelesítés ki van kapcsolva.
 """
 import json
@@ -124,10 +124,16 @@ def init_app(app, login_page):
         p = request.path
         if request.method == "OPTIONS" or p in PUBLIC_PATHS or p.startswith(PUBLIC_PREFIXES):
             return None
-        # API: csak Authorization-fejléc (a süti nem, így CSRF-mentes); oldalak: süti.
-        g.user = verify(bearer() if p.startswith("/api/") else request.cookies.get(COOKIE))
+        # Írási API: csak Authorization-fejléc (a süti nem, így CSRF-mentes).
+        # A HTML GET fejlécet is elfogad, ha iframe-ben a süti nem használható.
+        page_bearer = (request.method == "GET" and
+                       (p == "/" or p.startswith(("/d/", "/s/"))) and bearer())
+        g.user = verify(bearer() if p.startswith("/api/") else page_bearer or request.cookies.get(COOKIE))
         if g.user:
+            g.bearer_page = bool(page_bearer)
             return None
+        if page_bearer:
+            return jsonify(error="Authentication required"), 401
         if request.method in ("GET", "HEAD") and (p == "/" or p.startswith(READONLY_PREFIXES)):
             return None
         if p.startswith("/api/"):
@@ -135,6 +141,13 @@ def init_app(app, login_page):
         resp = app.response_class(login_page(), status=401)
         resp.headers["Cache-Control"] = "no-store"
         return resp
+
+    @app.after_request
+    def mark_authenticated_page(response):
+        if getattr(g, "bearer_page", False):
+            response.headers["X-Machon-Authenticated-Page"] = "1"
+            response.headers["Cache-Control"] = "no-store"
+        return response
 
 
 def can_edit():

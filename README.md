@@ -76,8 +76,10 @@ Működés: a böngésző PKCE-vel a Pocket ID-hoz irányít, a `code`→token c
 szerver `/api/auth/token` és `/api/auth/refresh` végpontja végzi (itt adódik hozzá a
 `client_secret`; a Pocket ID token endpointja `/api/oidc/token`). Az `/api/*` hívások
 `Authorization: Bearer` fejlécet kapnak, amit a szerver a Pocket ID JWKS-e alapján ellenőriz;
-az oldalak betöltését ugyanennek az access tokennek a `machon_at` sütije védi (`static/auth.js`
-állítja be). Bejelentkezés nélkül egy belépőoldal jelenik meg. A refresh token a böngésző
+az oldalak betöltéséhez ugyanezt a tokent a `machon_at` süti továbbítja. Ha a süti például
+beágyazott iframe-ben nem küldhető el, a kliens a szerkeszthető HTML-t Authorization-fejléccel
+kéri le; az írási API továbbra is kizárólag ezt a fejlécet fogadja el.
+Bejelentkezés nélkül a meglévő dokumentumok olvashatók. A refresh token a böngésző
 `localStorage`-ában van (egyszerű, dokumentált kompromisszum). Lejáratkor a token magától
 megújul; sikertelen megújításnál kijelentkeztet.
 

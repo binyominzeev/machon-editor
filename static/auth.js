@@ -7,7 +7,6 @@
   const verifierKey = 'machon.pkceVerifier';
   const returnPathKey = 'machon.returnPath';
   const popupLoginKey = 'machon.popupLogin';
-  const shellReloadKey = 'machon.shellReload';
   const cookieName = 'machon_at';
   const isLoginShell = document.body.hasAttribute('data-login');
   const isLoginPopup = document.body.hasAttribute('data-login-popup');
@@ -20,6 +19,7 @@
   let refreshTimer = null;
   let refreshing = null;
   let loginPopup = null;
+  let authError = '';
 
   function decodeJwtPayload(token) {
     try {
@@ -208,8 +208,9 @@
   });
 
   function showError(message) {
+    authError = `Bejelentkezési hiba: ${message}`;
     const status = document.getElementById('auth-status');
-    if (status) status.textContent = `Bejelentkezési hiba: ${message}`;
+    if (status) status.textContent = authError;
     const button = document.getElementById('login-button');
     if (button && isLoginShell) button.hidden = false;
   }
@@ -230,7 +231,7 @@
       if (button) { button.hidden = false; button.onclick = () => login().catch(e => showError(e.message)); }
       return;
     }
-    if (status) status.textContent = accessToken ? userName : 'Csak olvasható';
+    if (status) status.textContent = authError || (accessToken ? userName : 'Csak olvasható');
     if (button) {
       button.textContent = accessToken ? 'Kilépés' : 'Belépés';
       button.onclick = () => accessToken ? logout() : startPopupLogin();
@@ -249,6 +250,28 @@
     applyTokens(tokens);
     window.location.reload();
   });
+
+  async function loadAuthenticatedPage() {
+    const send = () => fetch(window.location.pathname + window.location.search, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+      cache: 'no-store'
+    });
+    let response = await send();
+    if (response.status === 401 && refreshToken) {
+      await refreshAccessToken();
+      response = await send();
+    }
+    if (!response.ok || response.headers.get('X-Machon-Authenticated-Page') !== '1') {
+      throw new Error(`a szerver nem fogadta el a tokent (HTTP ${response.status})`);
+    }
+    const html = await response.text();
+    const url = new URL(response.url);
+    if (url.origin !== window.location.origin) throw new Error('érvénytelen oldalátirányítás');
+    window.history.replaceState(null, '', url.pathname + url.search + window.location.hash);
+    document.open();
+    document.write(html);
+    document.close();
+  }
 
   async function initialize() {
     if (!config.enabled) return;
@@ -272,20 +295,13 @@
           scheduleRefresh(exp);
         }
       }
+      if ((isLoginShell || isReadonlyPage) && accessToken) {
+        await loadAuthenticatedPage();
+        return;
+      }
     } catch (error) {
       updateControls();
       showError(error.message);
-      return;
-    }
-    if ((isLoginShell || isReadonlyPage) && accessToken) {
-      // A szerver még login/olvasó oldalt adott; a süti beállítva, újratöltés. Hibás konfigurációnál nem pörgünk végtelen ciklusban.
-      const last = Number(sessionStorage.getItem(shellReloadKey) || 0);
-      if (Date.now() - last > 15000) {
-        sessionStorage.setItem(shellReloadKey, String(Date.now()));
-        window.location.replace(window.location.pathname + window.location.search);
-        return;
-      }
-      showError('a szerver nem fogadta el a tokent');
       return;
     }
     updateControls();
